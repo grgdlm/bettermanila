@@ -7,9 +7,19 @@ import ScrollToTop from './components/ui/ScrollToTop';
 import Services from './pages/Services';
 import Document from './pages/Document';
 import Government from './pages/Government';
+import ComingSoon from './pages/ComingSoon';
+import { COMING_SOON } from './config/launch';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
+  if (COMING_SOON) {
+    return (
+      <HelmetProvider>
+        <ComingSoon />
+      </HelmetProvider>
+    );
+  }
+
   return (
     <HelmetProvider>
       <Router>
