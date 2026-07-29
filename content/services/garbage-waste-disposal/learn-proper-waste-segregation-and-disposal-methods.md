@@ -1,73 +1,63 @@
-# Guidelines for Proper Waste Segregation and Disposal — Lapu-Lapu City
+# How to segregate your waste
 
-Proper waste segregation is **mandatory** in Lapu-Lapu City under **Republic Act 9003 (Ecological Solid Waste Management Act)** and local ordinances. Following these rules helps keep the city clean, prevents flooding, and protects health.
-
----
-
-## 1) Waste Categories You Must Separate
-
-| Category                    | Examples                                                                         | How to Dispose                                                                                                     |
-| --------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **Biodegradable**           | Food scraps, vegetable/fruit peelings, garden waste, paper towels                | Place in green container/biodegradable bin; collected by trucks; can also be composted at home/barangay MRF        |
-| **Recyclable**              | Plastic bottles, glass, tin/aluminum cans, paper, cartons, scrap metal           | Clean and dry before disposal; place in blue container/recyclable bin; bring to junkshops or barangay MRF          |
-| **Residual**                | Used diapers, styrofoam, plastic wrappers, sachets, contaminated paper, ceramics | Place in black container/residual bin; collected by trucks and sent to sanitary landfill                           |
-| **Special/Hazardous Waste** | Batteries, light bulbs, e-waste, paint cans, chemicals, medical waste            | Do **not** mix with regular waste; bring to barangay/CENRO special collection drives or accredited drop-off points |
+Segregating waste at source is required by national law and is the first thing Manila's waste department asks of residents.
 
 ---
 
-## 2) General Rules for Segregation
+## The law behind this
 
-- **Always use labeled bins** or color-coded plastic bags (green = biodegradable, blue = recyclable, black = residual).
-- **Rinse recyclables** to avoid pests and foul odor.
-- **Do not burn waste** — open burning is prohibited under RA 9003 and the Clean Air Act.
-- **Put garbage out only on your barangay’s collection day** to avoid clutter and flooding.
-- For **bulk items (furniture, appliances)** → request a **special pickup** through your Barangay Hall or CENRO.
-- **Construction debris** must be hauled by accredited haulers; not allowed in household collection.
+**Republic Act 9003**, the Ecological Solid Waste Management Act of 2000, requires segregation at source nationwide, mandates materials recovery facilities at barangay level, and bans open dumping. It applies in Manila as everywhere else in the country.
 
 ---
 
-## 3) Barangay Materials Recovery Facilities (MRFs)
+## What the city asks of you
 
-- Each barangay is required to operate an **MRF** to handle recyclables and compostables.
-- Residents can bring segregated recyclables and kitchen/garden waste to the MRF.
-- Some barangays have **“exchange programs”** (e.g., recyclables for rice or grocery packs).
+The Department of Public Services states its mission in these terms:
 
----
-
-## 4) For Businesses & Establishments
-
-- Must maintain **segregated waste bins** accessible to customers and staff.
-- Required to **contract accredited haulers** for industrial, medical, or hazardous waste.
-- Keep disposal receipts/hauler contracts for inspection by CENRO.
-- Restaurants/food-related establishments should explore **onsite composting** or regular turnover to barangay MRFs.
+- **Segregate at source**, so that materials which can be reused are recovered
+- **Compost** in backyards, and grow backyard or frontyard gardens, as a way of diverting waste
+- **Reduce** waste by avoiding generating it in the first place
+- **Keep hazardous waste separate.** It must not be mixed into the regular collection
+- **Do not dump illegally or late**, which efficient collection is meant to make unnecessary
 
 ---
 
-## 5) Penalties for Non-Compliance
+## The basic categories
 
-- **Improper waste disposal or open dumping** can result in fines or penalties under city ordinances and RA 9003.
-- Repeated violations may lead to **business permit suspension** (for establishments).
+| Category                 | Examples                                                                   |
+| ------------------------ | -------------------------------------------------------------------------- |
+| **Biodegradable**        | Food scraps, garden waste, paper that is not recyclable                    |
+| **Recyclable**           | Bottles, cans, clean paper and cardboard, certain plastics                 |
+| **Residual**             | Waste that is neither compostable nor recyclable                           |
+| **Special or hazardous** | Batteries, paint, solvents, fluorescent lamps, electronics, medical sharps |
 
----
-
-## 6) Quick Tips for Households
-
-- Keep **3–4 labeled bins** at home (biodegradable, recyclable, residual, hazardous).
-- Reduce waste by avoiding single-use plastics; bring reusable bags/containers.
-- Compost biodegradable waste if you have space (simple backyard compost pit or container).
-- Encourage kids and household members to follow segregation as a habit.
+Hazardous and electronic waste has its own route. See [special collection for hazardous waste and e-waste](/services/garbage-waste-disposal/request-special-waste-collection-hazardous-materials-electronics).
 
 ---
 
-## Contact for Support
+## Barangay materials recovery facilities
 
-- **City Environment and Natural Resources Office (CENRO)**  
-  Lapu-Lapu City Hall, Government Complex, Brgy. Pajo  
-  Phone: (032) 340-0004 (ask for CENRO)  
-  Updates via: [Lapu-Lapu City Information Office Facebook Page](https://www.facebook.com/lapulapucitygovernment)
+RA 9003 requires an MRF in every barangay or cluster of barangays. Yours is where recyclables and compostables are supposed to be brought.
+
+TODO: Add the list of MRF locations in Manila. The city site does not publish one.
 
 ---
 
-### Key Reminder
+## Penalties
 
-✅ Proper segregation is a **shared responsibility**. By separating waste correctly, you help reduce landfill use, promote recycling, and keep Lapu-Lapu City safe and sustainable.
+TODO: Add the specific fines under Manila's own solid waste ordinance. RA 9003 sets national penalty ranges, but the city ordinance sets what is actually charged in Manila. Do not publish figures from another city's ordinance.
+
+---
+
+## Who to contact
+
+|               |                                                                               |
+| ------------- | ----------------------------------------------------------------------------- |
+| **Office**    | Department of Public Services (DPS)                                           |
+| **Where**     | Ground floor, Old Comelec Building, Lions Road, Arroceros St., Ermita, Manila |
+| **Telephone** | (02) 8527 9638                                                                |
+| **Page**      | <https://manila.gov.ph/dps/>                                                  |
+
+---
+
+> Sourced from [manila.gov.ph/dps](https://manila.gov.ph/dps/) on 29 July 2026. This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila.

@@ -1,98 +1,131 @@
-# Go to the Local Hospital for Treatment or Confinement — Lapu-Lapu City
+# Go to a city hospital for treatment or confinement
 
-This guide covers **where to go**, **what to bring**, and **how admission works** at local hospitals in Lapu-Lapu City, including the city-run facility and nearby private hospitals.
-
----
-
-## A) Government Hospital (City-Run)
-
-### Sta. Rosa Community Hospital (Lapu-Lapu City)
-
-**Services & Hours**
-
-- **Emergency (Medical & Medico-legal):** 24/7
-- **Ward (In-patient confinement):** 24/7
-- **Out-Patient:** Mon–Fri, 8:00 AM–5:00 PM (except holidays)
-
-**Emergency (Medical cases) – Quick Steps**
-| Step | What you do | Hospital does | Typical time |
-|---|---|---|---|
-| 1 | Seek care at ER | Triage, vitals, initial MD orders | ~10–25 min |
-| 2 | Sign consent (treatment/admission if needed) | Prepare meds/tests; set for transfer to ward if admitted | ~20–25 min |
-| 3 | Transfer to ward (if for confinement) | ER endorses to Ward Nurse on duty | ~10 min |
-
-**Requirements (bring if available):** Registration data sheet (onsite), **PhilHealth ID/MDR (optional)**, doctor’s referral/admitting orders (if coming from clinic).
-
-**Ward (In-patient) – What to expect**
-
-- Follow doctor’s orders; nurses administer meds/tests; dietary issued as ordered.
-- For discharge: instructions & schedule for follow-ups are given; proceed to Billing for clearance; release at Ward/Nurse station.
-- **Fees:** Posted at Billing.
-- **Note:** If not enrolled in PhilHealth, staff will guide processing if a relative can provide documents.
+Manila runs a public hospital in each of its six districts. This page covers which hospital serves your district, what is free, what to bring, and how admission works.
 
 ---
 
-## B) Private Hospitals Nearby
+## The six city hospitals
 
-| Hospital                                     | Where                 | Beds/Notes                            | Admissions basics                                                                                                                     |
-| -------------------------------------------- | --------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mactan Doctors’ Hospital (CebuDoc Group)** | Basak, Lapu-Lapu City | **151-bed tertiary** private hospital | Bring valid ID; company/HMO authorization if applicable; PhilHealth forms; fill out admission forms and submit to Admissions/Billing. |
-| **ARC Hospitals**                            | Lapu-Lapu City        | **~100-bed** private hospital         | Standard private-hospital admission flow; coordinate with Admissions/HMO/PhilHealth desk.                                             |
+Every district of Manila has its own city-run hospital. All six are owned and funded by the City Government of Manila.
 
-> Private hospitals typically require **initial deposits** (varies by case/room) unless fully covered by HMO/PhilHealth arrangements. Confirm at the **Billing/Admissions** desk.
+| District | Hospital                                      | Notes                                                                                                                           |
+| -------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| I        | **Gat Andres Bonifacio Medical Center**       | In Tondo. 150 to 200 beds, opened 30 April 1998. The referral hospital for ultrasound and dialysis                              |
+| II       | **Ospital ng Tondo**                          | On Jose Abad Santos St. A 50-bed secondary hospital, inaugurated 3 May 1994                                                     |
+| III      | **Justice Jose Abad Santos General Hospital** | Serves Binondo, Quiapo, San Nicolas and Santa Cruz. 150 beds, opened 15 December 2009. The first of the six to be ISO certified |
+| IV       | **Ospital ng Sampaloc**                       | A 50-bed primary hospital for out-patient and emergency care                                                                    |
+| V        | **Ospital ng Maynila Medical Center**         | Corner of Quirino Avenue and Roxas Boulevard. A 300-bed tertiary training hospital. The referral hospital for CT scan and MRI   |
+| VI       | **Sta. Ana Hospital**                         | Level II, accredited by the DOH and PhilHealth. Opened 2010                                                                     |
 
----
+You are not restricted to your own district. District III's hospital, for example, states that it also takes patients from neighboring districts.
 
-## C) What to Bring (All Hospitals)
-
-- **Valid ID** (with photo & signature)
-- **PhilHealth** ID and **MDR** (Member Data Record); if a dependent, bring proof of dependency
-- **Doctor’s referral/admitting order** (if elective admission)
-- **HMO/Company**: LOA/guarantee letter, membership/ID cards (if applicable)
-- **Personal necessities** (for confinement)
+TODO: Add the street address and telephone number for each hospital. The city health services page names all six but does not publish their contact details in one place.
 
 ---
 
-## D) Costs & PhilHealth Coverage
+## What is free
 
-- **City hospital:** Fees are posted at **Billing**; **PhilHealth** benefits may apply at admission/discharge processing.
-- **No Balance Billing (NBB):** For **indigent/sponsored**, **senior citizens**, and certain categories in **government hospitals**, no other fees beyond PhilHealth package should be charged during confinement (subject to policy and facility capacity).
+The city subsidizes these hospitals from Manila taxes, so a great deal is free to residents.
 
----
+| Hospital              | What the city states is free                                                                             |
+| --------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Ospital ng Tondo**  | Medical consultation, laboratory, X-ray, hospitalization and medicines                                   |
+| **Sta. Ana Hospital** | All services, for any Manila resident. All services for senior citizens, where available at the hospital |
 
-## E) How to Avail — At a Glance
+If you are **not** a Manila resident, Sta. Ana Hospital enrolls you in PhilHealth on the spot under Point of Care, rather than turning you away.
 
-### Emergency (any hospital)
+Ospital ng Maynila is funded by Manila taxes and states that its primary concern is admitting and treating bona fide residents of the city.
 
-1. **Go straight to ER** (24/7).
-2. **Triage & initial orders** → stabilization/tests.
-3. **If admitted:** sign consent → transfer to ward → submit IDs/PhilHealth/HMO at Admissions/Billing.
-
-### Elective Admission (planned confinement/procedure)
-
-1. Obtain **doctor’s admitting order** & **referral**.
-2. Prepare **IDs, PhilHealth, HMO/LOA** (if any).
-3. Proceed to **Admissions** for room assignment, forms, and initial billing arrangements.
+TODO: Confirm what is free at Gat Andres Bonifacio Medical Center, Justice Jose Abad Santos General Hospital and Ospital ng Sampaloc. The city page does not spell this out for those three.
 
 ---
 
-## F) Useful Contacts
+## Opening hours
 
-- **Lapu-Lapu City Hospital / District Hospital (Gov’t)**
-  - A. Tumulak St., Gun-ob, Lapu-Lapu City
-  - **Tel:** (032) 340-0249 / 340-0248
-  - **Email:** lapulapucityhospital@yahoo.com
+| Service                                           | When                                                     |
+| ------------------------------------------------- | -------------------------------------------------------- |
+| **Emergency room, Sta. Ana Hospital**             | 24 hours, every day                                      |
+| **Laboratory and diagnostics, Sta. Ana Hospital** | 24 hours, every day                                      |
+| **Out-patient department, Sta. Ana Hospital**     | Monday to Friday, 8:00 AM to 5:00 PM, closed on holidays |
 
-- **Mactan Doctors’ Hospital (Private, CebuDoc Group)**
-  - Basak, Lapu-Lapu City
-  - **Trunkline:** +63 (32) 239-7002 to 7016
-
-- **ARC Hospitals (Private)**
-  - Lapu-Lapu City (100-bed facility)
+TODO: Confirm emergency and out-patient hours for the other five hospitals. Only Sta. Ana Hospital publishes its schedule on the city site. Assume emergency rooms run 24 hours and call ahead for out-patient clinics until this is verified.
 
 ---
 
-### Notes
+## What each hospital treats
 
-- Bring your **PhilHealth** documents even for emergencies; if unavailable, the hospital can guide you on follow-up submission.
-- Schedules and processes can change; confirm by calling the hospital **Admissions/Billing** desk before a planned confinement.
+**Justice Jose Abad Santos General Hospital** publishes the fullest list of departments:
+
+- Pediatrics, including developmental, infectious disease, cardiology, allergology and endocrinology
+- Obstetrics and Gynecology
+- Family Medicine
+- Surgery, including general, orthopedic, ophthalmology and ENT
+- Internal Medicine, including cardiology, pulmonology, diabetology, psychiatry, dermatology, gastroenterology, nephrology, neurology and infectious disease
+- Dental Medicine
+
+It was the first local government hospital in the country to earn the Mother-Baby Friendly Hospital Initiative accreditation, in 2013, recertified in August 2018.
+
+**Ospital ng Sampaloc** covers four specialties: Medicine, Obstetrics and Gynecology, Pediatrics, and Surgery.
+
+---
+
+## Referrals between the city hospitals
+
+The six hospitals refer patients to each other so you do not have to go private for a scan.
+
+| If you need            | You are referred to                 |
+| ---------------------- | ----------------------------------- |
+| Ultrasound or dialysis | Gat Andres Bonifacio Medical Center |
+| CT scan or MRI         | Ospital ng Maynila Medical Center   |
+
+Ask the hospital treating you to arrange the referral. Do not book these yourself.
+
+---
+
+## What to bring
+
+- A **valid ID** with photo and signature
+- **Proof that you live in Manila**, since the free services above are tied to residency
+- Your **PhilHealth ID and Member Data Record** if you have them. If you are a dependent, bring proof of dependency
+- A **doctor's referral or admitting order** if the admission is planned
+- **HMO or company** guarantee letter and cards, if you are using one
+- **Personal necessities** if you are being confined
+
+If you do not have your PhilHealth documents in an emergency, go anyway. Bring them later.
+
+---
+
+## How admission works
+
+### In an emergency
+
+1. Go straight to the emergency room. Do not wait for a referral.
+2. You will be triaged, and the severity of your case decides the order you are seen in, not the order you arrived.
+3. If you are to be confined, you sign a consent form and are moved to a ward.
+4. Submit your ID, PhilHealth and HMO details at admissions or billing once the patient is stable.
+
+### For a planned admission
+
+1. Get an **admitting order** from your doctor.
+2. Prepare your ID, proof of residency, PhilHealth and HMO documents.
+3. Go to **admissions** for your room assignment, forms and billing arrangements.
+
+---
+
+## If you are asked to pay something you did not expect
+
+Under **No Balance Billing**, indigent and sponsored PhilHealth members and senior citizens confined in government hospitals should not be charged beyond what the PhilHealth package covers.
+
+If you are asked for more, raise it with the hospital's billing desk first. If that gets you nowhere, the city's **Bilis Kilos Action Center** is the general route for complaints about city services: <https://manila.gov.ph/biliskilos/>
+
+---
+
+## Emergency numbers
+
+For ambulance, police and fire, use the city's emergency hotline list: <https://manila.gov.ph/emergency-police-fire-station-hotlines/>
+
+TODO: Pull the individual hospital and ambulance numbers out of that page and list them here.
+
+---
+
+> Sourced from [manila.gov.ph/health-services](https://manila.gov.ph/health-services/) on 29 July 2026. This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila. Hours and services change, so call ahead before a planned admission.

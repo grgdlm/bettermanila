@@ -1,65 +1,100 @@
-# How to Set Up a Business Partnership
+# Apply for a barangay clearance and a mayor's business permit
 
-## Step 1: Register with SEC
+Every business operating in Manila needs a mayor's permit from the city. National registration with the SEC or DTI comes first, then the city permit, then the BIR.
 
-**Prepare documents:**
+---
 
-- Partnership name (check via [SEC eSPARC](https://espac.sec.gov.ph/))
-- Notarized Articles of Partnership
-- IDs/TINs of partners, office address, capital structure
+## Who handles the city permit
 
-**File online** through [SEC eSPARC](https://espac.sec.gov.ph/) and pay fees.
+The **Bureau of Permits** (Kawanihan ng mga Permit sa Pagnenegosyo) issues business permits for the City of Manila.
 
-**Output:** SEC Certificate of Recording + Approved Business Name
+|               |                                          |
+| ------------- | ---------------------------------------- |
+| **Office**    | Bureau of Permits                        |
+| **Where**     | Ground floor, Manila City Hall building  |
+| **Telephone** | (02) 8527 0871                           |
+| **Email**     | permits@manila.gov.ph                    |
+| **Online**    | Go Manila, at <https://www.gomanila.com> |
 
-## Step 2: Apply for Business Permit
+The city states the faster route is to transact through **Go Manila** online rather than queuing at City Hall.
 
-Go to **Lapu-Lapu City BPLO** (Business Permit and Licensing Office).
+---
 
-**Requirements:**
+## The order things happen in
 
-- Unified Application Form
-- SEC Certificate of Registration + Articles of Partnership
-- Occupancy Permit (if owner) OR Lease Contract (if renting)
-- Community Tax Certificate (CTC)
+### 1. Register the business nationally
 
-Apply in person or online via [Lapu-Lapu Online Business Permit Portal](https://businesspermit.lapulapucity.gov.ph/).
+| Business type              | Register with                                     |
+| -------------------------- | ------------------------------------------------- |
+| Sole proprietor            | DTI                                               |
+| Partnership or corporation | SEC, through [eSPARC](https://esparc.sec.gov.ph/) |
+| Cooperative                | CDA                                               |
 
-> Note: Inspections may include zoning, sanitary, and fire safety checks.
+For a partnership you will need the partnership name checked, notarized Articles of Partnership, and the IDs, TINs, office address and capital structure of the partners. The SEC issues a Certificate of Recording and your approved business name.
 
-## Step 3: Register with BIR
+### 2. Get your barangay clearance
 
-File at the **BIR Revenue District Office (RDO)** where your office is located.
+A clearance from the barangay where the business sits is normally required before the city issues a mayor's permit. Manila has **896 barangays**, so this happens at the barangay covering your business address, not at a central counter in City Hall.
 
-- Fill out [BIR Form 1903](https://www.bir.gov.ph/images/1903%20Jan%202024.pdf)
-- Submit SEC Certificate + Articles of Partnership + valid IDs
-- Pay registration fee + Documentary Stamp Tax (DST)
+TODO: Confirm Manila's specific barangay clearance requirements, fees and processing time, and whether any part can be done through Go Manila. The city site does not cover barangay clearance directly.
 
-**Within 30 days of receiving BIR Certificate:**
+### 3. Apply at the Bureau of Permits
 
-- Apply for Authority to Print Receipts (Form 1906) OR enroll in e-invoicing
-- Register your Books of Accounts
+The Bureau publishes three separate routes:
 
-## Step 4: Register as Employer (if hiring)
+| Route               | When you use it                                     |
+| ------------------- | --------------------------------------------------- |
+| **New application** | Registering a business in Manila for the first time |
+| **Renewal**         | Renewing an existing Manila permit                  |
+| **Payment**         | Settling an assessment                              |
 
-Enroll with:
+Expect inspections. Zoning, sanitary and fire safety checks are standard parts of an LGU permit assessment.
 
-- [SSS](https://www.sss.gov.ph/)
-- [PhilHealth](https://www.philhealth.gov.ph/)
-- [Pag-IBIG](https://www.pagibigfund.gov.ph/)
+TODO: Document the exact requirements for each of the three routes. The city publishes them in expandable panels on <https://manila.gov.ph/permits/> that have to be opened one at a time. Do not write these from general knowledge of Philippine LGUs, because requirements differ from city to city.
 
-## Process Flow
+### 4. Register with the BIR
 
-1. SEC name check + register via [SEC eSPARC](https://espac.sec.gov.ph/)
-2. Secure Barangay Certification + site/lease documents
-3. Apply for Business Permit at [Lapu-Lapu BPLO](https://businesspermit.lapulapucity.gov.ph/)
-4. File BIR Form 1903 → apply ATP → register books
+File at the **Revenue District Office** covering your business address.
 
-## Document Checklist
+- File [BIR Form 1903](https://www.bir.gov.ph/) for partnerships and corporations
+- Submit your SEC certificate, constitutive documents and valid IDs
+- Pay the registration fee and documentary stamp tax
 
-- [ ] SEC Articles of Partnership + SEC Certificate
-- [ ] Lease Contract OR Occupancy/Building docs
-- [ ] Lapu-Lapu BPLO Unified Application Form + CTC
-- [ ] BIR Form 1903, IDs, ATP/Books
+Within 30 days of receiving your BIR certificate, apply for an Authority to Print receipts or enroll in e-invoicing, and register your books of accounts.
 
-With these steps, your partnership in Lapu-Lapu City will be fully compliant and ready to operate!
+### 5. Register as an employer, if you are hiring
+
+Enroll with [SSS](https://www.sss.gov.ph/), [PhilHealth](https://www.philhealth.gov.ph/) and [Pag-IBIG](https://www.pagibigfund.gov.ph/).
+
+---
+
+## Your rights under the Ease of Doing Business law
+
+The Bureau of Permits page cites **Republic Act 11032**, the Ease of Doing Business and Efficient Government Service Delivery Act, and the Anti-Red Tape Authority that enforces it.
+
+This matters to you as an applicant. The law requires government offices to publish how long each transaction should take and to act within those limits. If an office sits on your application without explanation, that citation on the city's own page is what you point at.
+
+TODO: Add the city's published processing times per permit type from its ARTA Citizen's Charter.
+
+---
+
+## Fees
+
+TODO: Add the fee schedule. Manila business permit costs vary with line of business, capitalization and gross receipts, and are set by city ordinance. Do not estimate them. Get the current schedule from the Bureau of Permits or the city's Citizen's Charter.
+
+---
+
+## Checklist
+
+- [ ] DTI, SEC or CDA registration
+- [ ] Barangay clearance from the barangay covering your business address
+- [ ] Lease contract, occupancy permit or tax declaration for the premises
+- [ ] Community Tax Certificate
+- [ ] Valid IDs, plus an SPA or board resolution if a representative is filing
+- [ ] Bureau of Permits application, filed at City Hall or through Go Manila
+- [ ] BIR Form 1903, then Authority to Print and books of accounts
+- [ ] SSS, PhilHealth and Pag-IBIG employer registration if hiring
+
+---
+
+> City details sourced from [manila.gov.ph/permits](https://manila.gov.ph/permits/) on 29 July 2026. National agency steps are general Philippine requirements, not Manila-specific. This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila. Confirm requirements with the Bureau of Permits before filing.

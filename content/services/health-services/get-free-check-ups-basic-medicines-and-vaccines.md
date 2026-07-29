@@ -1,41 +1,58 @@
-# Lapu-Lapu City Government: Free Health Services
+# Free check-ups, medicines and vaccines
 
-The Lapu-Lapu City Government offers free **check-ups, medicines, and vaccines** through the City Health Office (CHO), barangay health centers, and partner programs.
-
----
-
-## 1. Free Medical Check-ups
-
-| Service              | Where                        | Schedule                                     | Requirements                                              |
-| -------------------- | ---------------------------- | -------------------------------------------- | --------------------------------------------------------- |
-| General consultation | City/Barangay Health Centers | Mon–Fri, 8 AM–5 PM (varies by health center) | Individual Treatment Record (ITR) — issued on first visit |
+Manila subsidizes health care for its residents through six district hospitals and a network of health centers.
 
 ---
 
-## 2. Free Basic Medicines
+## Where free care is confirmed
 
-| Service                                          | Where                                    | Schedule           | Requirements                                                                                     |
-| ------------------------------------------------ | ---------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------ |
-| Free basic medicines                             | City Health Office (CHO) pharmacy        | Mon–Fri, 8 AM–5 PM | Doctor’s prescription and/or referral from hospital/clinic                                       |
-| Medicines for indigent seniors (MAIFIPP program) | Partner pharmacies (Basak, Carajay, Ibo) | Pharmacy hours     | Must be an indigent senior citizen, bona fide resident; coverage caps (e.g., ₱3,000 out-patient) |
+The city states the following outright:
 
----
+| Facility              | What is free                                                                             |
+| --------------------- | ---------------------------------------------------------------------------------------- |
+| **Ospital ng Tondo**  | Medical consultation, laboratory, X-ray, hospitalization and medicines                   |
+| **Sta. Ana Hospital** | All services, for any Manila resident. All services for senior citizens, where available |
 
-## 3. Free Vaccines & Immunization
+If you are not a Manila resident, Sta. Ana Hospital enrolls you in PhilHealth on the spot under Point of Care rather than turning you away.
 
-| Beneficiary       | Vaccine/Service                                          | Where                        | Schedule                        | Requirements                                             |
-| ----------------- | -------------------------------------------------------- | ---------------------------- | ------------------------------- | -------------------------------------------------------- |
-| Children          | BCG, Pentavalent, OPV/IPV, MMR, Hepatitis B, PCV13 (EPI) | Barangay Health Centers      | Typically Wednesdays, 8 AM–4 PM | ECCD card (first-timers can get one onsite)              |
-| Pregnant women    | Tetanus Toxoid vaccine + supplements                     | Barangay Health Centers      | During prenatal services        | Proof of pregnancy, ECCD/record                          |
-| Animal bite cases | Anti-rabies vaccine (first dose free)                    | Animal Bite Treatment Center | Clinic hours                    | Proof of Lapu-Lapu residency (e.g., voter’s certificate) |
+The city runs a hospital in each of its six districts. See [going to a city hospital](/services/health-services/go-to-the-local-hospital-for-treatment-or-confinement) for the full list.
 
 ---
 
-## How to Avail
+## Health centers
 
-1. **Check-ups** → Go to your Barangay Health Center or City Health Office; first-timers will be issued an ITR.
-2. **Medicines** → Bring a doctor’s prescription/referral; submit at CHO pharmacy window.
-3. **Child immunization** → Visit your barangay health center on immunization day with ECCD card.
-4. **Pregnancy services** → Attend prenatal visits at the barangay health center for free vaccine and supplements.
-5. **Anti-rabies** → Report to the Animal Bite Treatment Center; bring proof of residency.
-6. **Senior citizen medicines** → Visit participating partner pharmacies; follow MAIFIPP guidelines.
+The city operates health centers in addition to the six hospitals, and publishes a health centers directory on its health services page.
+
+TODO: Extract the health centers directory from <https://manila.gov.ph/health-services/> and list the centers here with their locations and hours. The directory sits behind a tab on that page. This is the most useful missing piece for residents who need a check-up rather than a hospital.
+
+---
+
+## Free medicines
+
+TODO: Confirm how Manila residents obtain free medicines outside of hospital confinement, including whether there is a city pharmacy or a senior citizens medicine program, what documents are needed, and any coverage caps.
+
+---
+
+## Vaccines
+
+Routine childhood immunization in the Philippines runs through the Department of Health's Expanded Program on Immunization and is free at public health facilities nationwide.
+
+TODO: Confirm Manila's immunization days, which health centers hold them, and what to bring. Also confirm where anti-rabies treatment is given in Manila after an animal bite, since that is time-critical and residents need the specific facility.
+
+---
+
+## What to bring
+
+- A valid ID
+- Proof that you live in Manila, since the free services above are tied to residency
+- Your PhilHealth details if you have them
+
+---
+
+## Who to contact
+
+Manila Health Department: **mhd@manila.gov.ph**
+
+---
+
+> Sourced from [manila.gov.ph/health-services](https://manila.gov.ph/health-services/) on 29 July 2026. This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila.

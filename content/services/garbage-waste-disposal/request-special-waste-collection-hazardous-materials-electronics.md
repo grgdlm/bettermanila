@@ -1,67 +1,47 @@
-# Request Special Collection Services for Hazardous Waste & E-Waste — Lapu-Lapu City
+# Hazardous waste and e-waste collection
 
-Hazardous and electronic wastes (e-waste) cannot be disposed of with regular garbage. The City Environment and Natural Resources Office (CENRO) and barangays coordinate **special collection drives** and drop-off services for these items.
-
----
-
-## 1) What Counts as Hazardous & E-Waste?
-
-| Category                       | Examples                                                                           | Notes                                                       |
-| ------------------------------ | ---------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| **Household Hazardous Waste**  | Batteries, fluorescent bulbs, used paints/solvents, pesticides, cleaning chemicals | Toxic and can pollute soil/water                            |
-| **Electronic Waste (E-Waste)** | Old cellphones, computers, printers, TVs, chargers, cables                         | May contain lead, mercury, cadmium                          |
-| **Medical Waste (Household)**  | Used syringes, sharps, soiled bandages                                             | Should be turned over to health centers for proper disposal |
+Hazardous waste must never go into your regular garbage. Manila runs a separate route for it.
 
 ---
 
-## 2) How to Request Special Collection
+## What counts as hazardous or electronic waste
 
-1. **Contact your Barangay Hall**
-   - Ask for the **Barangay Environment Committee** or Solid Waste desk.
-   - Provide details: type of waste, approximate volume, and your address.
-
-2. **Barangay forwards request to CENRO**
-   - CENRO schedules a **special truck pickup** or directs you to the next citywide collection event.
-   - Some barangays coordinate with **accredited junkshops/recyclers**.
-
-3. **Prepare items for pickup/drop-off**
-   - Store in sealed, clearly labeled containers or boxes.
-   - Do not mix hazardous waste with household garbage.
-
-4. **Follow the scheduled collection**
-   - Place items outside only when instructed, or bring them to the barangay/CENRO drop-off point.
+| Type                    | Examples                                                                |
+| ----------------------- | ----------------------------------------------------------------------- |
+| **Household hazardous** | Batteries, paint and solvents, pesticides, cleaning chemicals, aerosols |
+| **Lighting**            | Fluorescent lamps and tubes, which contain mercury                      |
+| **Electronic**          | Phones, computers, monitors, appliances, cables                         |
+| **Medical**             | Needles, syringes, expired medicines                                    |
 
 ---
 
-## 3) Other Disposal Options
+## The city runs a separate collection
 
-- **Barangay E-Waste Drives** — many barangays organize quarterly e-waste collection campaigns.
-- **School/NGO Drives** — occasionally schools or civic groups run e-waste donation drives in coordination with the City.
-- **Accredited Junkshops/Collectors** — some accept electronics for recycling; ask CENRO for the accredited list.
+The Department of Public Services states that hazardous waste is not mixed into the regular garbage round, and that establishing a collection and disposal system for household hazardous waste is one of its core tasks.
 
----
+The city has published a **collection schedule and drop-off locations for hazardous waste** through its news page.
 
-## 4) Contact Information
-
-- **City Environment and Natural Resources Office (CENRO)**  
-  Lapu-Lapu City Hall, Government Complex, Brgy. Pajo  
-  Phone: (032) 340-0004 (City Hall trunkline, ask for CENRO)  
-  Updates: [Lapu-Lapu City Government Facebook Page](https://www.facebook.com/lapulapucitygovernment)
-
-- **Barangay Halls** — Environment/Solid Waste desk for barangay-level pickup scheduling.
+TODO: Pull the current hazardous waste collection schedule and the drop-off location list from <https://manila.gov.ph/news/> and reproduce them here as a table. This is published but not in a permanent, findable place, which is exactly the sort of thing this site exists to fix.
 
 ---
 
-## 5) Tips for Households
+## Who to contact
 
-- Keep a **separate box** for batteries, bulbs, and small electronics.
-- Do not break bulbs or dismantle devices — this increases risk of contamination.
-- Join **barangay or school e-waste drives** regularly to avoid stockpiling.
-- Encourage neighbors to **bundle requests together** — barangays often schedule collection faster for group requests.
+|               |                                                                               |
+| ------------- | ----------------------------------------------------------------------------- |
+| **Office**    | Department of Public Services (DPS)                                           |
+| **Where**     | Ground floor, Old Comelec Building, Lions Road, Arroceros St., Ermita, Manila |
+| **Telephone** | (02) 8527 9638                                                                |
+| **Page**      | <https://manila.gov.ph/dps/>                                                  |
 
 ---
 
-### Reminder
+## In the meantime
 
-✅ Never dispose of hazardous waste or e-waste with your regular garbage.  
-✅ Always coordinate with your **Barangay Hall** or **CENRO** for proper and safe collection.
+Until the schedule is listed here, store hazardous items separately and safely, keep them out of the regular bin, and call the Department of Public Services on **(02) 8527 9638** to ask for the next collection date and nearest drop-off point.
+
+Never pour solvents, paint or chemicals into drains or esteros. Manila's drainage runs to the Pasig River and Manila Bay.
+
+---
+
+> Sourced from [manila.gov.ph/dps](https://manila.gov.ph/dps/) on 29 July 2026. This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila.
