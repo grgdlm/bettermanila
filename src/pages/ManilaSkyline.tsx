@@ -10,10 +10,11 @@
  * City Hall clock tower (clock, colonnade, domed cap), modern high-rises,
  * a broad-gabled church with pointed arches, and one more palm.
  *
- * Colours follow the owner's logo artwork: the front layer runs royal
- * (#2846b4) into the darkest logo ink (#210b6f), which is also the district
- * band behind it, so the two meet seamlessly; the back layer is tints of the
- * logo's azure (#0078d2).
+ * Colours reference the shared design tokens in `src/index.css`, which are
+ * derived from the logo artwork. The front layer runs primary-600 into
+ * primary-800, the same value as the district band behind it so the two meet
+ * seamlessly; the back layer is accent tints. Changing the tokens restyles
+ * this drawing with everything else.
  *
  * The silhouettes are suggestions drawn from scratch, not tracings.
  * Decorative only, so the whole drawing is hidden from assistive tech.
@@ -35,8 +36,8 @@ export function ManilaSkyline({ className }: { className?: string }) {
           y2="240"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stopColor="#b3d7f2" />
-          <stop offset="1" stopColor="#66aee4" />
+          <stop offset="0" stopColor="var(--color-accent-200)" />
+          <stop offset="1" stopColor="var(--color-accent-400)" />
         </linearGradient>
         <linearGradient
           id="bm-sky-front"
@@ -46,8 +47,8 @@ export function ManilaSkyline({ className }: { className?: string }) {
           y2="240"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stopColor="#2846b4" />
-          <stop offset="1" stopColor="#210b6f" />
+          <stop offset="0" stopColor="var(--color-primary-600)" />
+          <stop offset="1" stopColor="var(--color-primary-800)" />
         </linearGradient>
         {/* One palm, reused at three positions. Base of the trunk at (0,0). */}
         <g id="bm-palm">
@@ -171,7 +172,7 @@ export function ManilaSkyline({ className }: { className?: string }) {
       </g>
 
       {/* details inside the negative space */}
-      <g fill="#282896">
+      <g fill="var(--color-primary-700)">
         <circle cx="535" cy="166" r="6.5" />
         <circle cx="810" cy="116" r="2" />
         <rect x="809" y="104" width="2" height="12" />

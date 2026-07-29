@@ -24,7 +24,7 @@ export default function ThemeSelector({
     <div className={`relative ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="flex items-center space-x-2 px-3 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
       >
         <span className="text-sm font-medium">Theme: {currentTheme}</span>
         <svg
@@ -54,7 +54,7 @@ export default function ThemeSelector({
                 }}
                 className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
                   currentTheme === theme
-                    ? 'bg-blue-50 text-blue-700 font-medium'
+                    ? 'bg-primary-50 text-primary-700 font-medium'
                     : 'text-gray-700'
                 }`}
               >

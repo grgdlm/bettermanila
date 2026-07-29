@@ -8,14 +8,14 @@ export default function I18nTest() {
   };
 
   return (
-    <div className="p-4 bg-blue-50 rounded-lg">
+    <div className="p-4 bg-primary-50 rounded-lg">
       <h2 className="text-xl font-bold mb-4">i18n Test</h2>
       <p className="mb-2">Current language: {i18n.language}</p>
       <p className="mb-4">Translation test: {t('hero.title')}</p>
       <div className="space-x-2">
         <button
           onClick={() => changeLanguage('en')}
-          className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="px-3 py-1 bg-primary-500 text-white rounded hover:bg-primary-600"
         >
           English
         </button>

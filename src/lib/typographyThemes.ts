@@ -51,10 +51,10 @@ export const defaultTheme: TypographyTheme = {
     'li.ordered':
       'text-base text-gray-700 leading-relaxed relative pl-8 mb-2 before:content-[counter(list-item)] before:absolute before:left-0 before:text-gray-700 before:font-bold before:text-base before:counter-increment-[list-item] ',
     blockquote:
-      'border-l-4 border-blue-600 pl-6 py-4 mb-6 bg-blue-50 text-gray-700 italic text-base leading-relaxed ',
+      'border-l-4 border-primary-600 pl-6 py-4 mb-6 bg-primary-50 text-gray-700 italic text-base leading-relaxed ',
     code: 'bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border',
     pre: 'bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6 border font-mono text-sm leading-relaxed',
-    a: 'text-blue-600 hover:text-blue-800 underline font-medium transition-colors duration-200 ',
+    a: 'text-primary-600 hover:text-primary-800 underline font-medium transition-colors duration-200 ',
     strong: 'font-bold text-gray-900 ',
     em: 'italic text-gray-700 ',
     hr: 'border-t-2 border-gray-300 my-8',

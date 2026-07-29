@@ -1,15 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+/**
+ * Type system for Better Manila.
+ *
+ * Body and UI: Plus Jakarta Sans. Chosen over Inter for a civic site read
+ * mostly on mid-range Android phones: open apertures and a tall x-height keep
+ * it legible at small sizes, and it carries more warmth than a neutral
+ * grotesque without costing clarity. Full Latin Extended coverage, so Filipino
+ * and Spanish-derived place names render correctly.
+ *
+ * Display: Archivo. A grotesque with a real width axis, which the wordmark
+ * already uses at width 125. Pairing a humanist-geometric body with a
+ * grotesque display gives headings authority without a second personality.
+ *
+ * Mono: Roboto Mono, for figures and code.
+ *
+ * Two display families total, and every weight loaded here is one in use.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,500..800&family=Roboto+Mono:wght@400;500&display=swap');
 
 :root {
   --font-kapwa-sans:
-    'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    sans-serif;
+    'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-kapwa-display:
+    'Archivo', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   --font-kapwa-mono:
     'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 body {
   font-family: var(--font-kapwa-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings carry the display face. Set here rather than per component so it
+   applies to markdown content as well as to the UI. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-kapwa-display);
+  letter-spacing: -0.021em;
 }
 
 code,

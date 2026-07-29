@@ -51,13 +51,13 @@ const FILL = '[animation-fill-mode:both] motion-reduce:animate-none';
  * needs; Inter has no width axis. Loaded once in the Helmet below.
  */
 const DISPLAY_FONT: CSSProperties = {
-  fontFamily: "'Archivo', 'Inter', sans-serif",
+  fontFamily: 'var(--font-kapwa-display)',
   fontStretch: '125%',
 };
 
 export default function ComingSoon() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-white text-[#3a4166]">
+    <div className="relative flex min-h-screen flex-col bg-white text-slate-600">
       <Helmet>
         <title>
           Better Manila: a public-service portal for the City of Manila
@@ -94,10 +94,10 @@ export default function ComingSoon() {
         <header
           className={`animate-fade-in ${FILL} flex flex-wrap items-center gap-x-4 gap-y-2 text-xs tracking-widest uppercase`}
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#dcdff6] bg-[#eef0fb] px-3 py-1.5 font-semibold text-[#282896]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#dcdff6] bg-[#eef0fb] px-3 py-1.5 font-semibold text-primary-700">
             <span
               aria-hidden="true"
-              className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[#0078d2] motion-reduce:animate-none"
+              className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-accent-500 motion-reduce:animate-none"
             />
             <span>In development</span>
           </span>
@@ -121,7 +121,7 @@ export default function ComingSoon() {
           >
             <span
               style={DISPLAY_FONT}
-              className="bg-linear-to-r from-[#210b6f] via-[#2846b4] to-[#0078d2] bg-clip-text font-extrabold tracking-tight text-transparent uppercase"
+              className="bg-linear-to-r from-primary-800 via-primary-600 to-accent-500 bg-clip-text font-extrabold tracking-tight text-transparent uppercase"
             >
               Better Manila
             </span>
@@ -135,7 +135,7 @@ export default function ComingSoon() {
             departments, budgets and ordinances, written in plain language.
           </p>
           <p
-            className={`animate-slide-in ${FILL} mt-3 max-w-xl text-[#3a4166]/90`}
+            className={`animate-slide-in ${FILL} mt-3 max-w-xl text-slate-600/90`}
             style={{ animationDelay: '200ms' }}
           >
             Built in the open by volunteers. Not finished yet.
@@ -147,7 +147,7 @@ export default function ComingSoon() {
           >
             <a
               href={REPO_URL}
-              className="inline-flex items-center rounded-lg bg-[#2846b4] px-7 py-3.5 font-semibold text-white shadow-lg shadow-[#2846b4]/25 transition-colors hover:bg-[#285abe] focus-visible:ring-2 focus-visible:ring-[#2846b4] focus-visible:ring-offset-2 focus-visible:outline-none"
+              className="inline-flex items-center rounded-lg bg-primary-600 px-7 py-3.5 font-semibold text-white shadow-lg shadow-primary-600/25 transition-colors hover:bg-primary-500 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
               Follow the build on GitHub
             </a>
@@ -160,7 +160,7 @@ export default function ComingSoon() {
         className={`animate-fade-in ${FILL} relative mt-auto block h-28 w-full sm:h-40 md:aspect-[6/1] md:h-auto`}
       />
 
-      <div className="relative bg-[#210b6f] text-white">
+      <div className="relative bg-primary-800 text-white">
         {/* The city it is being built for, district by district */}
         <section
           aria-labelledby="districts-label"
