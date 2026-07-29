@@ -84,9 +84,9 @@ export default function ComingSoon() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        <div className="absolute top-16 left-1/2 h-[480px] w-[760px] max-w-none -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(80,118,238,0.24),rgba(255,255,255,0))]" />
-        <div className="bg-linear-to-r via-[#8fa8f0]/50 absolute top-40 -left-24 h-px w-96 -rotate-[24deg] from-transparent to-transparent" />
-        <div className="bg-linear-to-l via-[#8fa8f0]/50 absolute top-64 -right-24 h-px w-96 rotate-[24deg] from-transparent to-transparent" />
+        <div className="absolute top-16 left-1/2 h-[380px] w-[620px] max-w-none -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(80,118,238,0.07),rgba(255,255,255,0))]" />
+        <div className="bg-linear-to-r via-[#8fa8f0]/25 absolute top-40 -left-24 h-px w-96 -rotate-[24deg] from-transparent to-transparent" />
+        <div className="bg-linear-to-l via-[#8fa8f0]/25 absolute top-64 -right-24 h-px w-96 rotate-[24deg] from-transparent to-transparent" />
       </div>
 
       <div className="relative container mx-auto flex w-full flex-1 flex-col px-4 pt-8 md:pt-10">
@@ -112,7 +112,7 @@ export default function ComingSoon() {
             alt=""
             width={960}
             height={600}
-            className={`animate-fade-in ${FILL} h-auto w-52 drop-shadow-[0_12px_28px_rgba(40,70,180,0.28)] sm:w-60 md:w-72`}
+            className={`animate-fade-in ${FILL} h-auto w-36 drop-shadow-[0_10px_22px_rgba(40,70,180,0.18)] sm:w-40 md:w-48`}
           />
 
           <Heading
