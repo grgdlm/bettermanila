@@ -4,7 +4,7 @@
 pages:
   - name: 'Executive'
     slug: 'executive'
-    description: "Find out about your Mayor and Vice Mayor, including upcoming events, the Mayor's Community Assistance Program, mayoral history, and information about other historic roles in the local government unit."
+    description: 'Find out who leads the City of Manila, what the Mayor and Vice Mayor are responsible for, how to invite the Mayor to a community event, and how to reach the Office of the Mayor.'
   - name: 'Legislative'
     slug: 'legislative'
-    description: 'As of the 2025–2028 term, the Sangguniang Panlungsod (City Council) of Lapu-Lapu City has 12 elected councilors, with the Vice Mayor as the presiding officer of the council.'
+    description: 'For the 2025 to 2028 term, the Sangguniang Panlungsod ng Maynila has 38 councilors: 36 elected from the city 6 councilor districts, plus two ex-officio members, with the Vice Mayor presiding.'

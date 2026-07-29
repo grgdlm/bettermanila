@@ -1,9 +1,31 @@
 {
-  "GOVERNMENT_NAME": "Lapu Lapu City",
-  "MAYOR": "Ma. Cynthia K. Chan",
-  "MAYOR_HE_SHE": "she",
+  "_source": "https://manila.gov.ph/city-mayor/, https://manila.gov.ph/city-vice-mayor/, https://manila.gov.ph/contact-us/",
+  "_retrieved": "2026-07-29",
+
+  "GOVERNMENT_NAME": "City of Manila",
+
+  "MAYOR": "Francisco \"Isko\" Domagoso",
+  "MAYOR_KNOWN_AS": "Isko Moreno",
+  "MAYOR_HE_SHE": "he",
+  "MAYOR_HIS_HER": "his",
+  "MAYOR_ORDINAL": "29th",
+
+  "VICE_MAYOR": "Angela Lei \"Chi\" Atienza",
+  "VICE_MAYOR_HE_SHE": "she",
+  "VICE_MAYOR_HIS_HER": "her",
+  "VICE_MAYOR_ORDINAL": "29th",
+
   "HONORIFIC_TITLE": "Honorable",
-  "VICE_MAYOR": "Celedonio B. Sitoy",
-  "VICE_MAYOR_HE_SHE": "he",
-  "YEAR_ELECTED": "2022"
+  "YEAR_ELECTED": "2025",
+  "ELECTION_DATE": "12 May 2025",
+  "TERM_START": "30 June 2025",
+
+  "COUNCIL_NAME": "Sangguniang Panlungsod ng Maynila",
+  "COUNCIL_ORDINAL": "13th",
+  "COUNCILOR_COUNT": "38",
+  "DISTRICT_COUNT": "6",
+
+  "CITY_HALL_ADDRESS": "Manila City Hall Bldg., A. Villegas St., Ermita, Manila 1000",
+  "OFFICE_HOURS": "Monday to Friday, 7:00 AM to 4:00 PM",
+  "OFFICIAL_WEBSITE": "https://manila.gov.ph"
 }
