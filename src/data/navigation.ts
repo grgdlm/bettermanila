@@ -25,6 +25,21 @@ export const mainNavigation: NavigationItem[] = [
     label: 'Government',
     href: '/government/departments',
   },
+  {
+    label: 'Transparency',
+    href: '/government/transparency-documents',
+  },
+  {
+    label: 'News',
+    href: '/government/news',
+  },
+  {
+    // The city's own emergency list. Points off-site deliberately: in an
+    // emergency, send people to the authoritative source, not to a copy of it
+    // that might be stale.
+    label: 'Hotlines',
+    href: 'https://manila.gov.ph/emergency-police-fire-station-hotlines/',
+  },
 ];
 
 export const footerNavigation = {
@@ -50,7 +65,10 @@ export const footerNavigation = {
             label: category.category,
             href: `/services/${category.slug}`,
           })),
-        { label: 'Hotlines', href: '/philippines/hotlines' },
+        {
+          label: 'Hotlines',
+          href: 'https://manila.gov.ph/emergency-police-fire-station-hotlines/',
+        },
         { label: 'Holidays', href: '/philippines/holidays' },
       ],
     },

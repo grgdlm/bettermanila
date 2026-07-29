@@ -1,0 +1,13 @@
+# Transparency Documents
+# Where Manila's money, contracts and service commitments are published.
+
+pages:
+  - name: 'Where the city publishes its budget and spending'
+    slug: 'budget-and-spending-records'
+    description: 'Manila is required to publish its budget, expenditures and audit results. This is where each of those records actually lives.'
+  - name: 'Procurement and bidding documents'
+    slug: 'procurement-and-bidding'
+    description: 'Invitations to bid, requests for quotation and notices of award, on the city site and on PhilGEPS.'
+  - name: "The Citizen's Charter and your right to a deadline"
+    slug: 'citizens-charter'
+    description: 'Every city office must publish how long each transaction takes. That document is enforceable, and this is how to use it.'

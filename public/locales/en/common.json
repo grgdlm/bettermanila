@@ -35,7 +35,9 @@
     "government": "Government",
     "services": "Services",
     "hotlines": "Hotlines",
-    "holidays": "Holidays"
+    "holidays": "Holidays",
+    "transparency": "Transparency",
+    "news": "News"
   },
   "joinUs": {
     "stripTitle": "🚀 Join the #CivicTech Revolution",

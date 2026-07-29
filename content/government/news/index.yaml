@@ -1,0 +1,7 @@
+# News and Announcements
+# Where the city publishes advisories, suspensions and announcements.
+
+pages:
+  - name: 'Class suspensions, weather advisories and announcements'
+    slug: 'suspensions-and-advisories'
+    description: 'Where Manila announces class suspensions, rainfall advisories and emergency information, and which sources to trust.'
