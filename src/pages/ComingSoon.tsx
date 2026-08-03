@@ -57,7 +57,7 @@ const DISPLAY_FONT: CSSProperties = {
 
 export default function ComingSoon() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-white text-slate-600">
+    <div className="relative flex min-h-screen flex-col bg-white text-gray-700">
       <Helmet>
         <title>
           Better Manila: a public-service portal for the City of Manila
@@ -135,7 +135,7 @@ export default function ComingSoon() {
             departments, budgets and ordinances, written in plain language.
           </p>
           <p
-            className={`animate-slide-in ${FILL} mt-3 max-w-xl text-slate-600/90`}
+            className={`animate-slide-in ${FILL} mt-3 max-w-xl text-gray-600`}
             style={{ animationDelay: '200ms' }}
           >
             Built in the open by volunteers. Not finished yet.
