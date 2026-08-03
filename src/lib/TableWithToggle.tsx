@@ -1,297 +1,234 @@
 /**
- * Table component with view toggle functionality
+ * Table renderer for markdown content, with a table/list view toggle.
+ *
+ * Desktop defaults to the table. Phones default to a stacked list of cards,
+ * one card per row with the first column promoted to the card title, because
+ * fee and hotline tables are unreadable when squeezed into 360px columns.
+ *
+ * Rows are recovered from the hast node that react-markdown passes to custom
+ * components, so empty cells keep their position and every value stays under
+ * the header it belongs to. The previous implementation flattened the text
+ * nodes it found, which silently shifted values one column left whenever a
+ * cell was empty, for example a fire station with no landline.
  */
 
 import {
-  type ReactNode,
   type HTMLAttributes,
-  useState,
-  useMemo,
+  type ReactNode,
   useEffect,
+  useMemo,
+  useState,
 } from 'react';
-import { Table, List } from 'lucide-react';
+import { List, Table } from 'lucide-react';
 import { type TypographyTheme } from './typographyThemes';
+import { cn } from './utils';
 
-// Helper functions to extract text from React children
-const extractTextFromChildren = (children: ReactNode): string[] => {
-  const texts: string[] = [];
+/** Minimal structural view of a hast node, enough to walk a table. */
+export interface HastLike {
+  type?: string;
+  tagName?: string;
+  value?: string;
+  children?: HastLike[];
+}
 
-  const processNode = (node: ReactNode): void => {
-    if (typeof node === 'string') {
-      const trimmed = node.trim();
-      if (trimmed) texts.push(trimmed);
-    } else if (typeof node === 'number') {
-      texts.push(node.toString());
-    } else if (Array.isArray(node)) {
-      node.forEach(processNode);
-    } else if (node && typeof node === 'object' && 'props' in node) {
-      const nodeProps = node as { props?: { children?: ReactNode } };
-      if (nodeProps.props?.children) {
-        processNode(nodeProps.props.children);
+const textOf = (node: HastLike): string => {
+  if (typeof node.value === 'string') return node.value;
+  return (node.children ?? []).map(textOf).join('');
+};
+
+/** All cells of a row, in order, keeping empty cells as empty strings. */
+const cellsOf = (row: HastLike): string[] =>
+  (row.children ?? [])
+    .filter(cell => cell.tagName === 'td' || cell.tagName === 'th')
+    .map(cell => textOf(cell).trim());
+
+interface ParsedTable {
+  headers: string[];
+  rows: string[][];
+}
+
+const parseTable = (table?: HastLike): ParsedTable | null => {
+  if (!table) return null;
+  const headers: string[] = [];
+  const rows: string[][] = [];
+
+  const visit = (node: HastLike, inHead: boolean): void => {
+    for (const child of node.children ?? []) {
+      if (child.tagName === 'tr') {
+        const cells = cellsOf(child);
+        if (cells.length === 0) continue;
+        if (inHead && headers.length === 0) headers.push(...cells);
+        else rows.push(cells);
+      } else if (child.tagName === 'thead') {
+        visit(child, true);
+      } else if (child.tagName === 'tbody' || child.tagName === 'tfoot') {
+        visit(child, false);
       }
     }
   };
 
-  processNode(children);
-  return texts;
+  visit(table, false);
+  return headers.length > 0 || rows.length > 0 ? { headers, rows } : null;
 };
 
-const extractRowsFromChildren = (
-  children: ReactNode
-): Array<Record<string, string>> => {
-  const rows: Array<Record<string, string>> = [];
+const fieldLabelClass =
+  'text-xs font-medium tracking-wide text-gray-700 uppercase';
+const fieldValueClass = 'mt-0.5 text-sm leading-relaxed text-gray-900';
+const rowCardClass = 'rounded-xl border border-gray-200 bg-white p-4 shadow-xs';
 
-  const processNode = (node: ReactNode): void => {
-    if (Array.isArray(node)) {
-      node.forEach(processNode);
-    } else if (node && typeof node === 'object' && 'props' in node) {
-      const nodeProps = node as {
-        props?: { children?: ReactNode; className?: string };
-        key?: string;
-      };
+const URL_VALUE = /^https?:\/\/\S+$/;
 
-      // Check if this is a table row (tr element) by key or className
-      if (
-        nodeProps.key?.includes('tr') ||
-        nodeProps.props?.className?.includes('tr')
-      ) {
-        // Extract text from all direct children (td/th elements)
-        const cellTexts = extractTextFromChildren(nodeProps.props?.children);
-
-        if (cellTexts.length > 0) {
-          const row: Record<string, string> = {};
-          cellTexts.forEach((text, index) => {
-            row[`column_${index}`] = text;
-          });
-          rows.push(row);
-        }
-      } else if (nodeProps.props?.children) {
-        processNode(nodeProps.props.children);
-      }
-    }
-  };
-
-  processNode(children);
-  return rows;
-};
+/**
+ * List view extraction is text only, which would turn a cell holding a link
+ * into dead text. When a value is a single URL, render it as a link again so
+ * it stays tappable on a phone.
+ */
+const renderValue = (value: string, linkClass?: string) =>
+  URL_VALUE.test(value) ? (
+    <a
+      href={value}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={linkClass}
+    >
+      {value}
+    </a>
+  ) : (
+    value
+  );
 
 // Custom Table Component with view toggle
 export const TableWithToggle = ({
   children,
   theme,
+  node,
   ...props
 }: {
   children: ReactNode;
   theme: TypographyTheme;
+  node?: HastLike;
 } & HTMLAttributes<HTMLTableElement>) => {
   const [viewMode, setViewMode] = useState<'table' | 'list'>('table');
-  const [isMobile, setIsMobile] = useState(false);
 
-  // Set responsive default view
+  // Default to the view that suits the viewport, and follow it on resize.
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 640); // sm breakpoint
-    };
-
-    // Check on mount
-    checkScreenSize();
-
-    // Listen for resize events
-    window.addEventListener('resize', checkScreenSize);
-
-    return () => window.removeEventListener('resize', checkScreenSize);
+    const query = window.matchMedia('(max-width: 639px)'); // below sm
+    const apply = () => setViewMode(query.matches ? 'list' : 'table');
+    apply();
+    query.addEventListener('change', apply);
+    return () => query.removeEventListener('change', apply);
   }, []);
 
-  // Set default view based on screen size
-  useEffect(() => {
-    if (isMobile) {
-      setViewMode('list');
-    } else {
-      setViewMode('table');
-    }
-  }, [isMobile]);
+  const parsed = useMemo(() => parseTable(node), [node]);
+  const hasHeaders = parsed?.headers.some(header => header.length > 0) ?? false;
 
-  // Extract table data for list view
-  const tableData = useMemo(() => {
-    if (viewMode === 'table') return null;
+  // A markdown table can have a header row with no text in it, used for
+  // key-value blocks such as contact cards. Hide the empty tinted band it
+  // would otherwise paint at the top of the table.
+  const table = (
+    <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-xs">
+      <table
+        className={cn(
+          theme.components.table,
+          parsed !== null && !hasHeaders && '[&_thead]:hidden'
+        )}
+        {...props}
+      >
+        {children}
+      </table>
+    </div>
+  );
 
-    const rows: Array<Record<string, string>> = [];
-    const headers: string[] = [];
+  const list = () => {
+    // If the table could not be parsed into rows, render it as written
+    // rather than showing nothing.
+    if (!parsed || parsed.rows.length === 0) return table;
 
-    // Parse the table structure from children
-    const processTableElement = (element: ReactNode): void => {
-      if (
-        typeof element === 'object' &&
-        element !== null &&
-        'props' in element
-      ) {
-        const elementProps = element as {
-          props?: { children?: ReactNode; className?: string };
-          key?: string;
-        };
-
-        // Check by key first (for thead/tbody elements)
-        if (elementProps.key?.includes('thead')) {
-          const headerCells = extractTextFromChildren(
-            elementProps.props?.children
-          );
-          headers.push(...headerCells);
-        } else if (elementProps.key?.includes('tbody')) {
-          const bodyRows = extractRowsFromChildren(
-            elementProps.props?.children
-          );
-          rows.push(...bodyRows);
-        } else if (elementProps.key?.includes('tr')) {
-          const rowCells = extractTextFromChildren(
-            elementProps.props?.children
-          );
-          if (rowCells.length > 0) {
-            const row: Record<string, string> = {};
-            rowCells.forEach((text, index) => {
-              row[`column_${index}`] = text;
-            });
-            rows.push(row);
-          }
-        } else if (elementProps.props?.className?.includes('thead')) {
-          const headerCells = extractTextFromChildren(
-            elementProps.props.children
-          );
-          headers.push(...headerCells);
-        } else if (elementProps.props?.className?.includes('tbody')) {
-          const bodyRows = extractRowsFromChildren(elementProps.props.children);
-          rows.push(...bodyRows);
-        } else if (elementProps.props?.className?.includes('tr')) {
-          const rowCells = extractTextFromChildren(elementProps.props.children);
-          if (rowCells.length > 0) {
-            const row: Record<string, string> = {};
-            rowCells.forEach((text, index) => {
-              row[`column_${index}`] = text;
-            });
-            rows.push(row);
-          }
-        } else {
-          // Recursively process children
-          if (elementProps.props?.children) {
-            if (Array.isArray(elementProps.props.children)) {
-              elementProps.props.children.forEach(child => {
-                processTableElement(child);
-              });
-            } else {
-              processTableElement(elementProps.props.children);
-            }
-          }
-        }
-      }
-    };
-
-    if (Array.isArray(children)) {
-      children.forEach(processTableElement);
-    } else {
-      processTableElement(children);
-    }
-
-    // Map row data to headers
-    const mappedRows = rows.map(row => {
-      const mappedRow: Record<string, string> = {};
-      headers.forEach((header, index) => {
-        mappedRow[header] = row[`column_${index}`] || '';
-      });
-      return mappedRow;
-    });
-
-    return { headers, rows: mappedRows };
-  }, [children, viewMode]);
-
-  return (
-    <div className="-mx-4 sm:mx-0 mb-6">
-      {/* View Toggle Buttons */}
-      <div className="flex justify-end mb-4 gap-2 px-4 sm:px-0">
-        <button
-          onClick={() => setViewMode('table')}
-          className={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-2 ${
-            viewMode === 'table'
-              ? 'bg-primary-600 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
-          <Table size={16} />
-          Table
-        </button>
-        <button
-          onClick={() => setViewMode('list')}
-          className={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-2 ${
-            viewMode === 'list'
-              ? 'bg-primary-600 text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-        >
-          <List size={16} />
-          List
-        </button>
-      </div>
-
-      {viewMode === 'table' ? (
-        <div className="overflow-x-auto">
-          <table
-            className={`${theme.components.table} sticky-table`}
-            style={
-              {
-                '--first-col-width': '12rem',
-              } as React.CSSProperties
-            }
-            {...props}
-          >
-            {children}
-          </table>
+    // A table with no header text is a key-value block, such as an office
+    // contact card. Render it as a single card of term and detail pairs.
+    if (!hasHeaders) {
+      return (
+        <div className={rowCardClass}>
+          <dl className="space-y-3">
+            {parsed.rows.map((cells, index) => (
+              <div key={index}>
+                <dt className={fieldLabelClass}>{cells[0]}</dt>
+                <dd className={fieldValueClass}>
+                  {renderValue(
+                    cells.slice(1).filter(Boolean).join(', '),
+                    theme.components.a
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
-      ) : (
-        <div className="space-y-4 px-4 sm:px-0">
-          {tableData?.rows && tableData.rows.length > 0 ? (
-            tableData.rows.map((row, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm mx-2 sm:mx-0"
-              >
-                <div className="grid gap-3">
-                  {tableData.headers.map((header, headerIndex) => (
-                    <div
-                      key={headerIndex}
-                      className="flex flex-col sm:flex-row sm:items-center"
-                    >
-                      <div className="font-semibold text-gray-800 text-sm mb-1 sm:mb-0 sm:w-1/3 sm:pr-4">
-                        {header}:
-                      </div>
-                      <div className="text-gray-700 text-sm sm:w-2/3">
-                        {row[header] || ''}
-                      </div>
+      );
+    }
+
+    return (
+      <div className="space-y-3">
+        {parsed.rows.map((cells, index) => {
+          const fields = parsed.headers
+            .map((header, column) => ({ header, value: cells[column] ?? '' }))
+            .slice(1)
+            .filter(field => field.value.length > 0);
+          return (
+            <div key={index} className={rowCardClass}>
+              <p className="font-display text-sm font-bold tracking-tight text-primary-800">
+                {cells[0]}
+              </p>
+              {fields.length > 0 && (
+                <dl className="mt-2.5 space-y-2">
+                  {fields.map(field => (
+                    <div key={field.header}>
+                      <dt className={fieldLabelClass}>{field.header}</dt>
+                      <dd className={fieldValueClass}>
+                        {renderValue(field.value, theme.components.a)}
+                      </dd>
                     </div>
                   ))}
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mx-2 sm:mx-0">
-              <div className="text-yellow-800 text-sm">
-                <strong>Debug Info:</strong>
-                <br />
-                Headers: {JSON.stringify(tableData?.headers || [])}
-                <br />
-                Rows: {JSON.stringify(tableData?.rows || [])}
-                <br />
-                Children type: {typeof children}
-                <br />
-                Children is array: {Array.isArray(children) ? 'Yes' : 'No'}
-                <br />
-                Children length:{' '}
-                {Array.isArray(children) ? children.length : 'N/A'}
-                <br />
-                <br />
-                <strong>Check browser console for detailed parsing logs</strong>
-              </div>
+                </dl>
+              )}
             </div>
-          )}
+          );
+        })}
+      </div>
+    );
+  };
+
+  return (
+    <div className="mb-6">
+      <div className="mb-2 flex justify-end">
+        <div
+          role="group"
+          aria-label="Table display"
+          className="inline-flex items-center gap-0.5 rounded-lg border border-gray-200 bg-gray-50 p-0.5"
+        >
+          {(['table', 'list'] as const).map(mode => {
+            const Icon = mode === 'table' ? Table : List;
+            return (
+              <button
+                key={mode}
+                type="button"
+                aria-pressed={viewMode === mode}
+                onClick={() => setViewMode(mode)}
+                className={cn(
+                  'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none',
+                  viewMode === mode
+                    ? 'bg-white text-primary-700 shadow-xs'
+                    : 'text-gray-700 hover:text-gray-900'
+                )}
+              >
+                <Icon aria-hidden="true" size={14} />
+                {mode === 'table' ? 'Table' : 'List'}
+              </button>
+            );
+          })}
         </div>
-      )}
+      </div>
+
+      {viewMode === 'table' ? table : list()}
     </div>
   );
 };

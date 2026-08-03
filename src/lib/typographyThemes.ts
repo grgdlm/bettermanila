@@ -1,5 +1,25 @@
 /**
- * Typography theme configuration for markdown content
+ * Typography theme configuration for markdown content.
+ *
+ * These classes are the whole design system for document pages. The content
+ * under /content is plain markdown, so every heading, paragraph, table and
+ * divider a resident reads is styled from here.
+ *
+ * Layout intent:
+ *
+ * - Reading measure: prose elements (p, ul, ol) are capped at 65ch so long
+ *   explanations stay readable, while tables and headings take the full
+ *   document column. That resolves the conflict between comfortable line
+ *   length and tables that want width.
+ * - Section rhythm: the markdown uses `---` between sections. The hr renders
+ *   as a quiet hairline that owns the section gap, and any heading directly
+ *   after one drops its own top margin via the [hr+&] variant so spacing
+ *   stays even instead of doubling.
+ * - Lead paragraph: the first paragraph after any h1 renders larger via the
+ *   [&+p] variant, giving each page a proper standfirst.
+ * - Contrast: body copy uses gray-700 or darker. In this palette gray-500
+ *   and gray-600 fall below 4.5:1 on white, so they are reserved for
+ *   decorative strokes only.
  */
 
 export interface TypographyTheme {
@@ -37,34 +57,33 @@ export interface TypographyTheme {
 export const defaultTheme: TypographyTheme = {
   name: 'default',
   components: {
-    h1: 'text-3xl font-bold mb-6 mt-2',
-    h2: 'text-2xl font-semibold mb-4 mt-10',
-    h3: 'text-2xl font-medium text-gray-800 mb-4 mt-6 ',
-    h4: 'text-xl text-gray-800 mb-3 mt-5 ',
-    h5: 'text-lg text-gray-800 mb-3 mt-4 ',
-    h6: 'text-base text-gray-800 mb-3 mt-4 ',
-    p: 'text-base text-gray-700 mb-4 leading-relaxed ',
-    small: 'text-sm text-gray-600 mb-3 ',
-    ul: 'list-none mb-6 space-y-4 pl-0',
-    ol: 'list-none mb-6 space-y-4 pl-0',
-    li: 'text-base text-gray-700 leading-relaxed relative pl-6 mb-2 before:content-["•"] before:absolute before:left-0 before:text-gray-700 before:font-bold before:text-lg ',
-    'li.ordered':
-      'text-base text-gray-700 leading-relaxed relative pl-8 mb-2 before:content-[counter(list-item)] before:absolute before:left-0 before:text-gray-700 before:font-bold before:text-base before:counter-increment-[list-item] ',
+    h1: 'font-display mt-2 mb-4 text-3xl leading-tight font-extrabold tracking-tight text-balance text-primary-800 sm:text-4xl [hr+&]:mt-0 [&+p]:mb-5 [&+p]:text-lg [&+p]:leading-relaxed',
+    h2: 'font-display mt-12 mb-4 scroll-mt-24 text-2xl font-bold tracking-tight text-primary-800 [hr+&]:mt-0',
+    h3: 'font-display mt-10 mb-3 scroll-mt-24 text-xl font-bold tracking-tight text-gray-900 [hr+&]:mt-0',
+    h4: 'mt-8 mb-2 scroll-mt-24 text-base font-semibold text-gray-900',
+    h5: 'mt-6 mb-2 text-sm font-semibold text-gray-900',
+    h6: 'mt-6 mb-2 text-sm font-semibold tracking-wide text-gray-700 uppercase',
+    p: 'mb-4 max-w-[65ch] text-base leading-relaxed text-gray-700',
+    small: 'text-sm text-gray-700',
+    ul: 'mb-5 max-w-[65ch] list-disc space-y-2 pl-5 marker:text-primary-400',
+    ol: 'mb-5 max-w-[65ch] list-decimal space-y-2 pl-5 marker:font-semibold marker:text-primary-700',
+    li: 'pl-1.5 text-base leading-relaxed text-gray-700 [&>p]:mb-0',
     blockquote:
-      'border-l-4 border-primary-600 pl-6 py-4 mb-6 bg-primary-50 text-gray-700 italic text-base leading-relaxed ',
-    code: 'bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono border',
-    pre: 'bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6 border font-mono text-sm leading-relaxed',
-    a: 'text-primary-600 hover:text-primary-800 underline font-medium transition-colors duration-200 ',
-    strong: 'font-bold text-gray-900 ',
-    em: 'italic text-gray-700 ',
-    hr: 'border-t-2 border-gray-300 my-8',
+      'mt-10 mb-4 flex items-start gap-3 rounded-xl border border-gray-200 bg-gray-50 p-4 sm:p-5 [hr+&]:mt-0 [&_p]:mb-0 [&_p]:max-w-none [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-gray-700 [&_p+p]:mt-2',
+    code: 'rounded-md border border-gray-200 bg-gray-100 px-1.5 py-0.5 font-mono text-sm text-gray-800',
+    pre: 'mb-5 overflow-x-auto rounded-xl bg-gray-900 p-4 font-mono text-sm leading-relaxed text-gray-100',
+    a: 'rounded-sm font-medium text-primary-700 underline decoration-primary-300 underline-offset-[3px] transition-colors [overflow-wrap:anywhere] hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none',
+    strong: 'font-semibold text-gray-900',
+    em: 'italic',
+    hr: 'my-10 h-px border-0 bg-gray-200',
     table:
-      'w-full border-collapse border border-gray-300 rounded-lg overflow-hidden min-w-max',
-    thead: 'bg-gray-50',
-    tbody: '',
-    tr: 'border-b border-gray-200 hover:bg-gray-50 transition-colors [&:hover_td:first-child]:bg-gray-100',
-    th: 'text-left py-4 px-6 font-semibold text-gray-800 border-r border-gray-300 text-base ',
-    td: 'py-4 px-6 text-gray-700 border-r border-gray-300 text-base ',
+      'w-full border-collapse text-left text-sm [&_td:first-child]:font-medium [&_td:first-child]:text-gray-900',
+    thead: 'bg-primary-50',
+    tbody:
+      'divide-y divide-gray-100 bg-white [&>tr]:transition-colors [&>tr:hover]:bg-primary-50/40',
+    tr: '',
+    th: 'border-b border-primary-100 px-4 py-3 text-left text-xs font-semibold tracking-wider text-primary-800 uppercase',
+    td: 'px-4 py-3 align-top leading-relaxed text-gray-700',
   },
 };
 

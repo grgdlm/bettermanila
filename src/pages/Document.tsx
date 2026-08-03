@@ -12,7 +12,7 @@ import {
   type MarkdownContent,
 } from '../lib/markdownLoader';
 import { createMarkdownComponents } from '../lib/markdownComponents';
-import { Card, CardContent, CardHeader } from '@bettergov/kapwa/card';
+import { Card, CardContent } from '@bettergov/kapwa/card';
 import { getTypographyTheme } from '../lib/typographyThemes';
 import {
   serviceCategories,
@@ -28,6 +28,19 @@ interface DocumentProps {
   theme?: string;
   categoryType?: 'service' | 'government';
 }
+
+/**
+ * The document reader. Everything under /content renders through this page,
+ * so it is where residents actually spend their time: hospital lists, fee
+ * tables, office hours and hotline numbers.
+ *
+ * Layout: a single centered column (max-w-4xl). Prose inside it is capped at
+ * a readable measure by the typography theme, while tables use the full
+ * column width. The markdown's own h1 and lead paragraph act as the page
+ * header, so nothing is rendered twice.
+ */
+const skeletonLine = (extra: string) =>
+  `animate-pulse rounded-md bg-gray-100 motion-reduce:animate-none ${extra}`;
 
 export default function Document({
   theme: initialTheme = 'default',
@@ -120,22 +133,33 @@ export default function Document({
 
   if (loading) {
     return (
-      <Section className="p-3 mb-12">
-        <Banner type="info" description="Loading document..." />
+      <Section>
+        <div className="mx-auto max-w-4xl" aria-busy="true">
+          <span className="sr-only">Loading document</span>
+          <div className={skeletonLine('h-4 w-56')} />
+          <div className={skeletonLine('mt-10 h-9 w-3/4 rounded-lg')} />
+          <div className="mt-6 space-y-3">
+            <div className={skeletonLine('h-4 w-full')} />
+            <div className={skeletonLine('h-4 w-11/12')} />
+            <div className={skeletonLine('h-4 w-2/3')} />
+          </div>
+        </div>
       </Section>
     );
   }
 
   if (error) {
     return (
-      <Section className="p-3 mb-12">
-        <Breadcrumbs className="mb-8" items={breadcrumbs} />
-        <Banner
-          type="error"
-          title="Document Not Found"
-          description={error}
-          icon
-        />
+      <Section>
+        <div className="mx-auto max-w-4xl">
+          <Breadcrumbs className="mb-8" items={breadcrumbs} />
+          <Banner
+            type="error"
+            title="Document Not Found"
+            description={error}
+            icon
+          />
+        </div>
       </Section>
     );
   }
@@ -148,51 +172,58 @@ export default function Document({
           title={documentSlug}
           keywords={`${documentSlug}, government services, local government`}
         />
-        <Section className="p-3 mb-12">
-          <Breadcrumbs className="mb-8" items={breadcrumbs} />
-          {nestedIndex.title && (
-            <Heading level={2}>{nestedIndex.title}</Heading>
-          )}
-          {nestedIndex.description && (
-            <Text className="text-gray-600 mb-4">
-              {nestedIndex.description}
-            </Text>
-          )}
-          {nestedIndex.layout === 'grid' ? (
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {nestedPages.map((page, i) => (
-                <Card hoverable key={page.slug ?? i} className="h-full">
-                  <CardContent>
-                    <h4 className="text-lg font-medium text-gray-900">
-                      {page.name}
-                    </h4>
-                    {page.description && (
-                      <p className="mt-2 text-sm text-gray-600">
-                        {page.description}
-                      </p>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="space-y-4">
-              {nestedPages.map((page, i) => (
-                <Card key={page.slug ?? i} className="mb-4">
-                  <CardContent>
-                    <h4 className="text-lg font-medium text-gray-900">
-                      {page.name}
-                    </h4>
-                    {page.description && (
-                      <p className="mt-2 text-sm text-gray-600">
-                        {page.description}
-                      </p>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          )}
+        <Section>
+          <div className="mx-auto max-w-4xl">
+            <Breadcrumbs className="mb-6 sm:mb-8" items={breadcrumbs} />
+            {nestedIndex.title && (
+              <Heading
+                level={1}
+                className="font-display mb-3 text-3xl font-extrabold tracking-tight text-primary-800 sm:text-4xl"
+              >
+                {nestedIndex.title}
+              </Heading>
+            )}
+            {nestedIndex.description && (
+              <Text className="mb-8 max-w-[65ch] text-gray-700">
+                {nestedIndex.description}
+              </Text>
+            )}
+            {nestedIndex.layout === 'grid' ? (
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {nestedPages.map((page, i) => (
+                  <Card hoverable key={page.slug ?? i} className="h-full">
+                    <CardContent>
+                      <h2 className="font-display text-lg font-bold tracking-tight text-primary-800">
+                        {page.name}
+                      </h2>
+                      {page.description && (
+                        <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                          {page.description}
+                        </p>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {nestedPages.map((page, i) => (
+                  <Card key={page.slug ?? i}>
+                    <CardContent>
+                      <h2 className="font-display text-lg font-bold tracking-tight text-primary-800">
+                        {page.name}
+                      </h2>
+                      {page.description && (
+                        <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                          {page.description}
+                        </p>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </div>
         </Section>
       </>
     );
@@ -212,21 +243,18 @@ export default function Document({
         }
         keywords={`${documentSlug}, government services, public services, local government`}
       />
-      <Section className="p-3 mb-12">
-        <Breadcrumbs className="mb-8" items={breadcrumbs} />
-        <Card className="mb-8 markdown-content">
-          <CardHeader>
-            {markdownContent.description && (
-              <CardContent>{markdownContent.description}</CardContent>
-            )}
+      <Section>
+        <div className="mx-auto max-w-4xl">
+          <Breadcrumbs className="mb-6 sm:mb-8" items={breadcrumbs} />
+          <article>
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={markdownComponents}
             >
               {markdownContent.content}
             </ReactMarkdown>
-          </CardHeader>
-        </Card>
+          </article>
+        </div>
       </Section>
     </>
   );
