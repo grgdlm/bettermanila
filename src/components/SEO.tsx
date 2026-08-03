@@ -30,9 +30,17 @@ export default function SEO({
   const fullTitle = title ? `${title} | ${siteName}` : defaultTitle;
   const fullDescription = description || defaultDescription;
   const fullKeywords = keywords || defaultKeywords;
-  const fullUrl = url || import.meta.env.VITE_WEBSITE_URL || '';
-  const fullImage =
-    image || import.meta.env.VITE_OG_IMAGE_URL || `${fullUrl}/og-image.jpg`;
+  // Fall back to the production domain so og:url and og:image stay absolute
+  // even when no environment variables are configured on the host.
+  const siteUrl = (
+    import.meta.env.VITE_WEBSITE_URL || 'https://bettermanila.org'
+  ).replace(/\/+$/, '');
+  const fullUrl = url || siteUrl;
+  const ogImage = image || import.meta.env.VITE_OG_IMAGE_URL || '/og-image.jpg';
+  // Scrapers (Facebook included) require an absolute og:image URL.
+  const fullImage = /^https?:\/\//.test(ogImage)
+    ? ogImage
+    : `${siteUrl}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
   const twitterHandle = import.meta.env.VITE_TWITTER_HANDLE || '';
 
   return (
