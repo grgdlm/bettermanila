@@ -7,6 +7,9 @@ import ScrollToTop from './components/ui/ScrollToTop';
 import Services from './pages/Services';
 import Document from './pages/Document';
 import Government from './pages/Government';
+import Search from './pages/Search';
+import About from './pages/About';
+import NotFound from './pages/NotFound';
 import ComingSoon from './pages/ComingSoon';
 import { COMING_SOON } from './config/launch';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -29,6 +32,8 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/search" element={<Search />} />
               <Route path="/services/:category" element={<Services />} />
               <Route path="/services" element={<Services />} />
               <Route
@@ -41,8 +46,16 @@ function App() {
                 path="/government/:category/:documentSlug"
                 element={<Document categoryType="government" />}
               />
-              <Route path="/:lang/:documentSlug" element={<Document />} />
-              <Route path="/:documentSlug" element={<Document />} />
+              {/*
+                The former catch-alls, /:lang/:documentSlug and /:documentSlug,
+                were removed rather than kept. Document requires a category and
+                a categoryType to resolve a file, and neither route supplied
+                either, so both fell straight through to the "No document
+                specified" error every time. They could not serve a document,
+                only make a dead URL look like a broken page. Unmatched paths
+                now land on a real 404 instead.
+              */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
           </div>
