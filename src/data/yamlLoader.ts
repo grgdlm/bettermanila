@@ -42,6 +42,7 @@ import garbageWasteDisposalIndex from '../../content/services/garbage-waste-disp
 import environmentIndex from '../../content/services/environment/index.yaml?raw';
 import disasterPreparednessIndex from '../../content/services/disaster-preparedness/index.yaml?raw';
 import housingLandUseIndex from '../../content/services/housing-land-use/index.yaml?raw';
+import governmentEmergencyIndex from '../../content/government/emergency/index.yaml?raw';
 import governmentDepartmentsIndex from '../../content/government/departments/index.yaml?raw';
 import governmentDepartmentsLegislativeIndex from '../../content/government/departments/legislative/index.yaml?raw';
 import governmentNewsIndex from '../../content/government/news/index.yaml?raw';
@@ -59,6 +60,7 @@ const categoryIndexMap: { [key: string]: string } = {
   environment: environmentIndex,
   'disaster-preparedness': disasterPreparednessIndex,
   'housing-land-use': housingLandUseIndex,
+  emergency: governmentEmergencyIndex,
   departments: governmentDepartmentsIndex,
   legislative: governmentDepartmentsLegislativeIndex,
   news: governmentNewsIndex,
@@ -127,3 +129,31 @@ export async function getCategorySubcategories(
 export function isNestedCategory(slug: string): boolean {
   return slug in categoryIndexMap;
 }
+
+/**
+ * True when a category has at least one page with real content behind it.
+ *
+ * Categories are declared in services.yaml and government.yaml as the
+ * intended shape of the site, which is useful as a roadmap. Several of them
+ * have no pages written yet. Listing those for a resident produces a category
+ * that opens onto nothing, so browsing surfaces filter on this while direct
+ * URL lookups keep using the full list.
+ */
+export function categoryHasPages(slug: string): boolean {
+  const raw = categoryIndexMap[slug];
+  if (!raw) return false;
+  try {
+    const data = yaml.load(raw) as CategoryIndexData;
+    return Array.isArray(data?.pages) && data.pages.length > 0;
+  } catch {
+    return false;
+  }
+}
+
+/** Service categories that currently have something to show. */
+export const activeServiceCategories: Category[] =
+  serviceCategories.categories.filter(c => categoryHasPages(c.slug));
+
+/** Government categories that currently have something to show. */
+export const activeGovernmentCategories: Category[] =
+  governmentCategories.categories.filter(c => categoryHasPages(c.slug));

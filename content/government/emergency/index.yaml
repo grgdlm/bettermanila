@@ -1,0 +1,7 @@
+# Emergency
+# Numbers to call when something has gone wrong in Manila.
+
+pages:
+  - name: 'Emergency hotlines'
+    slug: 'hotlines'
+    description: 'Police, fire, ambulance and disaster numbers for the City of Manila, in text you can tap, copy and search.'

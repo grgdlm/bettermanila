@@ -3,6 +3,13 @@
 # Non-technical users can easily edit this file to add, remove, or modify local government activity
 
 categories:
+  - category: 'Emergency'
+    slug: 'emergency'
+    description: 'Police, fire, ambulance and disaster hotlines for Manila, in text you can tap, copy and search.'
+    icon: 'Siren'
+    subcategories:
+      - name: 'Emergency hotlines'
+        slug: 'hotlines'
   - category: 'Departments'
     slug: 'departments'
     description: 'Explore local government departments, agencies, and offices with their mandates, services, and contact details.'
