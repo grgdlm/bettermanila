@@ -3,8 +3,9 @@ import { X, Menu, ChevronDown, Globe, Search } from 'lucide-react';
 import { mainNavigation } from '../../data/navigation';
 import type { LanguageType } from '../../types/index';
 import { Link } from 'react-router-dom';
+import LiveStrip from './LiveStrip';
 import { useTranslation } from 'react-i18next';
-import { LANGUAGES } from '../../i18n/languages';
+import { AVAILABLE_LANGUAGES, WANTED_LANGUAGES } from '../../i18n/languages';
 
 /**
  * Colour comes from the shared `primary` scale in `src/index.css`, which is
@@ -51,42 +52,56 @@ const Navbar: React.FC = () => {
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-md">
       {/* Utility band */}
       <div className="bg-primary-800 text-white">
-        <div className="container mx-auto flex h-10 items-center justify-end gap-x-5 px-4">
-          <a
-            href="https://bettergov.ph/join-us"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded text-xs font-semibold text-primary-300 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:outline-none"
-          >
-            Join us
-          </a>
-          {utilityLinks.map(link => (
+        <div className="container mx-auto flex h-10 items-center gap-x-5 px-4">
+          <LiveStrip />
+          <div className="ml-auto flex items-center gap-x-5">
             <a
-              key={link.label}
-              href={link.href}
+              href="https://bettergov.ph/join-us"
               target="_blank"
               rel="noreferrer"
-              className="hidden rounded text-xs text-white/70 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:outline-none sm:block"
+              className="rounded text-xs font-semibold text-primary-300 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:outline-none"
             >
-              {link.label}
+              Join us
             </a>
-          ))}
-          <div className="hidden md:block">
-            <label htmlFor="lang-desktop" className="sr-only">
-              Language
-            </label>
-            <select
-              id="lang-desktop"
-              value={i18n.language}
-              onChange={e => changeLanguage(e.target.value as LanguageType)}
-              className="rounded border border-white/25 bg-transparent px-2 py-0.5 text-xs text-white transition-colors hover:border-white/60 focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:outline-none"
-            >
-              {Object.entries(LANGUAGES).map(([code, lang]) => (
-                <option key={code} value={code} className="text-gray-900">
-                  {lang.nativeName}
-                </option>
-              ))}
-            </select>
+            {utilityLinks.map(link => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="hidden rounded text-xs text-white/70 transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:outline-none sm:block"
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="hidden md:block">
+              <label htmlFor="lang-desktop" className="sr-only">
+                Language
+              </label>
+              <select
+                id="lang-desktop"
+                value={i18n.language}
+                onChange={e => changeLanguage(e.target.value as LanguageType)}
+                className="rounded border border-white/25 bg-transparent px-2 py-0.5 text-xs text-white transition-colors hover:border-white/60 focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:outline-none"
+              >
+                {AVAILABLE_LANGUAGES.map(lang => (
+                  <option
+                    key={lang.code}
+                    value={lang.code}
+                    className="text-gray-900"
+                  >
+                    {lang.nativeName}
+                  </option>
+                ))}
+                <optgroup label="Needs a translator" className="text-gray-900">
+                  {WANTED_LANGUAGES.map(lang => (
+                    <option key={lang.code} value={lang.code} disabled>
+                      {lang.nativeName}
+                    </option>
+                  ))}
+                </optgroup>
+              </select>
+            </div>
           </div>
         </div>
       </div>
@@ -262,11 +277,18 @@ const Navbar: React.FC = () => {
                 onChange={e => changeLanguage(e.target.value as LanguageType)}
                 className="rounded-lg border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-700 transition-colors hover:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               >
-                {Object.entries(LANGUAGES).map(([code, lang]) => (
-                  <option key={code} value={code}>
+                {AVAILABLE_LANGUAGES.map(lang => (
+                  <option key={lang.code} value={lang.code}>
                     {lang.nativeName}
                   </option>
                 ))}
+                <optgroup label="Needs a translator">
+                  {WANTED_LANGUAGES.map(lang => (
+                    <option key={lang.code} value={lang.code} disabled>
+                      {lang.nativeName}
+                    </option>
+                  ))}
+                </optgroup>
               </select>
             </div>
           </div>

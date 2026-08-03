@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
+import { cn } from '../../lib/utils';
 
 interface BreadcrumbItem {
   label: string;
@@ -11,6 +12,9 @@ interface BreadcrumbsProps {
   items?: BreadcrumbItem[];
   className?: string;
 }
+
+const capitalize = (label: string) =>
+  label.charAt(0).toUpperCase() + label.slice(1);
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' }) => {
   const location = useLocation();
@@ -43,28 +47,37 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' }) => {
   const breadcrumbItems = items || generateBreadcrumbs();
 
   return (
-    <nav
-      className={`flex items-center space-x-1 text-sm text-gray-600 ${className}`}
-      aria-label="Breadcrumb"
-    >
-      {breadcrumbItems.map((item, index) => (
-        <React.Fragment key={index}>
-          {index === 0 && <Home className="h-4 w-4" />}
-          {index > 0 && <ChevronRight className="h-4 w-4 text-gray-400" />}
-          {item.href ? (
-            <Link
-              to={item.href}
-              className="hover:text-primary-600 transition-colors duration-200"
-            >
-              {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
-            </Link>
-          ) : (
-            <span className="text-gray-900 font-medium" aria-current="page">
-              {item.label.charAt(0).toUpperCase() + item.label.slice(1)}
-            </span>
-          )}
-        </React.Fragment>
-      ))}
+    <nav aria-label="Breadcrumb" className={cn('text-sm', className)}>
+      <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+        {breadcrumbItems.map((item, index) => (
+          <li key={index} className="flex min-w-0 items-center gap-x-1.5">
+            {index > 0 && (
+              <ChevronRight
+                aria-hidden="true"
+                className="h-3.5 w-3.5 shrink-0 text-gray-400"
+              />
+            )}
+            {item.href ? (
+              <Link
+                to={item.href}
+                className="inline-flex items-center gap-1.5 rounded-sm text-gray-700 transition-colors hover:text-primary-700 hover:underline focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+              >
+                {index === 0 && (
+                  <Home aria-hidden="true" className="h-3.5 w-3.5" />
+                )}
+                {capitalize(item.label)}
+              </Link>
+            ) : (
+              <span
+                aria-current="page"
+                className="min-w-0 font-medium text-gray-900"
+              >
+                {capitalize(item.label)}
+              </span>
+            )}
+          </li>
+        ))}
+      </ol>
     </nav>
   );
 };
