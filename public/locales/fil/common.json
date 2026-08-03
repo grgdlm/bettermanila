@@ -1,0 +1,80 @@
+{
+  "site_name": "BetterManila",
+  "site_description": "Portal ng komunidad para sa Lungsod ng Maynila",
+  "hero": {
+    "title": "Hanapin ang kailangan mo sa Lungsod ng Maynila",
+    "subtitle": "Libreng gabay sa mga serbisyo, tanggapan, badyet at ordinansa ng lungsod, isinulat ng mga boluntaryong taga-Maynila rin.",
+    "nationalId": "National ID",
+    "birthCertificate": "Birth Certificate",
+    "businessRegistration": "Pagpaparehistro ng Negosyo"
+  },
+  "services": {
+    "title": "Mga Serbisyo at Impormasyon",
+    "governmentServices": "Mga Serbisyo ng Pamahalaan",
+    "description": "Malinaw na paliwanag sa mga serbisyo ng lungsod: ano ang makukuha mo, ano ang dalhin, saan pupunta, at magkano.",
+    "viewAll": "Tingnan lahat ng serbisyo",
+    "viewAllCategory": "Tingnan lahat"
+  },
+  "governmentActivity": {
+    "title": "Pamahalaang Lungsod",
+    "description": "Ang mga tanggapang namamahala sa Maynila, ang mga dokumentong inilalabas nila, at ang mga abisong dapat bantayan."
+  },
+  "weather": {
+    "title": "Panahon"
+  },
+  "forex": {
+    "title": "Palitan ng Salapi"
+  },
+  "news": {
+    "title": "Mga Balita at Abiso"
+  },
+  "footer": {
+    "landmark": "Footer ng site",
+    "navLabel": "Mga link sa footer",
+    "tagline": "Independent. Gawa ng mga boluntaryo.",
+    "disclaimer": "Ang BetterManila ay independent na gabay na isinulat ng mga boluntaryong nakatira sa Maynila. Hindi ito ang opisyal na website ng Lungsod ng Maynila, at hindi ito nagsasalita para sa City Hall.",
+    "officialSite": "Opisyal na website ng lungsod: manila.gov.ph",
+    "newTab": "bubukas sa bagong tab",
+    "sections": {
+      "services": "Mga Serbisyo",
+      "government": "Pamahalaan",
+      "site": "Ang site na ito",
+      "national": "Mga national na website"
+    },
+    "links": {
+      "allServices": "Lahat ng serbisyo",
+      "allGovernment": "Lahat ng pahina ng pamahalaan",
+      "home": "Unang pahina",
+      "about": "Tungkol sa BetterManila",
+      "search": "Maghanap sa site"
+    },
+    "contribute": {
+      "title": "May nakita kang mali?",
+      "body": "Mga boluntaryo ang sumusulat at nagche-check ng bawat pahina dito, kaya may nakakalusot na mali. Open source ang buong site, at puwedeng magpadala ng pagwawasto ang kahit sino.",
+      "cta": "Mag-ambag sa GitHub"
+    },
+    "copyright": "© {{year}} BetterManila. Ang teksto at code ay nasa ilalim ng CC0, malayang kopyahin ninuman.",
+    "builtBy": "Gawa ng mga boluntaryo sa Maynila."
+  },
+  "navbar": {
+    "government": "Pamahalaan",
+    "services": "Mga Serbisyo",
+    "hotlines": "Mga Hotline",
+    "holidays": "Mga Pista Opisyal",
+    "transparency": "Transparency",
+    "news": "Balita"
+  },
+  "joinUs": {
+    "stripTitle": "Sumali sa #CivicTech",
+    "stripSubtitle": "Tumulong sa pagbuo ng mas mahusay na serbisyo publiko sa pamamagitan ng teknolohiya",
+    "joinNow": "Sumali na",
+    "discord": "Discord",
+    "bannerTitle": "Sumali sa #CivicTech",
+    "bannerSubtitle": "Tumulong sa pagbuo ng mas mahusay na serbisyo publiko sa pamamagitan ng teknolohiya.",
+    "bannerHighlight": "Pinamumunuan ng boluntaryo. Open source. Mula sa komunidad.",
+    "joinMovement": "Sumali sa amin",
+    "or": "o",
+    "joinDiscord": "Sumali sa Discord",
+    "features": "Imprastraktura • Mentorship • Komunidad • Office Space"
+  }
+}

@@ -9,6 +9,11 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
+    // Only languages with a translation file. Without this, i18next requests
+    // /locales/<any>/common.json for whatever the browser reports, 404s, and
+    // silently renders English as if it were a translation.
+    supportedLngs: ['en', 'fil'],
+    load: 'languageOnly',
     debug: import.meta.env.DEV,
     defaultNS: 'common',
     ns: ['common'],

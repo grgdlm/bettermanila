@@ -2,8 +2,8 @@
   "site_name": "Better Manila",
   "site_description": "A community-run portal for the City of Manila",
   "hero": {
-    "title": "Welcome to Better Manila",
-    "subtitle": "A community-run portal to find information about the City of Manila",
+    "title": "Find what you need from the City of Manila",
+    "subtitle": "A free guide to city services, departments, budgets and ordinances, written by volunteers who live here.",
     "nationalId": "National ID",
     "birthCertificate": "Birth Certificate",
     "businessRegistration": "Business Registration"
@@ -11,13 +11,13 @@
   "services": {
     "title": "Services & Information",
     "governmentServices": "Government Services",
-    "description": "Access official government services quickly and easily. Find what you need for citizenship, business, education, and more.",
+    "description": "City services explained in plain language: what you can get, what to bring, where to go, and what it costs.",
     "viewAll": "View All Services",
     "viewAllCategory": "View All"
   },
   "governmentActivity": {
     "title": "Government Activity",
-    "description": "Stay updated with the latest government activities and announcements."
+    "description": "The offices that run Manila, the records they publish, and the announcements worth watching."
   },
   "weather": {
     "title": "Weather Updates"
@@ -29,7 +29,32 @@
     "title": "Latest News & Updates"
   },
   "footer": {
-    "copyright": "© 2025 BetterGov. All content is public domain unless otherwise specified."
+    "landmark": "Site footer",
+    "navLabel": "Footer links",
+    "tagline": "Independent. Volunteer-built.",
+    "disclaimer": "BetterManila is an independent guide written by volunteers who live in Manila. It is not the official website of the City of Manila, and it does not speak for City Hall.",
+    "officialSite": "Official city website: manila.gov.ph",
+    "newTab": "opens in a new tab",
+    "sections": {
+      "services": "Services",
+      "government": "Government",
+      "site": "This site",
+      "national": "National resources"
+    },
+    "links": {
+      "allServices": "All services",
+      "allGovernment": "All government pages",
+      "home": "Home",
+      "about": "About BetterManila",
+      "search": "Search the site"
+    },
+    "contribute": {
+      "title": "Found something wrong?",
+      "body": "Volunteers write and check every page here, so mistakes get through. The whole site is open source, and anyone can send a correction.",
+      "cta": "Contribute on GitHub"
+    },
+    "copyright": "© {{year}} BetterManila. Text and code are released under CC0, free for anyone to copy.",
+    "builtBy": "Built by volunteers in Manila."
   },
   "navbar": {
     "government": "Government",
