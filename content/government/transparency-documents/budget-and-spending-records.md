@@ -39,8 +39,48 @@ Several of these government sites block automated access and only respond to a r
 
 ---
 
-TODO: Once Manila's specific FDPP postings and its most recent COA annual audit report are retrieved, summarize the headline figures here in plain language, with the year and a direct link. Do not publish figures without naming the document they came from.
+## The headline figures
+
+Two of the four systems above already carry Manila's numbers. They count on different bases — BLGF's statement is a cash tally and the COA figures are audited accrual accounts — so the two tables sit side by side rather than adding up to each other.
+
+**From BLGF, FY 2025 (preliminary), Statement of Receipts and Expenditures:**
+
+| Item                                    | Amount         |
+| --------------------------------------- | -------------- |
+| Current operating income                | ₱19.33 billion |
+| — raised locally (taxes, fees, charges) | ₱13.89 billion |
+| — from the national government          | ₱5.43 billion  |
+| Current operating expenditures          | ₱14.21 billion |
+| Net operating income                    | ₱5.11 billion  |
+
+Manila pays most of its own way. On BLGF's regular-income measure, 67.6 percent of the city's income is locally sourced and 31.8 percent comes as the National Tax Allotment.
+
+**From COA, CY 2024 (audited):**
+
+| Item                                | Amount         |
+| ----------------------------------- | -------------- |
+| Income                              | ₱21.84 billion |
+| Expenses                            | ₱16.62 billion |
+| Assets                              | ₱87.52 billion |
+| Liabilities                         | ₱36.40 billion |
+| Appropriations (General Fund + SEF) | ₱25.88 billion |
+| Obligations charged against them    | ₱18.05 billion |
 
 ---
 
-> Sourced from the City of Manila's official site on 29 July 2026. This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila.
+## What the auditor found for 2024
+
+The Commission on Audit rendered a **qualified opinion** on the city's 2024 financial statements. That is not a failing grade, and it is not an accusation of theft: it means the auditor could vouch for the statements except for specific accounts whose records could not be verified. For 2024 those were:
+
+- A bank balance of ₱8.07 billion whose reliability could not be established, because the treasurer's records, the accountant's ledgers and the banks' confirmed balances did not reconcile;
+- Receivables with ₱276 million recorded without supporting detail, ₱511 million in misclassified tax credits, and ₱771 million left unrecorded;
+- An inventory balance of ₱310 million whose accuracy could not be determined;
+- A construction-in-progress account of ₱4.09 billion that could not be relied on, including ₱2.10 billion in finished projects still booked as unfinished.
+
+COA also reported ₱42.5 million in audit suspensions, ₱67.2 million in disallowances and ₱33.0 million in charges still unsettled at year-end, and that the city implemented 17 of the 27 audit recommendations from prior years.
+
+The full report is on the COA page linked above: choose **2024 → National Capital Region → Cities**, then "Manila City Annual Audit Report 2024" (the complete report) or "Manila City Executive Summary 2024" (a six-page PDF, the source of every figure in this section).
+
+---
+
+> Sourced from the City of Manila's official site on 29 July 2026. Financial figures retrieved 4 August 2026 from the BLGF Statement of Receipts and Expenditures and Annual Regular Income files for FY 2025 (preliminary, blgf.gov.ph) and from the COA _Annual Audit Report on the City of Manila, CY 2024_ Executive Summary (coa.gov.ph, posted 9 December 2025). This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila.
