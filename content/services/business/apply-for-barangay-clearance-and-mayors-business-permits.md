@@ -34,7 +34,7 @@ For a partnership you will need the partnership name checked, notarized Articles
 
 ### 2. Get your barangay clearance
 
-A clearance from the barangay where the business sits is normally required before the city issues a mayor's permit. Manila has **896 barangays**, so this happens at the barangay covering your business address, not at a central counter in City Hall.
+A clearance from the barangay where the business sits is normally required before the city issues a mayor's permit. Manila has **897 barangays**, so this happens at the barangay covering your business address, not at a central counter in City Hall.
 
 TODO: Confirm Manila's specific barangay clearance requirements, fees and processing time, and whether any part can be done through Go Manila. The city site does not cover barangay clearance directly.
 

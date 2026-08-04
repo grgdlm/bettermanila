@@ -23,7 +23,7 @@ The Department of Public Services states its aim is efficient garbage collection
 
 ## Finding your schedule
 
-Collection days in Manila are organized by district and barangay, not citywide. With **896 barangays** across **six districts**, there is no single schedule that applies to everyone.
+Collection days in Manila are organized by district and barangay, not citywide. With **897 barangays** across **six districts**, there is no single schedule that applies to everyone.
 
 TODO: Add the collection schedule per district or barangay. The city publishes schedules through the Department of Public Services and its district task forces, but not as one consolidated table. This is the single most useful thing missing from this page.
 

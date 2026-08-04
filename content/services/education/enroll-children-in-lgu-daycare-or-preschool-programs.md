@@ -26,7 +26,7 @@ Daycare centers in Philippine cities are usually run at barangay level with supp
 | --------------------------------------- | ----------------------------- |
 | **Manila Department of Social Welfare** | <https://manila.gov.ph/mdsw/> |
 
-Manila has **896 barangays**, so the daycare serving you is the one in your own barangay.
+Manila has **897 barangays**, so the daycare serving you is the one in your own barangay.
 
 TODO: Confirm how Manila daycare enrollment actually works: whether it is barangay-run or city-run, the age brackets, the requirements, and whether there is a central list of centers. The city site does not publish this.
 

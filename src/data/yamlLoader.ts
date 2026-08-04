@@ -46,6 +46,7 @@ import governmentEmergencyIndex from '../../content/government/emergency/index.y
 import governmentDepartmentsIndex from '../../content/government/departments/index.yaml?raw';
 import governmentDepartmentsLegislativeIndex from '../../content/government/departments/legislative/index.yaml?raw';
 import governmentNewsIndex from '../../content/government/news/index.yaml?raw';
+import governmentReportsAndStatisticsIndex from '../../content/government/reports-and-statistics/index.yaml?raw';
 import governmentTransparencyIndex from '../../content/government/transparency-documents/index.yaml?raw';
 
 // Create a mapping of category slugs to their YAML content
@@ -64,6 +65,7 @@ const categoryIndexMap: { [key: string]: string } = {
   departments: governmentDepartmentsIndex,
   legislative: governmentDepartmentsLegislativeIndex,
   news: governmentNewsIndex,
+  'reports-and-statistics': governmentReportsAndStatisticsIndex,
   'transparency-documents': governmentTransparencyIndex,
 };
 
