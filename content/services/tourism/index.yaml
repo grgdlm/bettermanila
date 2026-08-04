@@ -1,0 +1,13 @@
+# Tourism
+# A day out in the capital, with the practical details taken from official sources.
+
+pages:
+  - name: 'Visit Intramuros, the Walled City'
+    slug: 'visit-intramuros'
+    description: 'Hours and entrance fees for Fort Santiago, Casa Manila and the other Intramuros sites, straight from the Intramuros Administration, plus the free walking tours.'
+  - name: 'See the national museums for free'
+    slug: 'see-the-national-museums-for-free'
+    description: 'Admission to the National Museums of Fine Arts, Anthropology and Natural History is free. When to walk in, how groups book, and the free Sunday guided tour.'
+  - name: 'Spend a day at Rizal Park'
+    slug: 'spend-a-day-at-rizal-park'
+    description: "The country's best-known park: the Rizal Monument, Kilometer Zero, and the free national museums along its edge."
