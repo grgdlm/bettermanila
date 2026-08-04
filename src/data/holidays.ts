@@ -60,6 +60,15 @@ export const HOLIDAYS: Holiday[] = [
     note: 'Date set by separate proclamation',
   },
   { date: '2026-06-12', name: 'Independence Day', kind: 'regular' },
+  {
+    // City holiday, declared yearly by its own proclamation rather than by
+    // Proclamation 1006. 2026: Proclamation No. 1320 (16 June 2026), the
+    // city's 455th founding anniversary. Scope is the City of Manila only.
+    date: '2026-06-24',
+    name: 'Araw ng Maynila (Manila Day)',
+    kind: 'special',
+    note: 'City of Manila only',
+  },
   { date: '2026-08-21', name: 'Ninoy Aquino Day', kind: 'special' },
   { date: '2026-08-31', name: 'National Heroes Day', kind: 'regular' },
   { date: '2026-11-01', name: "All Saints' Day", kind: 'special' },
