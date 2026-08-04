@@ -24,6 +24,23 @@ export interface MarkdownContent {
 }
 
 /**
+ * True when a dynamic import failed to fetch its chunk file. Every rebuild
+ * renames the hashed chunk files and clears the old ones, so a tab that
+ * stayed open across a deploy asks for files that no longer exist — on this
+ * site that made every document page show "Document not found" until the
+ * visitor happened to hard-refresh. Callers use this to distinguish "the
+ * document does not exist" from "this session is stale and needs a reload".
+ */
+export function isChunkLoadError(error: unknown): boolean {
+  return (
+    error instanceof TypeError &&
+    /dynamically imported module|module script failed|error loading/i.test(
+      error.message
+    )
+  );
+}
+
+/**
  * Loads markdown content from the appropriate content directory.
  * Also attempts to load a companion JSON file (same slug) for template
  * variable substitution and structured data.
@@ -46,8 +63,11 @@ export async function loadMarkdownContent(
         `../../content/${dir}/${categorySlug}/${documentSlug}.json`
       );
       data = jsonModule.default;
-    } catch {
-      // No companion JSON — that's fine
+    } catch (jsonError) {
+      // A stale-session fetch failure must not be swallowed here: the page
+      // would render with raw {TOKEN} placeholders. Absence of a companion
+      // JSON, by contrast, is fine.
+      if (isChunkLoadError(jsonError)) throw jsonError;
     }
 
     const module = await import(
@@ -69,6 +89,9 @@ export async function loadMarkdownContent(
       `Failed to load markdown content for document: ${documentSlug}`,
       error
     );
+    // Let stale-chunk failures keep their identity so the page can recover
+    // with a reload instead of telling the reader the document is gone.
+    if (isChunkLoadError(error)) throw error;
     throw new Error(`Document not found: ${documentSlug}`);
   }
 }
