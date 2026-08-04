@@ -12,12 +12,12 @@ const Home: React.FC = () => {
         description="An independent, volunteer-built guide to City of Manila services, departments, budgets and ordinances, in plain language."
         keywords="Manila, City of Manila, city services, barangay, hotlines, business permit, transparency"
       />
-      <main className="flex-grow">
+      <div>
         <Hero />
         <ServicesSection />
         <GovernmentActivitySection />
         <UpcomingHolidays />
-      </main>
+      </div>
     </>
   );
 };

@@ -33,7 +33,7 @@ export default function UpcomingHolidays() {
       >
         Upcoming holidays
       </Heading>
-      <p className="mt-3 mb-8 max-w-2xl text-base leading-relaxed text-gray-600">
+      <p className="mt-3 mb-8 max-w-2xl text-base leading-relaxed text-gray-700">
         Regular holidays and special days declared for {HOLIDAY_SOURCE.year}.
         City offices generally close on these, so plan any transaction around
         them.
@@ -54,7 +54,7 @@ export default function UpcomingHolidays() {
               key={holiday.date}
               className="flex flex-col rounded-xl border border-gray-200 bg-white p-5"
             >
-              <span className="flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-gray-500 uppercase">
+              <span className="flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-gray-700 uppercase">
                 <CalendarDays aria-hidden="true" className="h-4 w-4" />
                 {days === 0
                   ? 'Today'
@@ -66,7 +66,7 @@ export default function UpcomingHolidays() {
                 {holiday.name}
               </span>
               <span className="mt-1 text-sm text-gray-700">{when}</span>
-              <span className="mt-3 text-xs text-gray-600">
+              <span className="mt-3 text-xs text-gray-700">
                 {holiday.kind === 'regular' && 'Regular holiday'}
                 {holiday.kind === 'special' && 'Special non-working day'}
                 {holiday.kind === 'working' &&
@@ -78,7 +78,7 @@ export default function UpcomingHolidays() {
         })}
       </ul>
 
-      <p className="mt-6 text-xs leading-relaxed text-gray-600">
+      <p className="mt-6 text-xs leading-relaxed text-gray-700">
         Source: {HOLIDAY_SOURCE.label}. Later proclamations can add, move or
         cancel dates.{' '}
         <a

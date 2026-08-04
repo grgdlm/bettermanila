@@ -50,6 +50,13 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/85 backdrop-blur-md">
+      {/* Keyboard users get a way past the whole header. */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-60 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-800 focus:shadow-lg focus:ring-2 focus:ring-primary-600"
+      >
+        Skip to content
+      </a>
       {/* Utility band */}
       <div className="bg-primary-800 text-white">
         <div className="container mx-auto flex h-10 items-center gap-x-5 px-4">
@@ -125,7 +132,7 @@ const Navbar: React.FC = () => {
                 <span className="text-primary-800 block truncate text-base leading-tight font-extrabold tracking-tight sm:text-[17px]">
                   BetterManila
                 </span>
-                <span className="mt-0.5 hidden truncate text-xs text-gray-500 sm:block">
+                <span className="mt-0.5 hidden truncate text-xs text-gray-700 sm:block">
                   {t('site_description')}
                 </span>
               </span>
@@ -135,23 +142,29 @@ const Navbar: React.FC = () => {
             <div className="hidden items-center gap-x-1 lg:flex">
               {mainNavigation.map(item => (
                 <div key={item.label} className="group relative">
-                  <a
-                    href={item.href}
-                    className="flex items-center rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-gray-600 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                  {/* Client-side Link, not <a>: a raw anchor forces a full
+                      document reload on every top-level navigation. */}
+                  <Link
+                    to={item.href}
+                    className="flex items-center rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
                   >
                     {t(`navbar.${item.label.replace(' ', '').toLowerCase()}`)}
                     {item.children && (
-                      <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+                      <ChevronDown
+                        aria-hidden="true"
+                        className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                      />
                     )}
-                  </a>
+                  </Link>
+                  {/* focus-within keeps the dropdown open while its links are
+                      tabbed through, so the submenu works without a mouse. */}
                   {item.children && (
-                    <div className="invisible absolute left-0 z-50 mt-1 w-60 origin-top-left translate-y-1 rounded-xl border border-gray-200/80 bg-white p-1.5 opacity-0 shadow-xl shadow-gray-900/10 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                      <div role="menu" aria-orientation="vertical">
+                    <div className="invisible absolute left-0 z-50 mt-1 w-60 origin-top-left translate-y-1 rounded-xl border border-gray-200/80 bg-white p-1.5 opacity-0 shadow-xl shadow-gray-900/10 transition-all duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                      <div>
                         {item.children.map(child => (
                           <Link
                             key={child.label}
                             to={child.href}
-                            role="menuitem"
                             className="block rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
                           >
                             {child.label}
@@ -165,13 +178,13 @@ const Navbar: React.FC = () => {
 
               <Link
                 to="/about"
-                className="rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-gray-600 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                className="rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               >
                 About
               </Link>
               <Link
                 to="/search"
-                className="flex items-center gap-1.5 rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-gray-600 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                className="flex items-center gap-1.5 rounded-lg px-3.5 py-2.5 text-[15px] font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               >
                 <Search className="h-4 w-4" aria-hidden="true" />
                 Search
@@ -206,22 +219,37 @@ const Navbar: React.FC = () => {
         className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}
       >
         <div className="container mx-auto space-y-1 border-b border-gray-200 bg-white px-3 pt-3 pb-4">
+          {/* Every top-level item is a real link. Items with children get a
+              separate disclosure button beside the link — the old single
+              button meant that tapping Government, Transparency, News or
+              Hotlines toggled state and navigated nowhere, leaving those
+              sections unreachable from a phone. */}
           {mainNavigation.map(item => (
             <div key={item.label}>
-              <button
-                onClick={() => toggleSubmenu(item.label)}
-                aria-expanded={activeMenu === item.label}
-                className="flex w-full items-center justify-between rounded-lg px-4 py-2.5 text-base font-medium text-gray-800 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-              >
-                {t(`navbar.${item.label.toLowerCase()}`)}
+              <div className="flex items-center gap-1">
+                <Link
+                  to={item.href}
+                  onClick={closeMenu}
+                  className="flex-1 rounded-lg px-4 py-2.5 text-base font-medium text-gray-800 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                >
+                  {t(`navbar.${item.label.replace(' ', '').toLowerCase()}`)}
+                </Link>
                 {item.children && (
-                  <ChevronDown
-                    className={`h-5 w-5 transition-transform duration-200 ${
-                      activeMenu === item.label ? 'rotate-180' : ''
-                    }`}
-                  />
+                  <button
+                    onClick={() => toggleSubmenu(item.label)}
+                    aria-expanded={activeMenu === item.label}
+                    aria-label={`Show ${item.label} sections`}
+                    className="rounded-lg p-2.5 text-gray-800 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                  >
+                    <ChevronDown
+                      aria-hidden="true"
+                      className={`h-5 w-5 transition-transform duration-200 ${
+                        activeMenu === item.label ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
                 )}
-              </button>
+              </div>
               {item.children && activeMenu === item.label && (
                 <div className="mt-1 ml-3 space-y-0.5 border-l-2 border-primary-200 pl-3">
                   {item.children.map(child => (
@@ -229,7 +257,7 @@ const Navbar: React.FC = () => {
                       key={child.label}
                       to={child.href}
                       onClick={closeMenu}
-                      className="block rounded-lg px-4 py-2 text-sm text-gray-600 transition-colors hover:bg-primary-50 hover:text-primary-600"
+                      className="block rounded-lg px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
                     >
                       {child.label}
                     </Link>

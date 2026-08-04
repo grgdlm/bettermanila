@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Heading } from '../components/ui/Heading';
+import { REPO_URL } from '../data/navigation';
 
 /**
  * 404 page.
@@ -31,8 +32,6 @@ import { Heading } from '../components/ui/Heading';
 
 /** Keeps staggered elements hidden until their delay elapses. */
 const FILL = '[animation-fill-mode:both] motion-reduce:animate-none';
-
-const REPO_URL = 'https://github.com/grgdlm/bettermanila';
 
 /**
  * The pages people actually arrive looking for. All of these exist, and this
@@ -109,8 +108,9 @@ export default function NotFound() {
       <SEO
         title="Page not found"
         description="That page does not exist on BetterManila. Search the site, or jump to city hotlines, hospitals, permits and departments."
+        noindex
       />
-      <main className="flex-grow">
+      <div>
         <section className="relative overflow-hidden bg-white">
           {/* Atmosphere: a single soft glow, kept faint */}
           <div
@@ -144,7 +144,7 @@ export default function NotFound() {
 
             {pathname && pathname !== '/' && (
               <p
-                className={`animate-fade-in ${FILL} mt-3 max-w-2xl text-sm text-gray-600`}
+                className={`animate-fade-in ${FILL} mt-3 max-w-2xl text-sm text-gray-700`}
                 style={{ animationDelay: '140ms' }}
               >
                 You asked for{' '}
@@ -175,7 +175,7 @@ export default function NotFound() {
                     value={query}
                     onChange={e => setQuery(e.target.value)}
                     placeholder="Try ospital, business permit, amilyar"
-                    className="w-full rounded-xl border border-gray-300 bg-white py-3.5 pr-4 pl-12 text-base text-gray-900 shadow-sm transition-colors placeholder:text-gray-400 focus-visible:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                    className="w-full rounded-xl border border-gray-300 bg-white py-3.5 pr-4 pl-12 text-base text-gray-900 shadow-sm transition-colors placeholder:text-gray-600 focus-visible:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
                   />
                 </div>
                 <button
@@ -189,7 +189,7 @@ export default function NotFound() {
 
             {/* The things people actually come here for */}
             <div className="mt-10 border-t border-gray-200 pt-8">
-              <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase">
+              <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-700 uppercase">
                 Most looked up
               </h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -199,7 +199,7 @@ export default function NotFound() {
                     <li key={link.href}>
                       <Link
                         to={link.href}
-                        className={`animate-fade-in ${FILL} group flex h-full items-start gap-3.5 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-900/5 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none`}
+                        className={`animate-fade-in ${FILL} group flex h-full items-start gap-3.5 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 motion-reduce:transform-none hover:border-primary-300 hover:shadow-lg hover:shadow-primary-900/5 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none`}
                         style={{ animationDelay: `${260 + i * 60}ms` }}
                       >
                         <span
@@ -212,13 +212,13 @@ export default function NotFound() {
                           <span className="font-display block text-sm leading-tight font-bold tracking-tight text-primary-800">
                             {link.label}
                           </span>
-                          <span className="mt-1 block text-sm leading-snug text-gray-600">
+                          <span className="mt-1 block text-sm leading-snug text-gray-700">
                             {link.note}
                           </span>
                         </span>
                         <ArrowRight
                           aria-hidden="true"
-                          className="mt-0.5 h-4 w-4 shrink-0 text-gray-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary-600"
+                          className="mt-0.5 h-4 w-4 shrink-0 text-gray-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary-600 motion-reduce:transform-none"
                         />
                       </Link>
                     </li>
@@ -229,7 +229,7 @@ export default function NotFound() {
 
             {/* Wider entry points for readers who would rather browse */}
             <div className="mt-10 border-t border-gray-200 pt-8">
-              <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase">
+              <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-700 uppercase">
                 Or start from the top
               </h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -239,7 +239,7 @@ export default function NotFound() {
                     <li key={section.href}>
                       <Link
                         to={section.href}
-                        className="group flex h-full items-start gap-3.5 rounded-xl border border-primary-200 bg-primary-50/60 p-4 transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-900/5 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none"
+                        className="group flex h-full items-start gap-3.5 rounded-xl border border-primary-200 bg-primary-50/60 p-4 transition-all hover:-translate-y-0.5 motion-reduce:transform-none hover:border-primary-300 hover:shadow-lg hover:shadow-primary-900/5 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                       >
                         <span
                           aria-hidden="true"
@@ -251,13 +251,13 @@ export default function NotFound() {
                           <span className="font-display block text-sm leading-tight font-bold tracking-tight text-primary-800">
                             {section.label}
                           </span>
-                          <span className="mt-1 block text-sm leading-snug text-gray-600">
+                          <span className="mt-1 block text-sm leading-snug text-gray-700">
                             {section.note}
                           </span>
                         </span>
                         <ArrowRight
                           aria-hidden="true"
-                          className="mt-0.5 h-4 w-4 shrink-0 text-primary-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary-600"
+                          className="mt-0.5 h-4 w-4 shrink-0 text-primary-300 transition-all group-hover:translate-x-0.5 motion-reduce:transform-none group-hover:text-primary-600"
                         />
                       </Link>
                     </li>
@@ -266,7 +266,7 @@ export default function NotFound() {
               </ul>
             </div>
 
-            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-gray-600">
+            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-gray-700">
               Did a link on this site bring you here? That is our mistake, and
               we would like to fix it.{' '}
               <a
@@ -288,7 +288,7 @@ export default function NotFound() {
             </p>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

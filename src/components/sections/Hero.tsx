@@ -70,9 +70,15 @@ const QUICK_LINKS = [
   },
 ];
 
+/**
+ * Per the PSA's PSGC entry for the City of Manila (counts as of 31 July
+ * 2025) and the 2024 POPCEN: 897 barangays grouped into 14 districts, and
+ * six legislative districts. Full figures with sources live on
+ * /government/reports-and-statistics/manila-by-the-numbers.
+ */
 const CITY_FACTS = [
-  { value: '16', label: 'districts' },
-  { value: '896', label: 'barangays' },
+  { value: '897', label: 'barangays' },
+  { value: '14', label: 'districts' },
   { value: '6', label: 'legislative districts' },
 ];
 
@@ -105,7 +111,7 @@ export default function Hero() {
 
         <Heading
           level={1}
-          className={`animate-slide-in ${FILL} mt-3 mb-0 max-w-3xl text-3xl leading-[1.1] font-extrabold tracking-tight text-primary-800 sm:text-4xl md:text-5xl`}
+          className={`animate-slide-in ${FILL} mt-3 mb-0 max-w-3xl text-3xl leading-[1.1] font-extrabold tracking-tight text-balance text-primary-800 sm:text-4xl md:text-5xl`}
         >
           Find what you need from the{' '}
           <span className="bg-linear-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
@@ -142,7 +148,7 @@ export default function Hero() {
                 value={query}
                 onChange={e => setQuery(e.target.value)}
                 placeholder="Try ospital, business permit, amilyar"
-                className="w-full rounded-xl border border-gray-300 bg-white py-3.5 pr-4 pl-12 text-base text-gray-900 shadow-sm transition-colors placeholder:text-gray-400 focus-visible:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                className="w-full rounded-xl border border-gray-300 bg-white py-3.5 pr-4 pl-12 text-base text-gray-900 shadow-sm transition-colors placeholder:text-gray-600 focus-visible:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               />
             </div>
             <button
@@ -155,7 +161,7 @@ export default function Hero() {
         </form>
 
         <p
-          className={`animate-fade-in ${FILL} mt-4 max-w-2xl text-sm text-gray-600`}
+          className={`animate-fade-in ${FILL} mt-4 max-w-2xl text-sm text-gray-700`}
           style={{ animationDelay: '220ms' }}
         >
           Not the official city website. For official business, visit{' '}
@@ -172,7 +178,7 @@ export default function Hero() {
 
         {/* The things people actually come here for */}
         <div className="mt-10 border-t border-gray-200 pt-8">
-          <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase">
+          <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-700 uppercase">
             Start here
           </h2>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -182,7 +188,7 @@ export default function Hero() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className={`animate-fade-in ${FILL} group flex h-full items-start gap-3.5 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-900/5 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none`}
+                    className={`animate-fade-in ${FILL} group flex h-full items-start gap-3.5 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 motion-reduce:transform-none hover:border-primary-300 hover:shadow-lg hover:shadow-primary-900/5 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none`}
                     style={{ animationDelay: `${260 + i * 60}ms` }}
                   >
                     <span
@@ -195,13 +201,13 @@ export default function Hero() {
                       <span className="font-display block text-sm leading-tight font-bold tracking-tight text-primary-800">
                         {link.label}
                       </span>
-                      <span className="mt-1 block text-sm leading-snug text-gray-600">
+                      <span className="mt-1 block text-sm leading-snug text-gray-700">
                         {link.note}
                       </span>
                     </span>
                     <ArrowRight
                       aria-hidden="true"
-                      className="mt-0.5 h-4 w-4 shrink-0 text-gray-300 transition-all group-hover:translate-x-0.5 group-hover:text-primary-600"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-gray-300 transition-all group-hover:translate-x-0.5 motion-reduce:transform-none group-hover:text-primary-600"
                     />
                   </Link>
                 </li>
@@ -213,16 +219,21 @@ export default function Hero() {
 
       {/* The scale of the city this site covers, kept to one line */}
       <div className="relative bg-primary-800 text-white">
-        <dl className="container mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3.5 text-center text-sm">
-          {CITY_FACTS.map(fact => (
-            <div key={fact.label} className="flex items-baseline gap-1.5">
-              <dt className="sr-only">{fact.label}</dt>
-              <dd className="font-display font-extrabold">{fact.value}</dd>
-              <span className="text-primary-200">{fact.label}</span>
-            </div>
-          ))}
-          <p className="text-primary-200">A city-run hospital in every one</p>
-        </dl>
+        <div className="container mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3.5 text-center text-sm">
+          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+            {CITY_FACTS.map(fact => (
+              <li key={fact.label} className="flex items-baseline gap-1.5">
+                <span className="font-display font-extrabold">
+                  {fact.value}
+                </span>
+                <span className="text-primary-200">{fact.label}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-primary-200">
+            A city-run hospital in every legislative district
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Heading } from '../components/ui/Heading';
+import { REPO_URL } from '../data/navigation';
 
 /**
  * About page.
@@ -38,8 +39,6 @@ import { Heading } from '../components/ui/Heading';
 
 /** Keeps staggered elements hidden until their delay elapses. */
 const FILL = '[animation-fill-mode:both] motion-reduce:animate-none';
-
-const REPO_URL = 'https://github.com/grgdlm/bettermanila';
 
 /** Where the facts on this site come from. Official publications only. */
 const SOURCES = [
@@ -107,7 +106,7 @@ export default function About() {
         description="BetterManila is a free, independent, volunteer-built guide to City of Manila services, departments, budgets and ordinances. Not the official city website."
         keywords="about bettermanila, independent, volunteer, open source, city of manila, sources, corrections"
       />
-      <main className="flex-grow">
+      <div>
         {/* Headline and the disclaimer, in that order and nothing between */}
         <section className="relative overflow-hidden bg-white">
           <div
@@ -215,7 +214,7 @@ export default function About() {
                       href={source.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex h-full items-start gap-3.5 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-900/5 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none"
+                      className="group flex h-full items-start gap-3.5 rounded-xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 motion-reduce:transform-none hover:border-primary-300 hover:shadow-lg hover:shadow-primary-900/5 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none"
                     >
                       <span
                         aria-hidden="true"
@@ -230,7 +229,7 @@ export default function About() {
                         <span className="mt-1 block text-xs break-all text-primary-700">
                           {source.domain}
                         </span>
-                        <span className="mt-1.5 block text-sm leading-snug text-gray-600">
+                        <span className="mt-1.5 block text-sm leading-snug text-gray-700">
                           {source.note}
                         </span>
                       </span>
@@ -338,7 +337,7 @@ export default function About() {
                     <h3 className="font-display mt-3.5 text-base font-bold tracking-tight text-primary-800">
                       {way.title}
                     </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-gray-600">
+                    <p className="mt-1.5 text-sm leading-relaxed text-gray-700">
                       {way.body}
                     </p>
                   </li>
@@ -376,7 +375,7 @@ export default function About() {
                     as sources are checked, and each one is an open invitation
                     to anyone who knows the answer.
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-gray-600">
+                  <p className="mt-4 text-sm leading-relaxed text-gray-700">
                     Looking for something specific?{' '}
                     <Link
                       to="/services"
@@ -405,7 +404,7 @@ export default function About() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

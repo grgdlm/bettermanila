@@ -30,23 +30,26 @@ function App() {
           <div className="min-h-screen flex flex-col">
             <Navbar />
             <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/services/:category" element={<Services />} />
-              <Route path="/services" element={<Services />} />
-              <Route
-                path="/services/:category/:documentSlug"
-                element={<Document categoryType="service" />}
-              />
-              <Route path="/government/:category" element={<Government />} />
-              <Route path="/government" element={<Government />} />
-              <Route
-                path="/government/:category/:documentSlug"
-                element={<Document categoryType="government" />}
-              />
-              {/*
+            {/* The single main landmark; the navbar's skip link targets it,
+                and flex-grow keeps the footer at the bottom on short pages. */}
+            <main id="main-content" className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/search" element={<Search />} />
+                <Route path="/services/:category" element={<Services />} />
+                <Route path="/services" element={<Services />} />
+                <Route
+                  path="/services/:category/:documentSlug"
+                  element={<Document categoryType="service" />}
+                />
+                <Route path="/government/:category" element={<Government />} />
+                <Route path="/government" element={<Government />} />
+                <Route
+                  path="/government/:category/:documentSlug"
+                  element={<Document categoryType="government" />}
+                />
+                {/*
                 The former catch-alls, /:lang/:documentSlug and /:documentSlug,
                 were removed rather than kept. Document requires a category and
                 a categoryType to resolve a file, and neither route supplied
@@ -55,8 +58,9 @@ function App() {
                 only make a dead URL look like a broken page. Unmatched paths
                 now land on a real 404 instead.
               */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
             <Footer />
           </div>
         </NuqsAdapter>

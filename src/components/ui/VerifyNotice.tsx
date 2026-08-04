@@ -11,8 +11,7 @@
 
 import { type ReactNode } from 'react';
 import { ExternalLink, HeartHandshake } from 'lucide-react';
-
-const REPO_URL = 'https://github.com/grgdlm/bettermanila';
+import { REPO_URL } from '../../data/navigation';
 
 export function VerifyNotice({ children }: { children?: ReactNode }) {
   return (

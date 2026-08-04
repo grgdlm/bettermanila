@@ -1,3 +1,16 @@
+import { cn } from '../../lib/utils';
+
+/**
+ * Sizes map to literal Tailwind classes: a template like `text-${size}`
+ * produces `text-md`, which is not a Tailwind class, and dynamic class names
+ * are invisible to Tailwind's static scanner anyway.
+ */
+const sizeClasses = {
+  sm: 'text-sm',
+  md: 'text-base',
+  lg: 'text-lg',
+};
+
 export function Text({
   size = 'md',
   transform = 'none',
@@ -16,7 +29,12 @@ export function Text({
   };
   return (
     <p
-      className={`text-${size} mb-2 max-w-lg ${transformClasses[transform]} ${className}`}
+      className={cn(
+        sizeClasses[size],
+        'mb-2 max-w-lg',
+        transformClasses[transform],
+        className
+      )}
     >
       {children}
     </p>

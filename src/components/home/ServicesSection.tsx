@@ -1,6 +1,6 @@
 import Section from '../ui/Section';
 import { Heading } from '../ui/Heading';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useTranslation } from 'react-i18next';
 import { CategoryCard } from '../ui/CategoryCard';
 
 import { activeServiceCategories } from '../../data/yamlLoader';
@@ -30,7 +30,7 @@ export default function ServicesSection({
       >
         {title || t('services.title')}
       </Heading>
-      <p className="mt-3 mb-8 max-w-2xl text-base leading-relaxed text-gray-600">
+      <p className="mt-3 mb-8 max-w-2xl text-base leading-relaxed text-gray-700">
         {description || t('services.description')}
       </p>
 

@@ -20,19 +20,14 @@ import { CloudSun, Clock } from 'lucide-react';
 
 const MANILA = 'Asia/Manila';
 
-interface Live {
-  temperature: number;
-  usd: number | null;
-}
-
 export default function LiveStrip() {
   const [now, setNow] = useState(() => new Date());
   const [weather, setWeather] = useState<number | null>(null);
   const [usd, setUsd] = useState<number | null>(null);
 
   useEffect(() => {
-    // A minute is enough resolution for a header clock, and it avoids waking
-    // the render loop every second on a phone.
+    // Half a minute is enough resolution for a header clock, and it avoids
+    // waking the render loop every second on a phone.
     const id = setInterval(() => setNow(new Date()), 30_000);
     return () => clearInterval(id);
   }, []);
@@ -109,11 +104,14 @@ export default function LiveStrip() {
           >
             <span className="text-primary-200">$1 = </span>
             <span className="tabular-nums">&#8369;{usd.toFixed(2)}</span>
+            {/* The title attribute is invisible to keyboard, touch and
+                screen-reader users, so state the caveat for them too. */}
+            <span className="sr-only">
+              (indicative market rate, not the Bangko Sentral reference rate)
+            </span>
           </span>
         </>
       )}
     </div>
   );
 }
-
-export type { Live };

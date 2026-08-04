@@ -60,14 +60,14 @@ export default function ComingSoon() {
     <div className="relative flex min-h-screen flex-col bg-white text-gray-700">
       <Helmet>
         <title>
-          Better Manila: a public-service portal for the City of Manila
+          BetterManila: a public-service portal for the City of Manila
         </title>
         <meta
           name="description"
           content="An independent, open-source public-service portal for the City of Manila. Services, departments, budgets and ordinances in plain language. Currently in development."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Better Manila" />
+        <meta property="og:title" content="BetterManila" />
         <meta
           property="og:description"
           content="An independent, open-source public-service portal for the City of Manila. In development."
@@ -123,7 +123,7 @@ export default function ComingSoon() {
               style={DISPLAY_FONT}
               className="bg-linear-to-r from-primary-800 via-primary-600 to-accent-500 bg-clip-text font-extrabold tracking-tight text-transparent uppercase"
             >
-              Better Manila
+              BetterManila
             </span>
           </Heading>
 
@@ -135,7 +135,7 @@ export default function ComingSoon() {
             departments, budgets and ordinances, written in plain language.
           </p>
           <p
-            className={`animate-slide-in ${FILL} mt-3 max-w-xl text-gray-600`}
+            className={`animate-slide-in ${FILL} mt-3 max-w-xl text-gray-700`}
             style={{ animationDelay: '200ms' }}
           >
             Built in the open by volunteers. Not finished yet.
@@ -188,7 +188,7 @@ export default function ComingSoon() {
             className={`animate-fade-in ${FILL} mt-6 font-mono text-xs tracking-wide text-[#b3c4f8] md:text-sm`}
             style={{ animationDelay: '1000ms' }}
           >
-            16 districts, 896 barangays, one place to look things up.
+            14 districts, 897 barangays, one place to look things up.
           </p>
         </section>
 

@@ -3,6 +3,13 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpBackend from 'i18next-http-backend';
 
+// Keep the document language attribute in step with the active language, so
+// screen readers switch pronunciation rules when the reader switches to
+// Filipino. index.html ships lang="en" and nothing else would update it.
+i18n.on('languageChanged', lng => {
+  document.documentElement.lang = lng;
+});
+
 i18n
   .use(HttpBackend)
   .use(LanguageDetector)

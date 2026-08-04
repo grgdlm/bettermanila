@@ -8,6 +8,8 @@ interface SEOProps {
   url?: string;
   type?: string;
   siteName?: string;
+  /** Set on pages that must not enter search indexes, such as the 404. */
+  noindex?: boolean;
 }
 
 export default function SEO({
@@ -17,12 +19,16 @@ export default function SEO({
   image,
   url,
   type = 'website',
-  siteName = import.meta.env.VITE_GOVERNMENT_NAME || 'Local Government Website',
+  siteName = import.meta.env.VITE_SITE_NAME || 'BetterManila',
+  noindex = false,
 }: SEOProps) {
-  const defaultTitle = `${siteName} - Official Government Website`;
+  // This is an independent volunteer project. The fallbacks must never claim
+  // to be the official government website — that is the one thing every
+  // disclaimer on the site exists to deny.
+  const defaultTitle = `${siteName} — an independent guide to the City of Manila`;
   const defaultDescription =
     import.meta.env.VITE_SITE_DESCRIPTION ||
-    `Official website of ${siteName}. Access government services, information, and resources.`;
+    `${siteName} is an independent, open-source portal that makes City of Manila public information easy to find: services, departments, budgets and ordinances, in plain language.`;
   const defaultKeywords =
     import.meta.env.VITE_SITE_KEYWORDS ||
     'government, local government, services, public services, civic services';
@@ -45,14 +51,17 @@ export default function SEO({
 
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
+      {/* Per-page tags only. Static tags that never change per route —
+          viewport, charset, favicons, preconnects — ship once in index.html
+          and are not repeated here. */}
       <title>{fullTitle}</title>
       <meta name="description" content={fullDescription} />
       <meta name="keywords" content={fullKeywords} />
       <meta name="author" content={siteName} />
-      <meta name="robots" content="index, follow" />
-      <meta name="language" content="English" />
-      <meta name="revisit-after" content="7 days" />
+      <meta
+        name="robots"
+        content={noindex ? 'noindex, nofollow' : 'index, follow'}
+      />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
@@ -61,53 +70,22 @@ export default function SEO({
       <meta property="og:description" content={fullDescription} />
       <meta property="og:image" content={fullImage} />
       <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_PH" />
 
-      {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={fullUrl} />
-      <meta property="twitter:title" content={fullTitle} />
-      <meta property="twitter:description" content={fullDescription} />
-      <meta property="twitter:image" content={fullImage} />
-      {twitterHandle && (
-        <meta property="twitter:site" content={twitterHandle} />
-      )}
+      {/* Twitter card tags use name=, not property=, per their spec */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={fullUrl} />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={fullDescription} />
+      <meta name="twitter:image" content={fullImage} />
+      {twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
 
-      {/* Additional Meta Tags */}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+      {/* Matches --color-primary-600 in src/index.css; meta tags cannot read
+          CSS custom properties, so the hex is repeated here. */}
       <meta name="theme-color" content="#2846b4" />
 
       {/* Canonical URL */}
       <link rel="canonical" href={fullUrl} />
-
-      {/* Favicon */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon-16x16.png"
-      />
-
-      {/* Preconnect to external domains */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="anonymous"
-      />
     </Helmet>
   );
 }
