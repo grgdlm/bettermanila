@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Banner } from '@bettergov/kapwa/banner';
 import Section from '../components/ui/Section';
-import { Heading } from '../components/ui/Heading';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
+import { PageHeader } from '../components/ui/PageHeader';
 import SEO from '../components/SEO';
 import {
   CategoryRail,
@@ -66,25 +66,16 @@ const Government: React.FC = () => {
         />
         <Section className="pb-16">
           <Breadcrumbs className="mb-8" />
-          <p className="text-xs font-semibold tracking-[0.2em] text-primary-700 uppercase">
-            City government
-          </p>
-          <Heading
-            level={1}
-            className="mt-3 mb-0 max-w-3xl text-3xl leading-tight font-extrabold tracking-tight text-primary-800 md:text-4xl lg:text-4xl"
-          >
-            The people, offices and records behind the city
-          </Heading>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-700">
-            Who runs the City of Manila, the hotlines that answer when something
-            goes wrong, and the documents every city is required to publish.
-          </p>
-          {loaded && totalPages > 0 && (
-            <p className="mt-2 text-sm text-gray-700">
-              {totalPages} pages in {activeGovernmentCategories.length} sections
-              so far, with more being added.
-            </p>
-          )}
+          <PageHeader
+            eyebrow="City government"
+            title="The people, offices and records behind the city"
+            lead="Who runs the City of Manila, the hotlines that answer when something goes wrong, and the documents every city is required to publish."
+            meta={
+              loaded && totalPages > 0
+                ? `${totalPages} pages in ${activeGovernmentCategories.length} sections so far, with more being added.`
+                : undefined
+            }
+          />
 
           <div className="mt-9 grid gap-5 md:grid-cols-2">
             {activeGovernmentCategories.map(c => {
@@ -193,25 +184,13 @@ const Government: React.FC = () => {
         />
         <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16">
           <div>
-            <p className="text-xs font-semibold tracking-[0.2em] text-primary-700 uppercase">
-              City government
-            </p>
-            <div className="mt-3 flex items-center gap-4">
-              <IconTile
-                icon={categoryData.icon}
-                className="h-12 w-12 rounded-xl"
-                iconClassName="h-6 w-6"
-              />
-              <Heading
-                level={1}
-                className="mb-0 text-2xl leading-tight font-extrabold tracking-tight text-primary-800 md:text-3xl lg:text-3xl"
-              >
-                {categoryData.category}
-              </Heading>
-            </div>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-700">
-              {categoryData.description}
-            </p>
+            <PageHeader
+              size="md"
+              eyebrow="City government"
+              icon={categoryData.icon}
+              title={categoryData.category}
+              lead={categoryData.description}
+            />
 
             <div className="mt-9">
               <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-700 uppercase">

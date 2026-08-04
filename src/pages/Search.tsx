@@ -1,35 +1,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import {
-  Book,
-  Building2,
-  ChartBar,
-  FileText,
-  GraduationCap,
-  Heart,
-  Home as HomeIcon,
-  MessagesSquare,
-  Newspaper,
-  Search as SearchIcon,
-  SearchX,
-  Shield,
-  Siren,
-  Trash2,
-  TreePine,
-  Users,
-  Wheat,
-  Wrench,
-  X,
-} from 'lucide-react';
+import { FileText, Search as SearchIcon, SearchX, X } from 'lucide-react';
 import Section from '../components/ui/Section';
 import SEO from '../components/SEO';
-import { Heading } from '../components/ui/Heading';
+import { PageHeader } from '../components/ui/PageHeader';
+import Breadcrumbs from '../components/ui/Breadcrumbs';
 import {
   activeGovernmentCategories,
   activeServiceCategories,
   type Category,
 } from '../data/yamlLoader';
 import { SAMPLE_ALIAS_TERMS } from '../lib/searchAliases';
+import { CATEGORY_ICONS } from '../lib/categoryIcons';
 import type { Highlight, SearchOutcome } from '../lib/searchEngine';
 
 /**
@@ -56,26 +38,9 @@ type TreeFilter = 'all' | 'services' | 'government';
  *  chunk stays lazy. */
 const MIN_QUERY = 2;
 
-/** Icons named in services.yaml and government.yaml, imported by name so the
- *  bundler can drop the rest of the icon set. */
-const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  Heart,
-  GraduationCap,
-  Building2,
-  Users,
-  Wheat,
-  Wrench,
-  Trash2,
-  TreePine,
-  Shield,
-  Home: HomeIcon,
-  Newspaper,
-  FileText,
-  Book,
-  ChartBar,
-  MessagesSquare,
-  Siren,
-};
+/** Icons named in services.yaml and government.yaml, from the shared map so
+ *  this page and the category cards cannot drift apart. */
+const ICONS = CATEGORY_ICONS;
 
 /** Real tasks that map onto pages that exist. */
 const COMMON_SEARCHES = [
@@ -299,29 +264,33 @@ const Search: React.FC = () => {
     <>
       <SEO
         title="Search"
-        description="Search every service, office and document on Better Manila."
+        description="Search every service, office and document on BetterManila."
         keywords="search, Manila services, city hall, find a service"
       />
 
-      {/* Section applies its className to both the section and the inner
-          container, so padding is set on the column below instead. */}
-      <Section className="bg-white py-0">
-        <div className="mx-auto max-w-3xl py-10 md:py-14">
-          <Heading level={1} className="mb-2 text-3xl md:text-4xl lg:text-4xl">
-            Search
-          </Heading>
-          <p className="mb-6 text-gray-700">
-            Every service page, department and transparency document on Better
-            Manila, in one box.
-          </p>
+      {/* Full container width, like the services and government catalogues:
+          the text and the search box are capped individually so the browse
+          grid below can still use the whole column. */}
+      <Section className="pb-16">
+        <div>
+          <Breadcrumbs
+            className="mb-8"
+            items={[{ label: 'Home', href: '/' }, { label: 'Search' }]}
+          />
+          <PageHeader
+            eyebrow="Search"
+            title="Search the whole site"
+            lead="Every service page, department and transparency document on BetterManila, in one box."
+            className="mb-6"
+          />
 
           <form
             role="search"
             onSubmit={event => event.preventDefault()}
-            className="relative"
+            className="relative max-w-2xl"
           >
             <label htmlFor="site-search" className="sr-only">
-              Search Better Manila
+              Search BetterManila
             </label>
             <SearchIcon
               aria-hidden="true"
@@ -341,7 +310,7 @@ const Search: React.FC = () => {
               spellCheck={false}
               enterKeyHint="search"
               aria-describedby="search-hint"
-              className="w-full rounded-xl border border-gray-300 bg-white py-4 pr-14 pl-12 text-base text-gray-900 shadow-xs transition-colors placeholder:text-gray-500 focus:border-primary-600 focus:ring-4 focus:ring-primary-100 focus:outline-none [&::-webkit-search-cancel-button]:appearance-none"
+              className="w-full rounded-xl border border-gray-300 bg-white py-4 pr-14 pl-12 text-base text-gray-900 shadow-xs transition-colors placeholder:text-gray-600 focus:border-primary-600 focus:ring-4 focus:ring-primary-100 focus:outline-none [&::-webkit-search-cancel-button]:appearance-none"
             />
             {query ? (
               <button
@@ -365,7 +334,7 @@ const Search: React.FC = () => {
             )}
           </form>
 
-          <p id="search-hint" className="mt-2 text-sm text-gray-600">
+          <p id="search-hint" className="mt-2 max-w-2xl text-sm text-gray-700">
             Press <span className="font-medium text-gray-700">/</span> to jump
             here, arrow keys to move through results, Enter to open.
           </p>
@@ -376,7 +345,7 @@ const Search: React.FC = () => {
 
           {/* ---- results ---- */}
           {hasResults && (
-            <div className="mt-8">
+            <div className="mt-8 max-w-3xl">
               <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 pb-3">
                 <p className="text-sm text-gray-700">
                   <span className="font-semibold text-gray-900">
@@ -463,14 +432,14 @@ const Search: React.FC = () => {
 
           {/* ---- too short ---- */}
           {isTooShort && (
-            <p className="mt-8 rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
+            <p className="mt-8 max-w-2xl rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
               Keep typing. Search starts at two characters.
             </p>
           )}
 
           {/* ---- no results ---- */}
           {showNoResults && (
-            <div className="mt-8">
+            <div className="mt-8 max-w-3xl">
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
                 <div className="flex items-start gap-3">
                   <SearchX
@@ -561,7 +530,7 @@ const Search: React.FC = () => {
               <h2 className="mb-3 text-sm font-semibold tracking-wide text-gray-700 uppercase">
                 Browse services
               </h2>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {browseServices.map(category => (
                   <CategoryCard
                     key={category.slug}
@@ -574,7 +543,7 @@ const Search: React.FC = () => {
               <h2 className="mt-8 mb-3 text-sm font-semibold tracking-wide text-gray-700 uppercase">
                 Browse government
               </h2>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {browseGovernment.map(category => (
                   <CategoryCard
                     key={category.slug}
