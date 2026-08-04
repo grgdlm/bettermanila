@@ -4,16 +4,16 @@
 pages:
   - name: 'Enroll children in LGU daycare or preschool programs'
     slug: 'enroll-children-in-lgu-daycare-or-preschool-programs'
-    description: 'Information about enrolling your children in local government daycare and preschool programs.'
-    
+    description: 'How to enroll a child in barangay daycare or city preschool in Manila, and the papers to bring.'
+
   - name: 'Apply for local scholarships'
     slug: 'apply-for-local-scholarships'
-    description: 'How to apply for scholarships and educational financial assistance from your local government.'
-    
+    description: 'Scholarship routes for Manileño students, including the city-run Pamantasan ng Lungsod ng Maynila.'
+
   - name: 'Access educational support programs from the LGU'
     slug: 'access-educational-support-programs-from-the-lgu'
-    description: 'Various educational support programs and resources provided by your local government unit.'
-    
+    description: 'What help with school costs and supplies the city offers students and families, and where to ask for it.'
+
   - name: 'Learn about supplementary activities for schools in your area'
     slug: 'learn-about-supplementary-activities-for-schools-in-your-area'
-    description: 'Information about supplementary educational activities and programs available for schools in your area.'
+    description: 'School programs beyond the classroom that the city runs or hosts, and how schools take part in them.'

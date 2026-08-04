@@ -4,16 +4,16 @@
 pages:
   - name: 'Check garbage collection schedules and request pickup'
     slug: 'check-garbage-collection-schedules-and-request-pickup'
-    description: 'Information about garbage collection schedules and how to request special garbage pickup services.'
-    
+    description: 'Collection in Manila runs by district and barangay, not citywide. How to find your schedule and ask for a pickup.'
+
   - name: 'Learn proper waste segregation and disposal methods'
     slug: 'learn-proper-waste-segregation-and-disposal-methods'
-    description: 'Guidelines for proper waste segregation and disposal methods in your area.'
-    
+    description: 'How Manila expects households to segregate waste, and what happens to each kind after collection.'
+
   - name: 'Request special waste collection (hazardous materials, electronics)'
     slug: 'request-special-waste-collection-hazardous-materials-electronics'
-    description: 'How to request special collection services for hazardous materials and electronic waste.'
-    
+    description: 'What to do with the waste the regular truck will not take: hazardous materials, electronics and bulky items.'
+
   - name: 'Report illegal dumping or waste management violations'
     slug: 'report-illegal-dumping-or-waste-management-violations'
-    description: 'How to report illegal dumping activities and waste management violations in your area.'
+    description: 'Where to report illegal dumping and waste violations in Manila, and what details make a report actionable.'

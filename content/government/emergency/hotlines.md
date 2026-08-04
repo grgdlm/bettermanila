@@ -211,8 +211,6 @@ The same city page also carries a list of open evacuation centers, but that list
 
 ## Where these numbers come from
 
-Every number on this page was transcribed from the hotline posters published as images by the City of Manila at [manila.gov.ph/emergency-police-fire-station-hotlines](https://manila.gov.ph/emergency-police-fire-station-hotlines/), retrieved 30 July 2026. Those posters are credited to the Manila Public Information Office, the Manila Police District, the Manila Fire District and the Manila Disaster Risk Reduction and Management Office.
-
 **Always check the city's own page if you can.** If a number here does not match what the city publishes today, the city is right and we are out of date. Please tell us so we can fix it.
 
-Better Manila is an independent, volunteer built project. It is not affiliated with, endorsed by, or an official channel of the City Government of Manila.
+> **Sources.** Every number on this page was transcribed from the hotline posters published as images by the City of Manila at [manila.gov.ph/emergency-police-fire-station-hotlines](https://manila.gov.ph/emergency-police-fire-station-hotlines/), retrieved 30 July 2026. Those posters are credited to the Manila Public Information Office, the Manila Police District, the Manila Fire District and the Manila Disaster Risk Reduction and Management Office. BetterManila is an independent, volunteer-built project. It is not affiliated with, endorsed by, or an official channel of the City Government of Manila.
