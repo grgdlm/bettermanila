@@ -21,6 +21,7 @@ import { type ReactNode, type HTMLAttributes } from 'react';
 import { BookOpenCheck } from 'lucide-react';
 import { TableWithToggle, type HastLike } from './TableWithToggle';
 import { VerifyNotice } from '../components/ui/VerifyNotice';
+import { linkifyTelChildren } from './telLinks';
 
 const TODO_PREFIX = /^\s*TODO:\s*/;
 
@@ -144,11 +145,15 @@ export function createMarkdownComponents(theme: TypographyTheme) {
       // content. Render them as a contribution callout instead of body copy.
       const notice = extractVerifyNotice(children);
       if (notice !== null) {
-        return <VerifyNotice>{notice}</VerifyNotice>;
+        return (
+          <VerifyNotice>
+            {linkifyTelChildren(notice, theme.components.a)}
+          </VerifyNotice>
+        );
       }
       return (
         <p className={theme.components.p} {...domProps(props)}>
-          {children}
+          {linkifyTelChildren(children, theme.components.a)}
         </p>
       );
     },
@@ -172,7 +177,14 @@ export function createMarkdownComponents(theme: TypographyTheme) {
         );
 
       if (hasTaskItems) {
-        return <>{children}</>;
+        // Keep the list wrapper: bare <li> elements are invalid HTML and
+        // screen readers lose the list semantics. Task items carry their own
+        // markers, so suppress the theme's bullets and indent.
+        return (
+          <ul className="mb-5 max-w-[65ch] list-none space-y-2 pl-0">
+            {children}
+          </ul>
+        );
       }
 
       return (
@@ -191,37 +203,51 @@ export function createMarkdownComponents(theme: TypographyTheme) {
       const taskLiClass =
         extendedTheme.components['li.task-list-item'] || liClass;
 
-      // Task list items swap the checkbox for an emoji check.
+      // Task list items swap the disabled checkbox input for a marker that
+      // matches its actual state. Unchecked items must not render as done:
+      // "- [ ] bring your ID" is a to-do for the reader, not a completed step.
       if (props.className?.includes('task-list-item')) {
-        const processedChildren = Array.isArray(children)
-          ? children.map((child: ReactNode) => {
-              if (
-                typeof child === 'object' &&
-                child !== null &&
-                'props' in child
-              ) {
-                const childElement = child as { props?: { type?: string } };
-                if (childElement.props?.type === 'checkbox') {
-                  return '✅';
-                }
-              }
-              return child;
-            })
-          : children;
+        const childArray = Array.isArray(children) ? children : [children];
+        const isChecked = childArray.some(
+          (child: ReactNode) =>
+            typeof child === 'object' &&
+            child !== null &&
+            'props' in child &&
+            (child as { props?: { type?: string; checked?: boolean } }).props
+              ?.type === 'checkbox' &&
+            (child as { props?: { checked?: boolean } }).props?.checked === true
+        );
+        const withoutCheckbox = childArray.filter(
+          (child: ReactNode) =>
+            !(
+              typeof child === 'object' &&
+              child !== null &&
+              'props' in child &&
+              (child as { props?: { type?: string } }).props?.type ===
+                'checkbox'
+            )
+        );
 
         return (
           <li className={taskLiClass} {...domProps(props)}>
-            <span className="pr-0">✅</span>
-            {Array.isArray(processedChildren)
-              ? processedChildren.filter((child: ReactNode) => child !== '✅')
-              : processedChildren}
+            {isChecked ? (
+              <span aria-hidden="true" className="pr-0">
+                ✅
+              </span>
+            ) : (
+              <span
+                aria-hidden="true"
+                className="mt-1 mr-0.5 inline-block h-4 w-4 shrink-0 rounded border-2 border-gray-400 bg-white align-text-top"
+              />
+            )}
+            {withoutCheckbox}
           </li>
         );
       }
 
       return (
         <li className={liClass} {...domProps(props)}>
-          {children}
+          {linkifyTelChildren(children, theme.components.a)}
         </li>
       );
     },
@@ -323,7 +349,7 @@ export function createMarkdownComponents(theme: TypographyTheme) {
     ),
     td: ({ children, ...props }: MdProps<HTMLTableCellElement>) => (
       <td className={theme.components.td} {...domProps(props)}>
-        {children}
+        {linkifyTelChildren(children, theme.components.a)}
       </td>
     ),
   };

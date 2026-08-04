@@ -115,9 +115,9 @@
   --font-mono: var(--font-kapwa-mono);
 }
 
-/* Checklist styling */
+/* Checklist styling. No cursor-pointer: these items are not interactive. */
 .task-list-item {
-  @apply text-base text-gray-700 leading-relaxed relative flex items-start gap-3 font-sans rounded-md mb-5 transition-all duration-200 border border-transparent cursor-pointer items-center;
+  @apply relative mb-2 flex items-center gap-3 rounded-md border border-transparent font-sans text-base leading-relaxed text-gray-700;
 }
 
 /* Sticky table styling */

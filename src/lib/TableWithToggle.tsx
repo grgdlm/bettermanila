@@ -22,6 +22,7 @@ import {
 import { List, Table } from 'lucide-react';
 import { type TypographyTheme } from './typographyThemes';
 import { cn } from './utils';
+import { linkifyTel } from './telLinks';
 
 /** Minimal structural view of a hast node, enough to walk a table. */
 export interface HastLike {
@@ -80,8 +81,9 @@ const URL_VALUE = /^https?:\/\/\S+$/;
 
 /**
  * List view extraction is text only, which would turn a cell holding a link
- * into dead text. When a value is a single URL, render it as a link again so
- * it stays tappable on a phone.
+ * into dead text. When a value is a single URL, render it as a link again,
+ * and any phone number in the text becomes a tel: link — the list view is
+ * what phones see, which is exactly where a number must be tappable.
  */
 const renderValue = (value: string, linkClass?: string) =>
   URL_VALUE.test(value) ? (
@@ -94,7 +96,7 @@ const renderValue = (value: string, linkClass?: string) =>
       {value}
     </a>
   ) : (
-    value
+    linkifyTel(value, linkClass)
   );
 
 // Custom Table Component with view toggle
