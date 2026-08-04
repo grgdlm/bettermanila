@@ -1,7 +1,7 @@
-import * as LucideIcons from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '../../lib/utils';
+import { iconByName, type IconComponent } from '../../lib/categoryIcons';
 
 /**
  * The shared building blocks of every category browsing surface: the home
@@ -13,13 +13,7 @@ import { cn } from '../../lib/utils';
  * two diverging copies of the same card.
  */
 
-type IconComponent = React.ComponentType<{ className?: string }>;
-
-function iconByName(name?: string): IconComponent | undefined {
-  return name
-    ? (LucideIcons[name as keyof typeof LucideIcons] as IconComponent)
-    : undefined;
-}
+export type { IconComponent };
 
 /** The icon-in-a-tinted-tile motif established by the home page hero. */
 export function IconTile({
@@ -80,7 +74,7 @@ export function CategoryCard({
       </div>
 
       {description && (
-        <p className="mt-3 text-sm leading-relaxed text-gray-600">
+        <p className="mt-3 text-sm leading-relaxed text-gray-700">
           {description}
         </p>
       )}
