@@ -48,9 +48,45 @@ The interface is translated by files in `public/locales/<code>/common.json`.
 English and Filipino exist. The language switcher deliberately lists the other
 Philippine languages Manileños speak — Cebuano, Ilocano, Hiligaynon, Waray,
 Kapampangan, Bikol, Pangasinan, Maguindanaon, Tausug, Meranaw — as _wanted_:
-each needs a speaker to translate one JSON file. If you speak one of them,
-copy `public/locales/fil/common.json`, translate the values (never the keys),
-and open a pull request.
+each needs a speaker to translate one JSON file.
+
+If you speak one of them, start with:
+
+```bash
+npm run i18n:new -- ceb    # or ilo, bcl, war, … ; omit the code to see the list
+```
+
+That writes `public/locales/ceb/common.json` as a copy of the English file.
+Translate the **values** in place, never the keys. Two things have to survive
+into your translation exactly as they appear:
+
+- `{{count}}`, `{{query}}`, `{{year}}` and friends — these get replaced with
+  real numbers and words at runtime.
+- `<link>…</link>`, `<city>…</city>`, `<services>…</services>` — these wrap
+  part of the sentence in a link or a highlight. Move them wherever the
+  grammar of your language puts that phrase, but keep the pair intact.
+
+Word order is yours to change. A sentence does not have to follow the English
+shape, and for most of these languages it should not.
+
+Check your work at any time:
+
+```bash
+npm run i18n:check
+```
+
+It compares every locale against English and fails on a missing key, a dropped
+`{{variable}}`, an unbalanced `<component>`, or a language switched on without
+a file behind it. It also reports how many values are still identical to
+English, so you can see what is left. The same check runs automatically when
+you commit a locale file.
+
+Leave the language switched off in your pull request. A maintainer flips
+`available: true` in `src/i18n/languages.ts` and adds the code to
+`supportedLngs` in `src/i18n.ts` once a second speaker has read it — until
+then the switcher keeps listing it as needing a translator, which is honest.
+Partial translations are welcome: an unfinished file sitting at
+`available: false` harms nobody and is a real head start for the next person.
 
 ## Local setup
 

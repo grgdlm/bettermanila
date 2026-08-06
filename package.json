@@ -10,6 +10,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "i18n:check": "node scripts/i18n-check.js",
+    "i18n:new": "node scripts/i18n-new.js",
     "preview": "vite preview",
     "prepare": "husky",
     "convert-yaml": "node scripts/yaml-to-json.js",
@@ -23,6 +25,10 @@
     ],
     "*.{json,css,md}": [
       "prettier --write"
+    ],
+    "public/locales/**/*.json": [
+      "prettier --write",
+      "node scripts/i18n-check.js"
     ]
   },
   "dependencies": {
