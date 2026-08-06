@@ -1,0 +1,300 @@
+{
+  "site_name": "BetterManila",
+  "site_description": "Portal ti komunidad para iti Siudad ti Maynila",
+  "common": {
+    "home": "Umuna a panid",
+    "services": "Dagiti Serbisio",
+    "government": "Gobierno",
+    "search": "Biruken",
+    "searchLabel": "Agbirok iti BetterManila",
+    "searchPlaceholder": "Padasem: ospital, permiso ti negosyo, amilyar",
+    "eyebrowIndependent": "Independiente. Open source. Inaramid dagiti boluntario.",
+    "officialSiteDomain": "manila.gov.ph",
+    "breadcrumbLabel": "Breadcrumb"
+  },
+  "quickLinks": {
+    "hotlines": {
+      "label": "Dagiti emergency hotline",
+      "note": "Dagiti numero para iti uram, layus, rescue ken pulis"
+    },
+    "hospitals": {
+      "label": "Dagiti ospital ti siudad",
+      "note": "Adda maysa iti tunggal distrito, ken ania ti libre"
+    },
+    "permits": {
+      "label": "Permiso ti negosyo",
+      "note": "Ag-apply, ag-renew ken agbayad iti lokal a buis"
+    },
+    "suspensions": {
+      "label": "Awan ti klase",
+      "note": "Sadino ti pakaipakaammuan dagiti abiso"
+    },
+    "garbage": {
+      "label": "Panagala iti basura",
+      "note": "Dagiti iskedyul ken request ti pickup"
+    },
+    "mayor": {
+      "label": "Ti Mayor yo",
+      "note": "Siasino ti mangidadaulo iti siudad, ken kasano a makontak"
+    }
+  },
+  "hero": {
+    "title": "Biruken ti kasapulam iti <city>Siudad ti Maynila</city>",
+    "subtitle": "Ti BetterManila ket libre a giya kadagiti serbisio, opisina, badyet ken ordinansa ti siudad, sinukisok ken sinurat dagiti boluntario nga agnanaed ditoy.",
+    "searchButton": "Biruken",
+    "disclaimer": "Saan a daytoy ti opisial a website ti siudad. Para iti opisial a transaksion, bisitaem ti <link>manila.gov.ph</link>.",
+    "startHere": "Rugian ditoy",
+    "facts": {
+      "barangays": "barangay",
+      "districts": "distrito",
+      "legislativeDistricts": "lehislatibo a distrito"
+    },
+    "hospitalNote": "Adda ospital ti siudad iti tunggal lehislatibo a distrito"
+  },
+  "services": {
+    "title": "Dagiti Serbisio ken Impormasion",
+    "description": "Nalawag a panangilawlawag kadagiti serbisio ti siudad: ania ti maalam, ania ti itugotmo, sadino ti papanam, ken mano ti bayadna.",
+    "catalogue": {
+      "eyebrow": "Dagiti serbisio ti siudad",
+      "title": "Dagiti serbisio ti siudad, tunggal addang",
+      "lead": "Ania ti itedto ti Siudad ti Maynila, siasino ti kualipikado, ania ti itugotmo, ken sadino ti papanam. Sukisoken dagiti boluntario ti tunggal giya ken idiligda daytoy iti opisial a taudan.",
+      "meta_one": "{{count}} a giya iti {{categories}} a kategoria ita, ken adda pay masursurat.",
+      "meta_other": "{{count}} a giya iti {{categories}} a kategoria ita, ken adda pay masursurat.",
+      "guideCount_one": "{{count}} a giya",
+      "guideCount_other": "{{count}} a giya",
+      "crossLinkTitle": "Ti mismo a City Hall ti birbirukem?",
+      "crossLinkNote": "Dagiti opisina, emergency hotline, abiso ken rekord ti transparency."
+    },
+    "category": {
+      "notFoundTitle": "Saan a nasarakan ti kategoria",
+      "notFoundBody": "Awan ti kategoria a birbirukem.",
+      "notFoundCta": "Kitaen amin a kategoria ti serbisio",
+      "inThisCategory": "Iti uneg daytoy a kategoria",
+      "loading": "Maikarkarga dagiti giya...",
+      "emptyBody": "Awan pay ti naisurat a giya para iti daytoy a kategoria. Inaramid dagiti boluntario daytoy a site, ken malukatan dagiti seksion no malpas ti panagsukisok.",
+      "emptyCta": "Kitaen dagiti kategoria a nakasagana",
+      "singleCta": "Basaen ti giya",
+      "singleNote": "Adda iti maysa a panid ti amin iti daytoy a kategoria.",
+      "railHeading": "Amin a kategoria ti serbisio",
+      "crossLink": "Seksion ti gobierno ti siudad",
+      "crossLinkNote": "Dagiti opisina, hotline, abiso ken rekord ti siudad."
+    }
+  },
+  "governmentActivity": {
+    "title": "Gobierno ti Siudad",
+    "description": "Dagiti opisina a mangimaton iti Maynila, dagiti dokumento nga iruarda, ken dagiti abiso a rumbeng a bantayan."
+  },
+  "government": {
+    "directory": {
+      "eyebrow": "Gobierno ti siudad",
+      "title": "Dagiti tao, opisina ken rekord iti likudan ti siudad",
+      "lead": "Siasino ti mangimaton iti Siudad ti Maynila, dagiti hotline a sumungbat no adda mapasamak a dakes, ken dagiti dokumento a masapul nga iruar ti tunggal siudad.",
+      "meta_one": "{{count}} a panid iti {{sections}} a seksion ita, ken adda pay mainayon.",
+      "meta_other": "{{count}} a panid iti {{sections}} a seksion ita, ken adda pay mainayon.",
+      "pageCount_one": "{{count}} a panid",
+      "pageCount_other": "{{count}} a panid",
+      "crossLinkTitle": "Serbisio ti birbirukem?",
+      "crossLinkNote": "Tunggal addang a giya kadagiti klinika, permiso, eskuela ken panagala iti basura."
+    },
+    "section": {
+      "notFoundTitle": "Saan a nasarakan ti seksion",
+      "notFoundBody": "Awan ti seksion a birbirukem.",
+      "notFoundCta": "Kitaen ti seksion ti gobierno",
+      "inThisSection": "Iti uneg daytoy a seksion",
+      "loading": "Maikarkarga dagiti panid...",
+      "emptyBody": "Awan pay ti naiwaragawag iti daytoy a seksion. Inaramid dagiti boluntario daytoy a site, ken malukatan dagiti seksion no malpas ti panagsukisok.",
+      "emptyCta": "Kitaen dagiti seksion a nakasagana",
+      "singleCta": "Luktan ti panid",
+      "singleNote": "Adda iti maysa a panid ti amin iti daytoy a seksion.",
+      "railHeading": "Amin a seksion ti gobierno",
+      "crossLink": "Dagiti giya ti serbisio ti siudad",
+      "crossLinkNote": "Tunggal addang a tulong kadagiti permiso, klinika ken programa ti siudad."
+    }
+  },
+  "document": {
+    "loading": "Maikarkarga ti dokumento",
+    "notFoundTitle": "Saan a Nasarakan ti Dokumento",
+    "noneSpecified": "Awan ti naipili a dokumento",
+    "loadFailed": "Saan a na-load ti dokumento",
+    "staleSession": "Saan a na-load daytoy a panid. Kaaduanna, kayatna a sawen ket na-update ti site bayat a nakalukat daytoy a tab. Pangngaasi i-refresh ti panid; no saan latta nga umanay, padasem ti search box."
+  },
+  "holidays": {
+    "title": "Dagiti umad-adani a piesta opisial",
+    "lead": "Dagiti regular a holiday ken espesial nga aldaw a naideklara para iti {{year}}. Kaaduanna a nakarikep dagiti opisina ti siudad kadagitoy nga aldaw, isu a planuem ti aniaman a transaksion iti aglawlaw dagitoy.",
+    "today": "Ita",
+    "tomorrow": "Inton bigat",
+    "inDays": "Iti uneg ti {{count}} nga aldaw",
+    "regular": "Regular a holiday",
+    "special": "Espesial nga aldaw nga awan ti trabaho",
+    "working": "Espesial nga aldaw nga adda trabaho, nakalukat dagiti opisina",
+    "source": "Taudan: {{source}}. Mabalin a mangnayon, mangyalis wenno mangkansela iti petsa dagiti sumaruno a proklamasion.",
+    "readProclamation": "Basaen ti proklamasion"
+  },
+  "liveStrip": {
+    "manilaTime": "Oras iti Maynila",
+    "temperature": "agdama a temperatura iti Maynila",
+    "rateCaveat": "Indicative market rate, saan a ti reference rate ti Bangko Sentral",
+    "rateCaveatSr": "(indicative market rate, saan a ti reference rate ti Bangko Sentral)"
+  },
+  "searchPage": {
+    "eyebrow": "Biruken",
+    "title": "Agbirok iti intero a site",
+    "lead": "Tunggal panid ti serbisio, opisina ken dokumento ti transparency iti BetterManila, iti maysa a kahon.",
+    "placeholder": "Padasem: ospital, permiso ti negosyo, basura",
+    "clear": "Punasen ti biniruk",
+    "hint": "Pinduten ti <kbd>/</kbd> tapno lumagto ditoy, arrow keys tapno aggaraw kadagiti resulta, Enter tapno luktan.",
+    "resultCount_one": "<count>{{count}}</count> a resulta para iti <query>{{query}}</query>",
+    "resultCount_other": "<count>{{count}}</count> a resulta para iti <query>{{query}}</query>",
+    "announce_one": "1 a resulta para iti {{query}}",
+    "announce_other": "{{count}} a resulta para iti {{query}}",
+    "filterLabel": "Sagaten dagiti resulta segun iti seksion",
+    "filterAll": "Amin",
+    "sectionListing": "Listaan ti seksion",
+    "tooShort": "Ituloy ti panag-type. Mangrugi ti panagbirok iti dua a letra.",
+    "noResults": "Awan ti resulta para iti <query>{{query}}</query>",
+    "didYouMean": "Ti kayatmo kadi a sawen ket <suggestion>{{suggestion}}</suggestion>?",
+    "tipShort": "Padasem ti maysa wenno dua a sao imbes nga intero a sentensia.",
+    "tipTask": "Birukem ti aramiden, saan a ti opisina. Padasem ti <term>permiso ti negosyo</term> imbes a nagan ti departamento.",
+    "tipTaskTerm": "permiso ti negosyo",
+    "tipFilipino": "Agserbi met dagiti sao a Filipino.",
+    "tipIncomplete": "Saan pay nga amin ket naisurat. Inaramid dagiti boluntario daytoy a portal ken agtultuloy pay ti panangnayon kadagiti panid.",
+    "commonSearches": "Kadawyan a birbiruken",
+    "commonTerms": [
+      "ospital",
+      "iskedyul ti basura",
+      "permiso ti negosyo",
+      "iskolarship",
+      "suspensyon ti klase",
+      "badyet ti siudad"
+    ],
+    "browseServices": "Kitaen dagiti serbisio",
+    "browseGovernment": "Kitaen ti gobierno"
+  },
+  "about": {
+    "title": "Maipapan iti BetterManila",
+    "lead": "Libre a giya kadagiti serbisio, opisina, badyet ken ordinansa ti Siudad ti Maynila, naisurat iti nalawag a pagsasao dagiti boluntario nga agnanaed ditoy.",
+    "intro": "Kaaduanna kadagiti masapul nga ammo ti maysa a residente ket publiko metten. Naiwaras laeng daytoy kadagiti nagduduma a portal, nailemmeng kadagiti PDF, ken naisurat para kadagiti auditor imbes a para iti tao nga agpilpila. Urnongen daytoy a site dagita a material iti maysa a lugar, idiligna daytoy iti opisina a nangiruar, ken isuratna manen tapno mabasa iti telepono iti sumagmamano a minuto.",
+    "disclaimer": {
+      "title": "Saan a daytoy ti opisial a website ti siudad",
+      "body": "Ti BetterManila ket independiente a proyekto. Saan a nainaig, saan a naendorso, ken saan a patpatarayen ti Gobierno ti Siudad ti Maynila. Awan ti naiwaragawag ditoy nga opisial nga abiso, ken awan ti transaksion iti daytoy a site a transaksion ti gobierno.",
+      "official": "Para iti opisial a transaksion, pakaammo ken online a serbisio, mapan iti <link>manila.gov.ph</link>. No agduma ti kunaen dayta a site ken daytoy, dayta a site ti husto."
+    },
+    "sources": {
+      "title": "Sadino ti naggapuan ti impormasion",
+      "lead": "Amin nga adda iti daytoy a site ket naggapu kadagiti opisial a publikasion ti gobierno ti Filipinas. Tunggal panid ket adda taudanna ken petsa no kaano naala, tapno masukisokmo a mismo ti orihinal ken maukommo no kasano kabaro. No publiko ken natalged ti dokumento, direkta a nailink daytoy iti panid.",
+      "manila": "Ti opisial a website ti siudad. Dagiti opisina, tanggapan, pakaammo ken online a serbisio.",
+      "dilg": "Dagiti badyet, financial statement ken procurement disclosure a masapul nga iruar ti tunggal LGU.",
+      "coa": "Tinawen nga audit report no kasano a ginastos ti siudad ti kuarta ti publiko.",
+      "blgf": "Datos iti lokal a sapul ken fiscal performance dagiti siudad ken munisipalidad.",
+      "philgeps": "Dagiti publiko a bid notice ken contract award manipud iti sistema ti procurement ti gobierno."
+    },
+    "corrections": {
+      "title": "Adda nakitam a biddut? Ibagam kadakami",
+      "body": "Iwarwaragawag daytoy a site dagiti kinapudno maipapan iti pudno a gobierno ti siudad, isu a saan a bassit a banag ti biddut a numero ti hotline, daan a bayad, wenno opisina a nagakar. Ti panagipadamag iti daytoy ti kapatgan a maaramidam ditoy, ken saan a masapul nga ammom ti agkode.",
+      "how": "Aglukat iti issue iti GitHub. Ibagam no ania a panid ti biddut ken ania ti husto nga impormasion. No adda opisial a taudam, i-link daytoy. No awan, ipadamagmo latta ket birukendanto.",
+      "report": "Ipadamag ti biddut iti GitHub",
+      "browse": "Kitaen ti repository"
+    },
+    "help": {
+      "title": "Kasano ti makatulong",
+      "lead": "Open source ti BetterManila ken inaramid dagiti boluntario. Ti site, agraman ti tunggal sao ti linaonna, ket adda iti maysa a publiko a repository iti sirok ti handle a <link>grgdlm/bettermanila</link>, isu a siasinoman ket mabalin nga agbasa, agdamag wenno agnayon.",
+      "writeTitle": "Agsurat ken agpasingked",
+      "writeBody": "Mangnayon iti panid nga awan pay, wenno sukimatem ti addan maibusor iti opisial a taudanna ken dakamatem daytoy. Ti linaon ket adda kas plain markdown iti isu met laeng a repository ti code.",
+      "translateTitle": "Agipatarus",
+      "translateBody": "Ingles ken Filipino ti iruar ti site ita. Ti Bisaya, Bikol, Ilocano ken dadduma pay a pagsasao iti switcher ket nakalista kas agkasapulan iti agipatarus, ken agtalinaed a nakalista agingga nga awan ti mangisurat kadagitoy.",
+      "localTitle": "Mangiranud iti lokal a pannakaammo",
+      "localBody": "Ania a bintana ti pudno a nakalukat, ania a numero ti masungbatan, ania ti ibagada nga itugotmo. Awan ti dokumento a mangrekord iti dayta, ken kaaduanna dayta ti kapatgan a kasapulan ti residente."
+    },
+    "status": {
+      "title": "Sadino ti ayan ti site ita",
+      "body": "Nasapa pay daytoy a site, ken ibagana a mismo dayta kadagiti panid. No adda kinapudno a saan a mapasingkedan maibusor iti opisial a taudan, ti panid ket adda makita a palagipna nga agkiddaw iti tulong tapno makompleto ti seksion imbes a punnuen ti abut iti natalged a panagpammatmat.",
+      "why": "Nainggagara dayta. Naan-anay a natalged ti abut a makitam ngem ti numero a kasla opisial ngem biddut. Maikkat dagita a palagip bayat a masukisok dagiti taudan, ken tunggal maysa ket nakalukat nga awis iti siasinoman nga ammona ti sungbat.",
+      "browse": "Adda kadi biruruken a naipangpangruna? <services>Kitaen dagiti serbisio</services>, <government>ti gobierno ti siudad</government>, wenno <search>agbirok iti site</search>."
+    }
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Saanmi a nasarakan dayta a panid",
+    "lead": "Mabalin nga adda biddut iti pannakaisurat ti address, wenno nagakar ti panid manipud idi naisurat ti link. Awan ti biddut iti bangirmo.",
+    "youAsked": "Ti biniruk mo ket",
+    "searchButton": "Biruken",
+    "mostLookedUp": "Kadawyan a birbiruken",
+    "startFromTop": "Wenno rugian iti ngato",
+    "allServicesLabel": "Amin a serbisio",
+    "allServicesNote": "Tunggal giya, naigrupo segun iti masapul nga aramidem",
+    "governmentLabel": "Gobierno ti siudad",
+    "governmentNote": "Dagiti opisina, tanggapan, badyet ken ordinansa",
+    "brokenLink": "Adda kadi link iti daytoy a site a nangiyeg kenka ditoy? Biddutmi dayta, ken kayatmi nga tarimaanen. <report>Ipadamag ti nadadael a link iti GitHub</report>, wenno agbasa pay <about>maipapan iti daytoy a site</about>."
+  },
+  "footer": {
+    "landmark": "Footer ti site",
+    "navLabel": "Dagiti link iti footer",
+    "tagline": "Independiente. Inaramid dagiti boluntario.",
+    "disclaimer": "Ti BetterManila ket independiente a giya a sinurat dagiti boluntario nga agnanaed iti Maynila. Saan a daytoy ti opisial a website ti Siudad ti Maynila, ken saan nga agsasao para iti City Hall.",
+    "officialSite": "Opisial a website ti siudad: manila.gov.ph",
+    "newTab": "aglukat iti baro a tab",
+    "sections": {
+      "services": "Dagiti Serbisio",
+      "government": "Gobierno",
+      "site": "Daytoy a site",
+      "national": "Dagiti national a website"
+    },
+    "links": {
+      "allServices": "Amin a serbisio",
+      "allGovernment": "Amin a panid ti gobierno",
+      "home": "Umuna a panid",
+      "about": "Maipapan iti BetterManila",
+      "search": "Agbirok iti site"
+    },
+    "contribute": {
+      "title": "Adda nakitam a biddut?",
+      "body": "Dagiti boluntario ti agsursurat ken agche-check iti tunggal panid ditoy, isu nga adda makalusot a biddut. Open source ti intero a site, ken siasinoman ket mabalin nga agipatulod iti korreksion.",
+      "cta": "Agkontribusion iti GitHub"
+    },
+    "copyright": "© {{year}} BetterManila. Ti teksto ken code ket adda iti sirok ti CC0, siwayawaya a kopiaen ti siasinoman.",
+    "builtBy": "Inaramid dagiti boluntario iti Maynila."
+  },
+  "navbar": {
+    "government": "Gobierno",
+    "services": "Dagiti Serbisio",
+    "hotlines": "Dagiti Hotline",
+    "holidays": "Dagiti Piesta Opisial",
+    "transparency": "Transparency",
+    "news": "Damag"
+  },
+  "seo": {
+    "home": {
+      "title": "Umuna a panid",
+      "description": "Independiente a giya, inaramid dagiti boluntario, kadagiti serbisio, opisina, badyet ken ordinansa ti Siudad ti Maynila, iti nalawag a pagsasao.",
+      "keywords": "Maynila, Siudad ti Maynila, serbisio ti siudad, barangay, hotline, permiso ti negosyo, transparency"
+    },
+    "services": {
+      "title": "Dagiti Serbisio",
+      "description": "Tunggal addang a giya kadagiti serbisio ti {{name}}: salun-at, edukasion, permiso ti negosyo, panagala iti basura ken dadduma pay.",
+      "keywords": "serbisio ti gobierno, publiko a serbisio, lokal a gobierno, serbisio sibiko",
+      "categoryKeywords": "{{category}}, serbisio ti gobierno, publiko a serbisio, lokal a gobierno"
+    },
+    "government": {
+      "title": "Gobierno",
+      "description": "Kasano a naurnos ti gobierno ti {{name}}: dagiti opisina, emergency hotline, damag ken dokumento ti transparency.",
+      "keywords": "lokal a gobierno, opisina ti siudad, emergency hotline, transparency, tanggapan ti gobierno",
+      "categoryKeywords": "{{category}}, lokal a gobierno, gobierno ti siudad, tanggapan ti gobierno"
+    },
+    "search": {
+      "title": "Biruken",
+      "description": "Birukem ti tunggal serbisio, opisina ken dokumento iti BetterManila.",
+      "keywords": "agbirok, serbisio ti Maynila, city hall, agbirok iti serbisio"
+    },
+    "about": {
+      "title": "Maipapan",
+      "description": "Ti BetterManila ket libre ken independiente a giya, inaramid dagiti boluntario, kadagiti serbisio, opisina, badyet ken ordinansa ti Siudad ti Maynila. Saan a daytoy ti opisial a website ti siudad.",
+      "keywords": "maipapan iti bettermanila, independiente, boluntario, open source, siudad ti maynila, taudan, korreksion"
+    },
+    "notFound": {
+      "title": "Saan a nasarakan ti panid",
+      "description": "Awan dayta a panid iti BetterManila. Agbirok iti site, wenno mapan kadagiti hotline, ospital, permiso ken opisina ti siudad."
+    },
+    "governmentFallback": "lokal",
+    "servicesFallback": "lokal a gobierno"
+  }
+}

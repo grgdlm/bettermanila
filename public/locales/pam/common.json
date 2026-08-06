@@ -1,0 +1,300 @@
+{
+  "site_name": "BetterManila",
+  "site_description": "Portal ning komunidad para king Lakanbalen ning Maynila",
+  "common": {
+    "home": "Mumunang bulung",
+    "services": "Deng Serbisyu",
+    "government": "Gubyernu",
+    "search": "Manintun",
+    "searchLabel": "Manintun king BetterManila",
+    "searchPlaceholder": "Subukan: ospital, permisu ning negosyu, amilyar",
+    "eyebrowIndependent": "Independent. Open source. Gewa da reng boluntaryu.",
+    "officialSiteDomain": "manila.gov.ph",
+    "breadcrumbLabel": "Breadcrumb"
+  },
+  "quickLinks": {
+    "hotlines": {
+      "label": "Deng emergency hotline",
+      "note": "Deng numeru para king api, albug, rescue ampong pulis"
+    },
+    "hospitals": {
+      "label": "Deng ospital ning lakanbalen",
+      "note": "Atin metung king balang distritu, ampo nung nanu ing libre"
+    },
+    "permits": {
+      "label": "Permisu ning negosyu",
+      "note": "Mag-apply, mag-renew ampong magbayad king lokal a buis"
+    },
+    "suspensions": {
+      "label": "Alang klase",
+      "note": "Nokarin la pepabalu reng abisu"
+    },
+    "garbage": {
+      "label": "Pamanakit basura",
+      "note": "Deng iskedyul ampong request ning pickup"
+    },
+    "mayor": {
+      "label": "Ing kekayung Mayor",
+      "note": "Ninu ing mamuntuk king lakanbalen, ampo nung makananu ya akontak"
+    }
+  },
+  "hero": {
+    "title": "Intun me ing kailangan mu king <city>Lakanbalen ning Maynila</city>",
+    "subtitle": "Ing BetterManila metung yang libreng giya karing serbisyu, opisina, badyet ampong ordinansa ning lakanbalen, sinaliksik at sinulat da reng boluntaryu a manuknangan keni.",
+    "searchButton": "Manintun",
+    "disclaimer": "Ali ya ini ing opisyal a website ning lakanbalen. Para king opisyal a transaksyon, pasyalan me ing <link>manila.gov.ph</link>.",
+    "startHere": "Magumpisa keni",
+    "facts": {
+      "barangays": "barangay",
+      "districts": "distritu",
+      "legislativeDistricts": "lehislatibung distritu"
+    },
+    "hospitalNote": "Atin ospital ning lakanbalen king balang lehislatibung distritu"
+  },
+  "services": {
+    "title": "Deng Serbisyu ampong Impormasyun",
+    "description": "Malinong pamaglarawan karing serbisyu ning lakanbalen: nanu ing akua mu, nanu ing daralan mu, nokarin ka munta, ampo nung magkanu.",
+    "catalogue": {
+      "eyebrow": "Deng serbisyu ning lakanbalen",
+      "title": "Deng serbisyu ning lakanbalen, balang dane",
+      "lead": "Nanu ing aalok ning Lakanbalen ning Maynila, ninu ing kwalipikadu, nanu ing daralan mu, ampo nokarin ka munta. Saliksikan da reng boluntaryu ing balang giya at itiktik de ini king opisyal a pikuanan.",
+      "meta_one": "{{count}} a giya king {{categories}} a kategorya ngeni, ampo atin pang sinusulat.",
+      "meta_other": "{{count}} a giya king {{categories}} a kategorya ngeni, ampo atin pang sinusulat.",
+      "guideCount_one": "{{count}} a giya",
+      "guideCount_other": "{{count}} a giya",
+      "crossLinkTitle": "Ing mismung City Hall ya ing pintunan mu?",
+      "crossLinkNote": "Deng opisina, emergency hotline, abisu ampong rekord ning transparency."
+    },
+    "category": {
+      "notFoundTitle": "Ali ya ayakit ing kategorya",
+      "notFoundBody": "Ala ing kategorya a pintunan mu.",
+      "notFoundCta": "Lawan la ngan deng kategorya ning serbisyu",
+      "inThisCategory": "King lalam ning kategoryang ini",
+      "loading": "Kakarga la reng giya...",
+      "emptyBody": "Ala pang giya a mesulat para king kategoryang ini. Gewa da reng boluntaryu ing site a ini, at mibubuklat la reng seksyun nung mepaupaya na ing pamanaliksik.",
+      "emptyCta": "Lawan la reng kategoryang handa na",
+      "singleCta": "Basan me ing giya",
+      "singleNote": "Atiu king metung a bulung ing eganagana king kategoryang ini.",
+      "railHeading": "Ngan a kategorya ning serbisyu",
+      "crossLink": "Seksyun ning gubyernu ning lakanbalen",
+      "crossLinkNote": "Deng opisina, hotline, abisu ampong rekord ning lakanbalen."
+    }
+  },
+  "governmentActivity": {
+    "title": "Gubyernu ning Lakanbalen",
+    "description": "Deng opisina a mamuntuk king Maynila, deng dokumentu a pepalual da, ampo reng abisu a dapat bantayan."
+  },
+  "government": {
+    "directory": {
+      "eyebrow": "Gubyernu ning lakanbalen",
+      "title": "Deng tau, opisina ampong rekord king gulut ning lakanbalen",
+      "lead": "Ninu ing mamuntuk king Lakanbalen ning Maynila, deng hotline a maniyagut nung atin marok a milyari, ampo reng dokumentu a dapat palual ning balang lakanbalen.",
+      "meta_one": "{{count}} a bulung king {{sections}} a seksyun ngeni, ampo atin pang midaragdag.",
+      "meta_other": "{{count}} a bulung king {{sections}} a seksyun ngeni, ampo atin pang midaragdag.",
+      "pageCount_one": "{{count}} a bulung",
+      "pageCount_other": "{{count}} a bulung",
+      "crossLinkTitle": "Serbisyu ya ing pintunan mu?",
+      "crossLinkNote": "Balang dane a giya karing klinika, permisu, eskwela ampong pamanakit basura."
+    },
+    "section": {
+      "notFoundTitle": "Ali ya ayakit ing seksyun",
+      "notFoundBody": "Ala ing seksyun a pintunan mu.",
+      "notFoundCta": "Lawan me ing seksyun ning gubyernu",
+      "inThisSection": "King lalam ning seksyung ini",
+      "loading": "Kakarga la reng bulung...",
+      "emptyBody": "Ala pang mepalual king seksyung ini. Gewa da reng boluntaryu ing site a ini, at mibubuklat la reng seksyun nung mepaupaya na ing pamanaliksik.",
+      "emptyCta": "Lawan la reng seksyung handa na",
+      "singleCta": "Buklatan me ing bulung",
+      "singleNote": "Atiu king metung a bulung ing eganagana king seksyung ini.",
+      "railHeading": "Ngan a seksyun ning gubyernu",
+      "crossLink": "Deng giya king serbisyu ning lakanbalen",
+      "crossLinkNote": "Balang dane a saup karing permisu, klinika ampong programa ning lakanbalen."
+    }
+  },
+  "document": {
+    "loading": "Kakarga ya ing dokumentu",
+    "notFoundTitle": "Ali ya Ayakit ing Dokumentu",
+    "noneSpecified": "Alang mepiling dokumentu",
+    "loadFailed": "Ali ya me-load ing dokumentu",
+    "staleSession": "Ali ya me-load ing bulung a ini. Karaniwan, ing buri nang sabian meupdate ya ing site kabang mabuklat ya ing tab a ini. Pakisuyu i-refresh me ing bulung; nung ali ya pa mu rin gagana, subukan me ing search box."
+  },
+  "holidays": {
+    "title": "Deng daratang a piyestang opisyal",
+    "lead": "Deng regular a holiday ampong espesyal a aldo a medeklara para king {{year}}. Karaniwan sarad la reng opisina ning lakanbalen karing aldong deni, kanita planuan me ing nanu mang transaksyon king kilub da.",
+    "today": "Ngeni",
+    "tomorrow": "Bukas",
+    "inDays": "King kilub ning {{count}} a aldo",
+    "regular": "Regular a holiday",
+    "special": "Espesyal a aldo alang obra",
+    "working": "Espesyal a aldo atin obra, mabuklat la reng opisina",
+    "source": "Pikuanan: {{source}}. Malyari lang magdagdag, maglipat o magkansela petsa deng tutuking proklamasyun.",
+    "readProclamation": "Basan me ing proklamasyun"
+  },
+  "liveStrip": {
+    "manilaTime": "Oras king Maynila",
+    "temperature": "kasalukuyang temperatura king Maynila",
+    "rateCaveat": "Indicative market rate, ali ya ing reference rate ning Bangko Sentral",
+    "rateCaveatSr": "(indicative market rate, ali ya ing reference rate ning Bangko Sentral)"
+  },
+  "searchPage": {
+    "eyebrow": "Manintun",
+    "title": "Manintun king mabilug a site",
+    "lead": "Balang bulung ning serbisyu, opisina ampong dokumentu ning transparency king BetterManila, king metung a kahun.",
+    "placeholder": "Subukan: ospital, permisu ning negosyu, basura",
+    "clear": "Punasan me ing pintunan",
+    "hint": "Pindutan me ing <kbd>/</kbd> bang lumundag keni, arrow keys bang gumalo karing resulta, Enter bang buklatan.",
+    "resultCount_one": "<count>{{count}}</count> a resulta para king <query>{{query}}</query>",
+    "resultCount_other": "<count>{{count}}</count> a resulta para king <query>{{query}}</query>",
+    "announce_one": "1 a resulta para king {{query}}",
+    "announce_other": "{{count}} a resulta para king {{query}}",
+    "filterLabel": "Salaan la reng resulta agpang king seksyun",
+    "filterAll": "Ngan",
+    "sectionListing": "Listahan ning seksyun",
+    "tooShort": "Tuluy-tuluy ka mag-type. Magumpisa ya ing pamanintun king aduang letra.",
+    "noResults": "Alang resulta para king <query>{{query}}</query>",
+    "didYouMean": "Ing buri mu wari sabian ya ing <suggestion>{{suggestion}}</suggestion>?",
+    "tipShort": "Subukan me ing metung o aduang amanu imbes na mabilug a pangungusap.",
+    "tipTask": "Intun me ing dapat, ali ing opisina. Subukan me ing <term>permisu ning negosyu</term> imbes na lagyu ning departamentu.",
+    "tipTaskTerm": "permisu ning negosyu",
+    "tipFilipino": "Gagana la mu naman deng amanung Filipino.",
+    "tipIncomplete": "Ali pa ngan mesulat. Gewa da reng boluntaryu ing portal a ini at tuluy-tuluy pa ing pamandagdag karing bulung.",
+    "commonSearches": "Karaniwang pintunan",
+    "commonTerms": [
+      "ospital",
+      "iskedyul ning basura",
+      "permisu ning negosyu",
+      "iskolarship",
+      "suspensyon ning klase",
+      "badyet ning lakanbalen"
+    ],
+    "browseServices": "Lawan la reng serbisyu",
+    "browseGovernment": "Lawan me ing gubyernu"
+  },
+  "about": {
+    "title": "Tungkul king BetterManila",
+    "lead": "Libreng giya karing serbisyu, opisina, badyet ampong ordinansa ning Lakanbalen ning Maynila, mesulat king malinong amanu da reng boluntaryu a manuknangan keni.",
+    "intro": "Karakalan king kailangan abalu ning metung a residente publiku ne. Mekalat ya mu ini karing miyayaliwang portal, mekalbung karing PDF, at mesulat para karing auditor imbes na para king taung mipila. Titipunan ning site a ini deng materyal a ita king metung a lugal, itiktik ne ini king opisina a pepalual, at sulatan yang pasibayu bang mabasa king telepono king kilub ning pilang minutu.",
+    "disclaimer": {
+      "title": "Ali ya ini ing opisyal a website ning lakanbalen",
+      "body": "Ing BetterManila metung yang independent a proyektu. Ali ya makakonekta, ali ya me-endorso, at ali ya papatakbuan ning Gubyernu ning Lakanbalen ning Maynila. Alang mepalual keni a opisyal a abisu, at alang transaksyon king site a ini a transaksyon ning gubyernu.",
+      "official": "Para king opisyal a transaksyon, pamipabalu ampong online a serbisyu, munta ka king <link>manila.gov.ph</link>. Nung miyaliwa ing sasabian ning site a ita ampo ning ini, ing site a ita ing tama."
+    },
+    "sources": {
+      "title": "Nokarin ya menibat ing impormasyun",
+      "lead": "Ing eganagana king site a ini menibat ya karing opisyal a publikasyun ning gubyernu ning Filipinas. Ing balang bulung atin yang pikuanan ampong petsa nung kapilan ya mekua, bang asaliksik mu mismu ing orihinal at ahusgan mu nung makananu ya kabayu. Nung publiku at matatag ing dokumentu, direktang me-link ya ini ning bulung.",
+      "manila": "Ing opisyal a website ning lakanbalen. Deng opisina, tanggapan, pamipabalu ampong online a serbisyu.",
+      "dilg": "Deng badyet, financial statement ampong procurement disclosure a dapat palual ning balang LGU.",
+      "coa": "Banwang audit report nung makananu ne talaga ginastus ning lakanbalen ing salapi ning publiku.",
+      "blgf": "Datos king lokal a kita ampong fiscal performance da reng lakanbalen ampong munisipalidad.",
+      "philgeps": "Deng publikung bid notice ampong contract award ibat king sistema ning procurement ning gubyernu."
+    },
+    "corrections": {
+      "title": "Atin kang ikit a mali? Sabian mu kekami",
+      "body": "Papalual ning site a ini deng katutuan tungkul king metung a tune gubyernu ning lakanbalen, kanita ali ya malating bage ing maling numeru ning hotline, lumang bayad, o opisina a melipat na. Ing pamag-report kaniti ing pekamasanting a agawa mu keni, at ali mu kailangan a balu mung mag-code.",
+      "how": "Magbuklat kang issue king GitHub. Sabian mu nung nokarin a bulung ing mali ampo nung nanu ing tamang impormasyun. Nung atin kang opisyal a pikuanan, i-link me ini. Nung ala, i-report me pa mu rin at pintunan de ini.",
+      "report": "I-report me ing mali king GitHub",
+      "browse": "Lawan me ing repository"
+    },
+    "help": {
+      "title": "Makananu ing makasaup",
+      "lead": "Open source ing BetterManila at gewa da reng boluntaryu. Ing site, kayabe ing balang amanu ning laman na, atiu king metung a publikung repository king lalam ning handle a <link>grgdlm/bettermanila</link>, kanita ninu man malyaring mamasa, magkutang o magdagdag.",
+      "writeTitle": "Manulat at magpatune",
+      "writeBody": "Magdagdag kang bulung a ala pa, o saliksikan me ing atin na laban king opisyal a pikuanan na at banggitan me ini. Ing laman atiu bilang plain markdown king parehung repository ning code.",
+      "translateTitle": "Maglito",
+      "translateBody": "Ingles ampong Filipino ing papalual ning site ngeni. Ing Bisaya, Bikol, Ilocano ampo reng aliwang amanu king switcher makalista lang bilang kailangan dang taglito, at manatili lang makalista angga king alang manulat kareti.",
+      "localTitle": "Magbahagi lokal a kabaluan",
+      "localBody": "Nokarin a bintana ing tune mabuklat, nokarin a numeru ing sasagutan, nanu ing pepadala rang daralan. Alang dokumentu a magrekord kaniti, at karaniwan ita ing pekakailangan ning residente."
+    },
+    "status": {
+      "title": "Nokarin ya ing site ngeni",
+      "body": "Maranun ya pa ing site a ini, at sasabian ne mismu ita karing bulung. Nung atin katutuan a ali makumpirma laban king opisyal a pikuanan, ing bulung atin yang akakit a paalala a manyad saup bang makumpletu ing seksyun imbes na tapalan ing butas king makatiwalang hula.",
+      "why": "Sinadya ya ita. Mas ligtas ing butas a akakit mu kesa king numerung anti mong opisyal oneng mali. Mialis la reng paalalang ita kabang sasaliksikan la reng pikuanan, at ing balang metung metung yang mabuklat a imbitasyon king ninu mang balu ing pakibat.",
+      "browse": "Atin kang pintunan a espesipiku? <services>Lawan la reng serbisyu</services>, <government>ing gubyernu ning lakanbalen</government>, o <search>manintun king site</search>."
+    }
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Ali mi ayakit ing bulung a ita",
+    "lead": "Malyaring atin maling mesulat king address, o melipat ne ing bulung manibat nang mesulat ing link. Alang mali king pasibayu mu.",
+    "youAsked": "Ing pintunan mu ya ing",
+    "searchButton": "Manintun",
+    "mostLookedUp": "Karaniwang pintunan",
+    "startFromTop": "O magumpisa king babo",
+    "allServicesLabel": "Ngan a serbisyu",
+    "allServicesNote": "Balang giya, migrupu agpang king kailangan mung gawan",
+    "governmentLabel": "Gubyernu ning lakanbalen",
+    "governmentNote": "Deng opisina, tanggapan, badyet ampong ordinansa",
+    "brokenLink": "Atin wari link king site a ini a dinala keka keni? Kekami yang mali ita, at buri ming ayusan. <report>I-report me ing sirang link king GitHub</report>, o mamasa ka pa <about>tungkul king site a ini</about>."
+  },
+  "footer": {
+    "landmark": "Footer ning site",
+    "navLabel": "Deng link king footer",
+    "tagline": "Independent. Gewa da reng boluntaryu.",
+    "disclaimer": "Ing BetterManila metung yang independent a giya a sinulat da reng boluntaryu a manuknangan king Maynila. Ali ya ini ing opisyal a website ning Lakanbalen ning Maynila, at ali ya magsalita para king City Hall.",
+    "officialSite": "Opisyal a website ning lakanbalen: manila.gov.ph",
+    "newTab": "mibubuklat king bayung tab",
+    "sections": {
+      "services": "Deng Serbisyu",
+      "government": "Gubyernu",
+      "site": "Ing site a ini",
+      "national": "Deng national a website"
+    },
+    "links": {
+      "allServices": "Ngan a serbisyu",
+      "allGovernment": "Ngan a bulung ning gubyernu",
+      "home": "Mumunang bulung",
+      "about": "Tungkul king BetterManila",
+      "search": "Manintun king site"
+    },
+    "contribute": {
+      "title": "Atin kang ikit a mali?",
+      "body": "Deng boluntaryu ing manulat at maniyasat king balang bulung keni, kanita atin makalusut a mali. Open source ing mabilug a site, at ninu man malyaring magpadala korreksyon.",
+      "cta": "Mag-ambag king GitHub"
+    },
+    "copyright": "© {{year}} BetterManila. Ing teksto ampong code atiu king lalam ning CC0, malayang kopyan ning ninu man.",
+    "builtBy": "Gewa da reng boluntaryu king Maynila."
+  },
+  "navbar": {
+    "government": "Gubyernu",
+    "services": "Deng Serbisyu",
+    "hotlines": "Deng Hotline",
+    "holidays": "Deng Piyestang Opisyal",
+    "transparency": "Transparency",
+    "news": "Balita"
+  },
+  "seo": {
+    "home": {
+      "title": "Mumunang bulung",
+      "description": "Independent a giya, gewa da reng boluntaryu, karing serbisyu, opisina, badyet ampong ordinansa ning Lakanbalen ning Maynila, king malinong amanu.",
+      "keywords": "Maynila, Lakanbalen ning Maynila, serbisyu ning lakanbalen, barangay, hotline, permisu ning negosyu, transparency"
+    },
+    "services": {
+      "title": "Deng Serbisyu",
+      "description": "Balang dane a giya karing serbisyu ning {{name}}: kalusugan, edukasyon, permisu ning negosyu, pamanakit basura ampo reng aliwa pa.",
+      "keywords": "serbisyu ning gubyernu, publikung serbisyu, lokal a gubyernu, serbisyung sibiku",
+      "categoryKeywords": "{{category}}, serbisyu ning gubyernu, publikung serbisyu, lokal a gubyernu"
+    },
+    "government": {
+      "title": "Gubyernu",
+      "description": "Makananu yang mig-ayus ing gubyernu ning {{name}}: deng opisina, emergency hotline, balita ampong dokumentu ning transparency.",
+      "keywords": "lokal a gubyernu, opisina ning lakanbalen, emergency hotline, transparency, tanggapan ning gubyernu",
+      "categoryKeywords": "{{category}}, lokal a gubyernu, gubyernu ning lakanbalen, tanggapan ning gubyernu"
+    },
+    "search": {
+      "title": "Manintun",
+      "description": "Intun me ing balang serbisyu, opisina ampong dokumentu king BetterManila.",
+      "keywords": "pamanintun, serbisyu ning Maynila, city hall, manintun serbisyu"
+    },
+    "about": {
+      "title": "Tungkul",
+      "description": "Ing BetterManila metung yang libre at independent a giya, gewa da reng boluntaryu, karing serbisyu, opisina, badyet ampong ordinansa ning Lakanbalen ning Maynila. Ali ya ini ing opisyal a website ning lakanbalen.",
+      "keywords": "tungkul king bettermanila, independent, boluntaryu, open source, lakanbalen ning maynila, pikuanan, korreksyon"
+    },
+    "notFound": {
+      "title": "Ali ya ayakit ing bulung",
+      "description": "Ala ing bulung a ita king BetterManila. Manintun king site, o munta karing hotline, ospital, permisu ampong opisina ning lakanbalen."
+    },
+    "governmentFallback": "lokal",
+    "servicesFallback": "lokal a gubyernu"
+  }
+}

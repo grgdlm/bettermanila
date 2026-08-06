@@ -2,6 +2,7 @@ import { NuqsAdapter } from 'nuqs/adapters/react';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import DraftLanguageNotice from './components/layout/DraftLanguageNotice';
 import Home from './pages/Home';
 import ScrollToTop from './components/ui/ScrollToTop';
 import Services from './pages/Services';
@@ -29,6 +30,7 @@ function App() {
         <NuqsAdapter>
           <div className="min-h-screen flex flex-col">
             <Navbar />
+            <DraftLanguageNotice />
             <ScrollToTop />
             {/* The single main landmark; the navbar's skip link targets it,
                 and flex-grow keeps the footer at the bottom on short pages. */}

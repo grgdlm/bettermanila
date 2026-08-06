@@ -59,24 +59,31 @@ const setsEqual = (a, b) =>
   a.size === b.size && [...a].every(item => b.has(item));
 const show = set => (set.size ? [...set].sort().join(' ') : '(none)');
 
-/** `LANGUAGES` in src/i18n/languages.ts, as { code: available }. */
+/** `LANGUAGES` in src/i18n/languages.ts, as { code: { available, reviewed } }. */
 function readDeclaredLanguages() {
   const source = fs.readFileSync(LANGUAGES_TS, 'utf8');
   const declared = {};
-  const entry = /code:\s*'([a-z]+)'[\s\S]*?available:\s*(true|false)/g;
+  const entry =
+    /code:\s*'([a-z]+)'[\s\S]*?available:\s*(true|false),\s*reviewed:\s*(true|false)/g;
   let match;
   while ((match = entry.exec(source)) !== null) {
-    declared[match[1]] = match[2] === 'true';
+    declared[match[1]] = {
+      available: match[2] === 'true',
+      reviewed: match[3] === 'true',
+    };
   }
   return declared;
 }
 
-/** `supportedLngs` in src/i18n.ts. */
-function readSupportedLngs() {
+/**
+ * supportedLngs is derived from LANGUAGES now, so there is no second list to
+ * drift out of step. This only confirms the wiring is still derived: if
+ * someone replaces it with a literal array, the two can diverge again and the
+ * check should say so.
+ */
+function supportedLngsIsDerived() {
   const source = fs.readFileSync(I18N_TS, 'utf8');
-  const match = source.match(/supportedLngs:\s*\[([^\]]*)\]/);
-  if (!match) return null;
-  return match[1].split(',').map(part => part.trim().replace(/['"]/g, ''));
+  return /supportedLngs:\s*SUPPORTED_LANGUAGE_CODES/.test(source);
 }
 
 // ---------------------------------------------------------------------------
@@ -107,7 +114,6 @@ const localeDirs = fs
   .sort();
 
 const declared = readDeclaredLanguages();
-const supported = readSupportedLngs();
 
 console.log(
   `Reference: ${REFERENCE} (${referenceKeys.length} keys)\n` +
@@ -183,30 +189,40 @@ for (const locale of localeDirs) {
 
   const missingCount = missing.length;
   const status = missingCount === 0 ? '✅' : '❌';
+  const state = declared[locale]?.reviewed ? 'reviewed' : 'draft';
   console.log(
     `${status} ${locale}: ${referenceKeys.length - missingCount}/${referenceKeys.length} keys` +
-      (identical ? `, ${identical} same as ${REFERENCE}` : '')
+      (identical ? `, ${identical} same as ${REFERENCE}` : '') +
+      `  [${state}]`
   );
 }
 
 // --- the switcher must not offer a language the app cannot actually load ---
 
-for (const [code, isAvailable] of Object.entries(declared)) {
+if (!supportedLngsIsDerived()) {
+  errors.push(
+    'src/i18n.ts: supportedLngs is no longer derived from SUPPORTED_LANGUAGE_CODES. ' +
+      'A hand-written list can drift from languages.ts, which offers a reader a ' +
+      'language i18next then refuses to load.'
+  );
+}
+
+for (const [code, info] of Object.entries(declared)) {
   const hasFile = fs.existsSync(path.join(LOCALES_DIR, code, NAMESPACE));
 
-  if (isAvailable && !hasFile) {
+  if (info.available && !hasFile) {
     errors.push(
       `${code}: marked available in languages.ts but public/locales/${code}/${NAMESPACE} does not exist`
     );
   }
-  if (isAvailable && supported && !supported.includes(code)) {
+  if (info.reviewed && !info.available) {
     errors.push(
-      `${code}: marked available in languages.ts but missing from supportedLngs in src/i18n.ts`
+      `${code}: marked reviewed but not available — a language cannot be checked by a speaker and absent at the same time`
     );
   }
-  if (!isAvailable && hasFile) {
+  if (!info.available && hasFile) {
     notes.push(
-      `${code}: has a locale file but is still available: false — flip it in src/i18n/languages.ts once a speaker has reviewed it`
+      `${code}: has a locale file but available: false, so nobody can select it — set available: true to ship it as a draft`
     );
   }
 }
@@ -219,14 +235,13 @@ for (const locale of localeDirs) {
   }
 }
 
-if (supported) {
-  for (const code of supported) {
-    if (!fs.existsSync(path.join(LOCALES_DIR, code, NAMESPACE))) {
-      errors.push(
-        `${code}: listed in supportedLngs but has no public/locales/${code}/${NAMESPACE}`
-      );
-    }
-  }
+const drafts = Object.entries(declared)
+  .filter(([, info]) => info.available && !info.reviewed)
+  .map(([code]) => code);
+if (drafts.length) {
+  notes.push(
+    `shipping as drafts, pending a speaker's review: ${drafts.join(', ')}`
+  );
 }
 
 // ---------------------------------------------------------------------------

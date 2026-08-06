@@ -5,7 +5,11 @@ import type { LanguageType } from '../../types/index';
 import { Link } from 'react-router-dom';
 import LiveStrip from './LiveStrip';
 import { useTranslation } from 'react-i18next';
-import { AVAILABLE_LANGUAGES, WANTED_LANGUAGES } from '../../i18n/languages';
+import {
+  DRAFT_LANGUAGES,
+  REVIEWED_LANGUAGES,
+  WANTED_LANGUAGES,
+} from '../../i18n/languages';
 
 /**
  * Colour comes from the shared `primary` scale in `src/index.css`, which is
@@ -91,7 +95,7 @@ const Navbar: React.FC = () => {
                 onChange={e => changeLanguage(e.target.value as LanguageType)}
                 className="rounded border border-white/25 bg-transparent px-2 py-0.5 text-xs text-white transition-colors hover:border-white/60 focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:outline-none"
               >
-                {AVAILABLE_LANGUAGES.map(lang => (
+                {REVIEWED_LANGUAGES.map(lang => (
                   <option
                     key={lang.code}
                     value={lang.code}
@@ -100,6 +104,20 @@ const Navbar: React.FC = () => {
                     {lang.nativeName}
                   </option>
                 ))}
+                <optgroup
+                  label="Draft, not yet checked"
+                  className="text-gray-900"
+                >
+                  {DRAFT_LANGUAGES.map(lang => (
+                    <option
+                      key={lang.code}
+                      value={lang.code}
+                      className="text-gray-900"
+                    >
+                      {lang.nativeName}
+                    </option>
+                  ))}
+                </optgroup>
                 <optgroup label="Needs a translator" className="text-gray-900">
                   {WANTED_LANGUAGES.map(lang => (
                     <option key={lang.code} value={lang.code} disabled>
@@ -305,11 +323,18 @@ const Navbar: React.FC = () => {
                 onChange={e => changeLanguage(e.target.value as LanguageType)}
                 className="rounded-lg border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-700 transition-colors hover:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               >
-                {AVAILABLE_LANGUAGES.map(lang => (
+                {REVIEWED_LANGUAGES.map(lang => (
                   <option key={lang.code} value={lang.code}>
                     {lang.nativeName}
                   </option>
                 ))}
+                <optgroup label="Draft, not yet checked">
+                  {DRAFT_LANGUAGES.map(lang => (
+                    <option key={lang.code} value={lang.code}>
+                      {lang.nativeName}
+                    </option>
+                  ))}
+                </optgroup>
                 <optgroup label="Needs a translator">
                   {WANTED_LANGUAGES.map(lang => (
                     <option key={lang.code} value={lang.code} disabled>

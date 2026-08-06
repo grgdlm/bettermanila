@@ -1,0 +1,300 @@
+{
+  "site_name": "BetterManila",
+  "site_description": "Portal han komunidad para ha Syudad han Maynila",
+  "common": {
+    "home": "Syahan nga pahina",
+    "services": "Mga Serbisyo",
+    "government": "Gobyerno",
+    "search": "Biling",
+    "searchLabel": "Pamiling ha BetterManila",
+    "searchPlaceholder": "Sarihi: ospital, permiso han negosyo, amilyar",
+    "eyebrowIndependent": "Independent. Open source. Ginhimo han mga boluntaryo.",
+    "officialSiteDomain": "manila.gov.ph",
+    "breadcrumbLabel": "Breadcrumb"
+  },
+  "quickLinks": {
+    "hotlines": {
+      "label": "Mga emergency hotline",
+      "note": "Mga numero para ha sunog, baha, rescue ngan pulis"
+    },
+    "hospitals": {
+      "label": "Mga ospital han syudad",
+      "note": "May usa ha kada distrito, ngan kon ano an libre"
+    },
+    "permits": {
+      "label": "Permiso han negosyo",
+      "note": "Mag-apply, mag-renew ngan magbayad hin lokal nga buhis"
+    },
+    "suspensions": {
+      "label": "Waray klase",
+      "note": "Hain iginpapasabot an mga abiso"
+    },
+    "garbage": {
+      "label": "Pagkuha han basura",
+      "note": "Mga iskedyul ngan request han pickup"
+    },
+    "mayor": {
+      "label": "An iyo Mayor",
+      "note": "Hin-o an nangunguna ha syudad, ngan paonan-o hiya makontak"
+    }
+  },
+  "hero": {
+    "title": "Bilnga an imo kinahanglan ha <city>Syudad han Maynila</city>",
+    "subtitle": "An BetterManila usa nga libre nga giya ha mga serbisyo, opisina, badyet ngan ordinansa han syudad, gin-usisa ngan ginsurat han mga boluntaryo nga naukoy dinhi.",
+    "searchButton": "Biling",
+    "disclaimer": "Diri ini an opisyal nga website han syudad. Para ha opisyal nga transaksyon, bisitaha an <link>manila.gov.ph</link>.",
+    "startHere": "Tikangi dinhi",
+    "facts": {
+      "barangays": "barangay",
+      "districts": "distrito",
+      "legislativeDistricts": "lehislatibo nga distrito"
+    },
+    "hospitalNote": "May ospital han syudad ha kada lehislatibo nga distrito"
+  },
+  "services": {
+    "title": "Mga Serbisyo ngan Impormasyon",
+    "description": "Matin-aw nga pagsaysay ha mga serbisyo han syudad: ano an makukuha mo, ano an dad-on, hain kakadto, ngan tagpira.",
+    "catalogue": {
+      "eyebrow": "Mga serbisyo han syudad",
+      "title": "Mga serbisyo han syudad, kada tikang",
+      "lead": "Ano an igintatanyag han Syudad han Maynila, hin-o an kwalipikado, ano an dad-on, ngan hain kakadto. Gin-uusisa han mga boluntaryo an kada giya ngan iginpapariho ini ha opisyal nga tinikangan.",
+      "meta_one": "{{count}} nga giya ha {{categories}} nga kategorya yana, ngan may ginsusurat pa.",
+      "meta_other": "{{count}} nga giya ha {{categories}} nga kategorya yana, ngan may ginsusurat pa.",
+      "guideCount_one": "{{count}} nga giya",
+      "guideCount_other": "{{count}} nga giya",
+      "crossLinkTitle": "An City Hall gud ba an imo ginbibiling?",
+      "crossLinkNote": "Mga opisina, emergency hotline, abiso ngan rekord han transparency."
+    },
+    "category": {
+      "notFoundTitle": "Waray makit-i an kategorya",
+      "notFoundBody": "Waray an kategorya nga imo ginbibiling.",
+      "notFoundCta": "Kitaa an ngatanan nga kategorya han serbisyo",
+      "inThisCategory": "Ha sulod hini nga kategorya",
+      "loading": "Ginkakarga an mga giya...",
+      "emptyBody": "Waray pa nga giya nga nasurat para hini nga kategorya. Ginhimo han mga boluntaryo ini nga site, ngan naabri an mga seksyon kon tapos na an pag-usisa.",
+      "emptyCta": "Kitaa an mga kategorya nga andam na",
+      "singleCta": "Basaha an giya",
+      "singleNote": "Aada ha usa nga pahina an ngatanan hini nga kategorya.",
+      "railHeading": "Ngatanan nga kategorya han serbisyo",
+      "crossLink": "Seksyon han gobyerno han syudad",
+      "crossLinkNote": "Mga opisina, hotline, abiso ngan rekord han syudad."
+    }
+  },
+  "governmentActivity": {
+    "title": "Gobyerno han Syudad",
+    "description": "An mga opisina nga nangunguna ha Maynila, an mga dokumento nga ira iginpapagawas, ngan an mga abiso nga sadang bantayan."
+  },
+  "government": {
+    "directory": {
+      "eyebrow": "Gobyerno han syudad",
+      "title": "An mga tawo, opisina ngan rekord ha luyo han syudad",
+      "lead": "Hin-o an nangunguna ha Syudad han Maynila, an mga hotline nga nabaton kon may maraot nga nahitatabo, ngan an mga dokumento nga kinahanglan igpagawas han kada syudad.",
+      "meta_one": "{{count}} nga pahina ha {{sections}} nga seksyon yana, ngan may gindudugang pa.",
+      "meta_other": "{{count}} nga pahina ha {{sections}} nga seksyon yana, ngan may gindudugang pa.",
+      "pageCount_one": "{{count}} nga pahina",
+      "pageCount_other": "{{count}} nga pahina",
+      "crossLinkTitle": "Serbisyo ba an imo ginbibiling?",
+      "crossLinkNote": "Kada tikang nga giya ha mga klinika, permiso, eskwelahan ngan pagkuha han basura."
+    },
+    "section": {
+      "notFoundTitle": "Waray makit-i an seksyon",
+      "notFoundBody": "Waray an seksyon nga imo ginbibiling.",
+      "notFoundCta": "Kitaa an seksyon han gobyerno",
+      "inThisSection": "Ha sulod hini nga seksyon",
+      "loading": "Ginkakarga an mga pahina...",
+      "emptyBody": "Waray pa nga iginpagawas hini nga seksyon. Ginhimo han mga boluntaryo ini nga site, ngan naabri an mga seksyon kon tapos na an pag-usisa.",
+      "emptyCta": "Kitaa an mga seksyon nga andam na",
+      "singleCta": "Abrihi an pahina",
+      "singleNote": "Aada ha usa nga pahina an ngatanan hini nga seksyon.",
+      "railHeading": "Ngatanan nga seksyon han gobyerno",
+      "crossLink": "Mga giya ha serbisyo han syudad",
+      "crossLinkNote": "Kada tikang nga bulig ha mga permiso, klinika ngan programa han syudad."
+    }
+  },
+  "document": {
+    "loading": "Ginkakarga an dokumento",
+    "notFoundTitle": "Waray Makit-i an Dokumento",
+    "noneSpecified": "Waray ginpili nga dokumento",
+    "loadFailed": "Waray na-load an dokumento",
+    "staleSession": "Waray na-load ini nga pahina. Kasagaran, karuyag sidngon nga na-update an site samtang abrido ini nga tab. Alayon i-refresh an pahina; kon diri gihapon mag-obra, sarihi an search box."
+  },
+  "holidays": {
+    "title": "Mga tiarabot nga piyesta opisyal",
+    "lead": "Mga regular nga holiday ngan espesyal nga adlaw nga igindeklara para ha {{year}}. Kasagaran sirado an mga opisina han syudad hini nga mga adlaw, salit planoha an bisan ano nga transaksyon palibot hini.",
+    "today": "Yana",
+    "tomorrow": "Buwas",
+    "inDays": "Ha sulod hin {{count}} ka adlaw",
+    "regular": "Regular nga holiday",
+    "special": "Espesyal nga adlaw nga waray trabaho",
+    "working": "Espesyal nga adlaw nga may trabaho, abrido an mga opisina",
+    "source": "Tinikangan: {{source}}. Puydi magdugang, magbalhin o magkansela hin petsa an masunod nga mga proklamasyon.",
+    "readProclamation": "Basaha an proklamasyon"
+  },
+  "liveStrip": {
+    "manilaTime": "Oras ha Maynila",
+    "temperature": "yana nga temperatura ha Maynila",
+    "rateCaveat": "Indicative market rate, diri an reference rate han Bangko Sentral",
+    "rateCaveatSr": "(indicative market rate, diri an reference rate han Bangko Sentral)"
+  },
+  "searchPage": {
+    "eyebrow": "Biling",
+    "title": "Pamiling ha bug-os nga site",
+    "lead": "Kada pahina han serbisyo, opisina ngan dokumento han transparency ha BetterManila, ha usa nga kahon.",
+    "placeholder": "Sarihi: ospital, permiso han negosyo, basura",
+    "clear": "Panasa an ginbiling",
+    "hint": "Pisla an <kbd>/</kbd> basi makalukso dinhi, arrow keys basi makagios ha mga resulta, Enter basi abrihan.",
+    "resultCount_one": "<count>{{count}}</count> nga resulta para ha <query>{{query}}</query>",
+    "resultCount_other": "<count>{{count}}</count> nga resulta para ha <query>{{query}}</query>",
+    "announce_one": "1 nga resulta para ha {{query}}",
+    "announce_other": "{{count}} nga resulta para ha {{query}}",
+    "filterLabel": "Salaa an mga resulta sumala ha seksyon",
+    "filterAll": "Ngatanan",
+    "sectionListing": "Lista han seksyon",
+    "tooShort": "Padayuna an pag-type. Natikang an pamiling ha duha ka letra.",
+    "noResults": "Waray resulta para ha <query>{{query}}</query>",
+    "didYouMean": "An karuyag mo ba sidngon amo an <suggestion>{{suggestion}}</suggestion>?",
+    "tipShort": "Sarihi an usa o duha nga pulong imbes nga bug-os nga sentensya.",
+    "tipTask": "Bilnga an buruhaton, diri an opisina. Sarihi an <term>permiso han negosyo</term> imbes nga ngaran han departamento.",
+    "tipTaskTerm": "permiso han negosyo",
+    "tipFilipino": "Naobra liwat an mga pulong nga Filipino.",
+    "tipIncomplete": "Diri pa ngatanan nasurat. Ginhimo han mga boluntaryo ini nga portal ngan padayon pa an pagdugang han mga pahina.",
+    "commonSearches": "Agsob nga ginbibiling",
+    "commonTerms": [
+      "ospital",
+      "iskedyul han basura",
+      "permiso han negosyo",
+      "iskolarship",
+      "suspensyon han klase",
+      "badyet han syudad"
+    ],
+    "browseServices": "Kitaa an mga serbisyo",
+    "browseGovernment": "Kitaa an gobyerno"
+  },
+  "about": {
+    "title": "Mahitungod ha BetterManila",
+    "lead": "Libre nga giya ha mga serbisyo, opisina, badyet ngan ordinansa han Syudad han Maynila, ginsurat ha matin-aw nga yinaknan han mga boluntaryo nga naukoy dinhi.",
+    "intro": "Kadam-an han kinahanglan hibaroan han usa nga residente publiko na. Nagsarang la ini ha magkalain-lain nga portal, nalubong ha mga PDF, ngan ginsurat para ha mga auditor imbes nga para ha tawo nga napila. Gintitirok hini nga site an sugad nga materyal ha usa nga lugar, iginpapariho ini ha opisina nga nagpagawas, ngan ginsusurat utro basi mabasa ha telepono ha sulod hin pipira ka minuto.",
+    "disclaimer": {
+      "title": "Diri ini an opisyal nga website han syudad",
+      "body": "An BetterManila usa nga independent nga proyekto. Diri ini konektado, diri gin-endorso, ngan diri ginpapadalagan han Gobyerno han Syudad han Maynila. Waray iginpapagawas dinhi nga opisyal nga abiso, ngan waray transaksyon hini nga site nga transaksyon han gobyerno.",
+      "official": "Para ha opisyal nga transaksyon, pahibaro ngan online nga serbisyo, kadto ha <link>manila.gov.ph</link>. Kon magkaiba an ginsisiring hito nga site ngan hini, ito nga site an husto."
+    },
+    "sources": {
+      "title": "Hain tikang an impormasyon",
+      "lead": "An ngatanan hini nga site tikang ha opisyal nga publikasyon han gobyerno han Pilipinas. An kada pahina may tinikangan ngan petsa kon san-o ini nakuha, basi ma-usisa mo mismo an orihinal ngan mahusgahan kon ano ini kabag-o. Kon publiko ngan marig-on an dokumento, direkta nga gin-link ini han pahina.",
+      "manila": "An opisyal nga website han syudad. Mga opisina, tanggapan, pahibaro ngan online nga serbisyo.",
+      "dilg": "Mga badyet, financial statement ngan procurement disclosure nga kinahanglan igpagawas han kada LGU.",
+      "coa": "Tinuig nga audit report kon paonan-o gud gin-gasto han syudad an kwarta han publiko.",
+      "blgf": "Datos ha lokal nga kita ngan fiscal performance han mga syudad ngan munisipalidad.",
+      "philgeps": "Mga publiko nga bid notice ngan contract award tikang ha sistema han procurement han gobyerno."
+    },
+    "corrections": {
+      "title": "May nakita ka nga sayop? Sumati kami",
+      "body": "Nagpapagawas ini nga site hin mga kamatuoran mahitungod ha usa nga tinuod nga gobyerno han syudad, salit diri gutiay nga butang an sayop nga numero han hotline, daan nga bayad, o opisina nga binalhin na. An pagreport hini amo an pinakamapulsanon nga imo mahihimo dinhi, ngan diri kinahanglan nga maaram ka mag-code.",
+      "how": "Pag-abri hin issue ha GitHub. Sumati kon hain nga pahina an sayop ngan ano an husto nga impormasyon. Kon may opisyal ka nga tinikangan, i-link ini. Kon waray, ireport gihapon ngan bibilngon ini.",
+      "report": "Ireport an sayop ha GitHub",
+      "browse": "Kitaa an repository"
+    },
+    "help": {
+      "title": "Paonan-o makakabulig",
+      "lead": "Open source an BetterManila ngan ginhimo han mga boluntaryo. An site, upod an kada pulong han sulod hini, aada ha usa nga publiko nga repository ha ilarom han handle nga <link>grgdlm/bettermanila</link>, salit bisan hin-o puydi magbasa, magpakiana o magdugang.",
+      "writeTitle": "Pagsurat ngan pagpamatuod",
+      "writeBody": "Pagdugang hin pahina nga waray pa, o usisaha an aada na kontra ha opisyal nga tinikangan hini ngan unabiha ini. An sulod aada sugad nga plain markdown ha pareho nga repository han code.",
+      "translateTitle": "Paghubad",
+      "translateBody": "Iningles ngan Filipino an iginpapagawas han site yana. An Bisaya, Bikol, Ilocano ngan iba pa nga yinaknan ha switcher nakalista sugad nga nagkikinahanglan hin parahubad, ngan magpapabilin nga nakalista tubtob waray magsurat hini.",
+      "localTitle": "Pagpaambit hin lokal nga kahibaro",
+      "localBody": "Hain nga bintana an tinuod nga abrido, hain nga numero an ginbabaton, ano an ira iginpapadara nga dad-on. Waray dokumento nga nagrerekord hito, ngan agsob ito an pinakakinahanglan han residente."
+    },
+    "status": {
+      "title": "Hain an site yana",
+      "body": "Aga pa ini nga site, ngan ginsisiring mismo ito ha mga pahina. Kon may kamatuoran nga diri makumpirma kontra ha opisyal nga tinikangan, an pahina may makikita nga pahinumdom nga nangangaro hin bulig basi makompleto an seksyon imbes nga pun-on an lungag hin masarigon nga pagtag-an.",
+      "why": "Tinuyo ito. Mas talwas an lungag nga imo nakikita kay ha numero nga baga hin opisyal pero sayop. Nakukuha ito nga mga pahinumdom samtang gin-uusisa an mga tinikangan, ngan an kada usa usa nga abrido nga pag-imbita ha bisan hin-o nga maaram han baton.",
+      "browse": "May ginbibiling ka ba nga espesipiko? <services>Kitaa an mga serbisyo</services>, <government>an gobyerno han syudad</government>, o <search>pamiling ha site</search>."
+    }
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Waray namon makit-i ito nga pahina",
+    "lead": "Bangin may sayop ha pagkasurat han address, o binalhin na an pahina tikang han ginsurat an link. Waray sayop ha imo bahin.",
+    "youAsked": "An imo ginbiling amo an",
+    "searchButton": "Biling",
+    "mostLookedUp": "Agsob nga ginbibiling",
+    "startFromTop": "O tikangi ha igbaw",
+    "allServicesLabel": "Ngatanan nga serbisyo",
+    "allServicesNote": "Kada giya, gingrupo sumala ha imo kinahanglan buhaton",
+    "governmentLabel": "Gobyerno han syudad",
+    "governmentNote": "Mga opisina, tanggapan, badyet ngan ordinansa",
+    "brokenLink": "May link ba hini nga site nga nagdara ha imo dinhi? Amon ito nga sayop, ngan karuyag namon ayohon. <report>Ireport an guba nga link ha GitHub</report>, o magbasa pa <about>mahitungod hini nga site</about>."
+  },
+  "footer": {
+    "landmark": "Footer han site",
+    "navLabel": "Mga link ha footer",
+    "tagline": "Independent. Ginhimo han mga boluntaryo.",
+    "disclaimer": "An BetterManila usa nga independent nga giya nga ginsurat han mga boluntaryo nga naukoy ha Maynila. Diri ini an opisyal nga website han Syudad han Maynila, ngan diri ini nagyayakan para ha City Hall.",
+    "officialSite": "Opisyal nga website han syudad: manila.gov.ph",
+    "newTab": "naabri ha bag-o nga tab",
+    "sections": {
+      "services": "Mga Serbisyo",
+      "government": "Gobyerno",
+      "site": "Ini nga site",
+      "national": "Mga national nga website"
+    },
+    "links": {
+      "allServices": "Ngatanan nga serbisyo",
+      "allGovernment": "Ngatanan nga pahina han gobyerno",
+      "home": "Syahan nga pahina",
+      "about": "Mahitungod ha BetterManila",
+      "search": "Pamiling ha site"
+    },
+    "contribute": {
+      "title": "May nakita ka nga sayop?",
+      "body": "Mga boluntaryo an nagsusurat ngan nagcheck han kada pahina dinhi, salit may nalulusot nga sayop. Open source an bug-os nga site, ngan bisan hin-o puydi magpadara hin koreksyon.",
+      "cta": "Umambit ha GitHub"
+    },
+    "copyright": "© {{year}} BetterManila. An teksto ngan code aada ha ilarom han CC0, gawasnon nga kopyahon han bisan hin-o.",
+    "builtBy": "Ginhimo han mga boluntaryo ha Maynila."
+  },
+  "navbar": {
+    "government": "Gobyerno",
+    "services": "Mga Serbisyo",
+    "hotlines": "Mga Hotline",
+    "holidays": "Mga Piyesta Opisyal",
+    "transparency": "Transparency",
+    "news": "Balita"
+  },
+  "seo": {
+    "home": {
+      "title": "Syahan nga pahina",
+      "description": "Independent nga giya, ginhimo han mga boluntaryo, ha mga serbisyo, opisina, badyet ngan ordinansa han Syudad han Maynila, ha matin-aw nga yinaknan.",
+      "keywords": "Maynila, Syudad han Maynila, serbisyo han syudad, barangay, hotline, permiso han negosyo, transparency"
+    },
+    "services": {
+      "title": "Mga Serbisyo",
+      "description": "Kada tikang nga giya ha mga serbisyo han {{name}}: panlawas, edukasyon, permiso han negosyo, pagkuha han basura ngan iba pa.",
+      "keywords": "serbisyo han gobyerno, publiko nga serbisyo, lokal nga gobyerno, serbisyo sibiko",
+      "categoryKeywords": "{{category}}, serbisyo han gobyerno, publiko nga serbisyo, lokal nga gobyerno"
+    },
+    "government": {
+      "title": "Gobyerno",
+      "description": "Paonan-o ginhan-ay an gobyerno han {{name}}: mga opisina, emergency hotline, balita ngan dokumento han transparency.",
+      "keywords": "lokal nga gobyerno, opisina han syudad, emergency hotline, transparency, tanggapan han gobyerno",
+      "categoryKeywords": "{{category}}, lokal nga gobyerno, gobyerno han syudad, tanggapan han gobyerno"
+    },
+    "search": {
+      "title": "Biling",
+      "description": "Bilnga an kada serbisyo, opisina ngan dokumento ha BetterManila.",
+      "keywords": "pamiling, serbisyo han Maynila, city hall, pamiling hin serbisyo"
+    },
+    "about": {
+      "title": "Mahitungod",
+      "description": "An BetterManila usa nga libre ngan independent nga giya, ginhimo han mga boluntaryo, ha mga serbisyo, opisina, badyet ngan ordinansa han Syudad han Maynila. Diri ini an opisyal nga website han syudad.",
+      "keywords": "mahitungod ha bettermanila, independent, boluntaryo, open source, syudad han maynila, tinikangan, koreksyon"
+    },
+    "notFound": {
+      "title": "Waray makit-i an pahina",
+      "description": "Waray ito nga pahina ha BetterManila. Pamiling ha site, o kadto ha mga hotline, ospital, permiso ngan opisina han syudad."
+    },
+    "governmentFallback": "lokal",
+    "servicesFallback": "lokal nga gobyerno"
+  }
+}
