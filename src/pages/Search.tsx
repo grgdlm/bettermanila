@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { FileText, Search as SearchIcon, SearchX, X } from 'lucide-react';
+import { Trans, useTranslation } from 'react-i18next';
 import Section from '../components/ui/Section';
 import SEO from '../components/SEO';
 import { PageHeader } from '../components/ui/PageHeader';
@@ -42,21 +43,6 @@ const MIN_QUERY = 2;
  *  this page and the category cards cannot drift apart. */
 const ICONS = CATEGORY_ICONS;
 
-/** Real tasks that map onto pages that exist. */
-const COMMON_SEARCHES = [
-  'hospital',
-  'garbage schedule',
-  'business permit',
-  'scholarship',
-  'class suspension',
-  'city budget',
-];
-
-const TREE_LABEL: Record<string, string> = {
-  services: 'Services',
-  government: 'Government',
-};
-
 function renderHighlights(parts: Highlight[]) {
   return parts.map((part, index) =>
     part.hit ? (
@@ -97,6 +83,7 @@ function CategoryCard({
 }
 
 const Search: React.FC = () => {
+  const { t } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState(() => searchParams.get('q') ?? '');
   const [engine, setEngine] = useState<Engine | null>(null);
@@ -109,6 +96,18 @@ const Search: React.FC = () => {
   // on an empty page.
   const browseServices = activeServiceCategories;
   const browseGovernment = activeGovernmentCategories;
+
+  // Suggested queries are translated, not transliterated: the Filipino list
+  // is made of terms the alias layer in searchAliases.ts actually resolves,
+  // so a chip never leads to an empty result page.
+  const commonSearches = t('searchPage.commonTerms', {
+    returnObjects: true,
+  }) as string[];
+
+  const treeLabel: Record<string, string> = {
+    services: t('common.services'),
+    government: t('common.government'),
+  };
 
   // Load the corpus once, on mount, and warm the index before the first
   // keystroke so the first result list is instant.
@@ -167,13 +166,14 @@ const Search: React.FC = () => {
     }
     const timer = setTimeout(() => {
       setAnnouncement(
-        results.length === 1
-          ? `1 result for ${outcome.query}`
-          : `${results.length} results for ${outcome.query}`
+        t('searchPage.announce', {
+          count: results.length,
+          query: outcome.query,
+        })
       );
     }, 500);
     return () => clearTimeout(timer);
-  }, [outcome, results.length, query]);
+  }, [outcome, results.length, query, t]);
 
   // "/" focuses the box from anywhere on the page.
   useEffect(() => {
@@ -247,15 +247,19 @@ const Search: React.FC = () => {
     !isIdle && !isTooShort && outcome !== null && !hasResults;
 
   const filters: { value: TreeFilter; label: string; count: number }[] = [
-    { value: 'all', label: 'All', count: outcome?.counts.all ?? 0 },
+    {
+      value: 'all',
+      label: t('searchPage.filterAll'),
+      count: outcome?.counts.all ?? 0,
+    },
     {
       value: 'services',
-      label: 'Services',
+      label: t('common.services'),
       count: outcome?.counts.services ?? 0,
     },
     {
       value: 'government',
-      label: 'Government',
+      label: t('common.government'),
       count: outcome?.counts.government ?? 0,
     },
   ];
@@ -263,9 +267,9 @@ const Search: React.FC = () => {
   return (
     <>
       <SEO
-        title="Search"
-        description="Search every service, office and document on BetterManila."
-        keywords="search, Manila services, city hall, find a service"
+        title={t('seo.search.title')}
+        description={t('seo.search.description')}
+        keywords={t('seo.search.keywords')}
       />
 
       {/* Full container width, like the services and government catalogues:
@@ -275,12 +279,15 @@ const Search: React.FC = () => {
         <div>
           <Breadcrumbs
             className="mb-8"
-            items={[{ label: 'Home', href: '/' }, { label: 'Search' }]}
+            items={[
+              { label: t('common.home'), href: '/' },
+              { label: t('common.search') },
+            ]}
           />
           <PageHeader
-            eyebrow="Search"
-            title="Search the whole site"
-            lead="Every service page, department and transparency document on BetterManila, in one box."
+            eyebrow={t('searchPage.eyebrow')}
+            title={t('searchPage.title')}
+            lead={t('searchPage.lead')}
             className="mb-6"
           />
 
@@ -290,7 +297,7 @@ const Search: React.FC = () => {
             className="relative max-w-2xl"
           >
             <label htmlFor="site-search" className="sr-only">
-              Search BetterManila
+              {t('common.searchLabel')}
             </label>
             <SearchIcon
               aria-hidden="true"
@@ -303,7 +310,7 @@ const Search: React.FC = () => {
               value={query}
               onChange={event => setQuery(event.target.value)}
               onKeyDown={handleInputKeyDown}
-              placeholder="Try hospital, business permit, basura"
+              placeholder={t('searchPage.placeholder')}
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
@@ -322,7 +329,7 @@ const Search: React.FC = () => {
                 className="absolute top-1/2 right-3 -translate-y-1/2 rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               >
                 <X className="h-4 w-4" aria-hidden="true" />
-                <span className="sr-only">Clear search</span>
+                <span className="sr-only">{t('searchPage.clear')}</span>
               </button>
             ) : (
               <kbd
@@ -335,8 +342,12 @@ const Search: React.FC = () => {
           </form>
 
           <p id="search-hint" className="mt-2 max-w-2xl text-sm text-gray-700">
-            Press <span className="font-medium text-gray-700">/</span> to jump
-            here, arrow keys to move through results, Enter to open.
+            <Trans
+              i18nKey="searchPage.hint"
+              components={{
+                kbd: <span className="font-medium text-gray-700" />,
+              }}
+            />
           </p>
 
           <p aria-live="polite" className="sr-only">
@@ -348,20 +359,22 @@ const Search: React.FC = () => {
             <div className="mt-8 max-w-3xl">
               <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 pb-3">
                 <p className="text-sm text-gray-700">
-                  <span className="font-semibold text-gray-900">
-                    {results.length}
-                  </span>{' '}
-                  {results.length === 1 ? 'result' : 'results'} for{' '}
-                  <span className="font-semibold text-gray-900">
-                    {outcome?.query}
-                  </span>
+                  <Trans
+                    i18nKey="searchPage.resultCount"
+                    count={results.length}
+                    values={{ query: outcome?.query }}
+                    components={{
+                      count: <span className="font-semibold text-gray-900" />,
+                      query: <span className="font-semibold text-gray-900" />,
+                    }}
+                  />
                 </p>
                 {outcome &&
                   outcome.counts.services > 0 &&
                   outcome.counts.government > 0 && (
                     <div
                       role="group"
-                      aria-label="Filter results by section"
+                      aria-label={t('searchPage.filterLabel')}
                       className="flex gap-1 rounded-lg bg-gray-100 p-1"
                     >
                       {filters.map(filter => (
@@ -399,7 +412,7 @@ const Search: React.FC = () => {
                     >
                       <p className="mb-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
                         <span className="font-medium text-primary-700">
-                          {TREE_LABEL[result.tree]}
+                          {treeLabel[result.tree]}
                         </span>
                         {result.kind === 'page' && (
                           <>
@@ -413,7 +426,7 @@ const Search: React.FC = () => {
                         )}
                         {result.kind === 'section' && (
                           <span className="rounded-full bg-gray-100 px-2 py-0.5 font-medium text-gray-700">
-                            Section listing
+                            {t('searchPage.sectionListing')}
                           </span>
                         )}
                       </p>
@@ -433,7 +446,7 @@ const Search: React.FC = () => {
           {/* ---- too short ---- */}
           {isTooShort && (
             <p className="mt-8 max-w-2xl rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
-              Keep typing. Search starts at two characters.
+              {t('searchPage.tooShort')}
             </p>
           )}
 
@@ -448,37 +461,56 @@ const Search: React.FC = () => {
                   />
                   <div>
                     <p className="text-gray-900">
-                      No results for{' '}
-                      <span className="font-semibold">{outcome?.query}</span>
+                      <Trans
+                        i18nKey="searchPage.noResults"
+                        values={{ query: outcome?.query }}
+                        components={{
+                          query: <span className="font-semibold" />,
+                        }}
+                      />
                     </p>
                     {outcome?.suggestion && (
                       <p className="mt-2 text-sm text-gray-700">
-                        Did you mean{' '}
-                        <button
-                          type="button"
-                          onClick={() => runQuery(outcome.suggestion as string)}
-                          className="rounded font-semibold text-primary-700 underline underline-offset-2 hover:text-primary-800 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-                        >
-                          {outcome.suggestion}
-                        </button>
-                        ?
+                        <Trans
+                          i18nKey="searchPage.didYouMean"
+                          values={{ suggestion: outcome.suggestion }}
+                          components={{
+                            suggestion: (
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  runQuery(outcome.suggestion as string)
+                                }
+                                className="rounded font-semibold text-primary-700 underline underline-offset-2 hover:text-primary-800 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                              />
+                            ),
+                          }}
+                        />
                       </p>
                     )}
                     <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-700">
-                      <li>Try one or two words instead of a full sentence.</li>
+                      <li>{t('searchPage.tipShort')}</li>
                       <li>
-                        Search the task, not the office. Try{' '}
-                        <button
-                          type="button"
-                          onClick={() => runQuery('business permit')}
-                          className="rounded font-medium text-primary-700 underline underline-offset-2 hover:text-primary-800 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-                        >
-                          business permit
-                        </button>{' '}
-                        rather than a department name.
+                        <Trans
+                          i18nKey="searchPage.tipTask"
+                          components={{
+                            // The label comes from the translation, so the
+                            // query has to as well — otherwise the Filipino
+                            // page offers one term and searches another.
+                            term: (
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  runQuery(t('searchPage.tipTaskTerm'))
+                                }
+                                className="rounded font-medium text-primary-700 underline underline-offset-2 hover:text-primary-800 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                              />
+                            ),
+                          }}
+                        />
                       </li>
                       <li>
-                        Filipino words work.{' '}
+                        {t('searchPage.tipFilipino')}{' '}
                         {SAMPLE_ALIAS_TERMS.map((term, index) => (
                           <span key={term}>
                             {index > 0 && ', '}
@@ -493,10 +525,7 @@ const Search: React.FC = () => {
                         ))}
                         .
                       </li>
-                      <li>
-                        Not everything is written up yet. This portal is built
-                        by volunteers and pages are still being added.
-                      </li>
+                      <li>{t('searchPage.tipIncomplete')}</li>
                     </ul>
                   </div>
                 </div>
@@ -510,10 +539,10 @@ const Search: React.FC = () => {
               {isIdle && (
                 <div className="mb-8">
                   <h2 className="mb-3 text-sm font-semibold tracking-wide text-gray-700 uppercase">
-                    Common searches
+                    {t('searchPage.commonSearches')}
                   </h2>
                   <div className="flex flex-wrap gap-2">
-                    {COMMON_SEARCHES.map(term => (
+                    {commonSearches.map(term => (
                       <button
                         key={term}
                         type="button"
@@ -528,7 +557,7 @@ const Search: React.FC = () => {
               )}
 
               <h2 className="mb-3 text-sm font-semibold tracking-wide text-gray-700 uppercase">
-                Browse services
+                {t('searchPage.browseServices')}
               </h2>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {browseServices.map(category => (
@@ -541,7 +570,7 @@ const Search: React.FC = () => {
               </div>
 
               <h2 className="mt-8 mb-3 text-sm font-semibold tracking-wide text-gray-700 uppercase">
-                Browse government
+                {t('searchPage.browseGovernment')}
               </h2>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {browseGovernment.map(category => (

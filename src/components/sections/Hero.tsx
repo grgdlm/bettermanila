@@ -1,16 +1,9 @@
 import { useState, type FormEvent } from 'react';
-import {
-  ArrowRight,
-  CloudRain,
-  FileText,
-  HeartPulse,
-  Landmark,
-  Search,
-  Siren,
-  Trash2,
-} from 'lucide-react';
+import { ArrowRight, Search } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
 import { Heading } from '../ui/Heading';
+import { QUICK_LINKS } from '../../data/quickLinks';
 
 /**
  * Home page hero.
@@ -30,60 +23,24 @@ import { Heading } from '../ui/Heading';
 /** Keeps staggered elements hidden until their delay elapses. */
 const FILL = '[animation-fill-mode:both] motion-reduce:animate-none';
 
-/** The pages people actually arrive looking for. All of these exist. */
-const QUICK_LINKS = [
-  {
-    icon: Siren,
-    label: 'Emergency hotlines',
-    note: 'Fire, flood, rescue and police numbers',
-    href: '/government/emergency/hotlines',
-  },
-  {
-    icon: HeartPulse,
-    label: 'City hospitals',
-    note: 'One in every district, and what is free',
-    href: '/services/health-services/go-to-the-local-hospital-for-treatment-or-confinement',
-  },
-  {
-    icon: FileText,
-    label: 'Business permits',
-    note: 'Apply, renew and pay local taxes',
-    href: '/services/business/apply-for-barangay-clearance-and-mayors-business-permits',
-  },
-  {
-    icon: CloudRain,
-    label: 'Class suspensions',
-    note: 'Where advisories get announced',
-    href: '/government/news/suspensions-and-advisories',
-  },
-  {
-    icon: Trash2,
-    label: 'Garbage collection',
-    note: 'Schedules and pickup requests',
-    href: '/services/garbage-waste-disposal/check-garbage-collection-schedules-and-request-pickup',
-  },
-  {
-    icon: Landmark,
-    label: 'Your Mayor',
-    note: 'Who leads the city, and how to reach them',
-    href: '/government/departments/executive',
-  },
-];
-
 /**
  * Per the PSA's PSGC entry for the City of Manila (counts as of 31 July
  * 2025) and the 2024 POPCEN: 897 barangays grouped into 14 districts, and
  * six legislative districts. Full figures with sources live on
  * /government/reports-and-statistics/manila-by-the-numbers.
+ *
+ * The figures are language-independent; only the noun after each one is
+ * translated, via `hero.facts.<key>`.
  */
 const CITY_FACTS = [
-  { value: '897', label: 'barangays' },
-  { value: '14', label: 'districts' },
-  { value: '6', label: 'legislative districts' },
+  { value: '897', key: 'barangays' },
+  { value: '14', key: 'districts' },
+  { value: '6', key: 'legislativeDistricts' },
 ];
 
 export default function Hero() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [query, setQuery] = useState('');
 
   const onSubmit = (e: FormEvent) => {
@@ -106,25 +63,28 @@ export default function Hero() {
         <p
           className={`animate-fade-in ${FILL} text-xs font-semibold tracking-[0.2em] text-primary-700 uppercase`}
         >
-          Independent. Open source. Volunteer-built.
+          {t('common.eyebrowIndependent')}
         </p>
 
         <Heading
           level={1}
           className={`animate-slide-in ${FILL} mt-3 mb-0 max-w-3xl text-3xl leading-[1.1] font-extrabold tracking-tight text-balance text-primary-800 sm:text-4xl md:text-5xl`}
         >
-          Find what you need from the{' '}
-          <span className="bg-linear-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
-            City of Manila
-          </span>
+          <Trans
+            i18nKey="hero.title"
+            components={{
+              city: (
+                <span className="bg-linear-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent" />
+              ),
+            }}
+          />
         </Heading>
 
         <p
           className={`animate-slide-in ${FILL} mt-4 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg`}
           style={{ animationDelay: '100ms' }}
         >
-          BetterManila is a free guide to city services, departments, budgets
-          and ordinances, researched and written by volunteers who live here.
+          {t('hero.subtitle')}
         </p>
 
         <form
@@ -134,7 +94,7 @@ export default function Hero() {
           style={{ animationDelay: '160ms' }}
         >
           <label htmlFor="hero-search" className="sr-only">
-            Search BetterManila
+            {t('common.searchLabel')}
           </label>
           <div className="flex gap-2">
             <div className="relative flex-1">
@@ -147,7 +107,7 @@ export default function Hero() {
                 type="search"
                 value={query}
                 onChange={e => setQuery(e.target.value)}
-                placeholder="Try ospital, business permit, amilyar"
+                placeholder={t('common.searchPlaceholder')}
                 className="w-full rounded-xl border border-gray-300 bg-white py-3.5 pr-4 pl-12 text-base text-gray-900 shadow-sm transition-colors placeholder:text-gray-600 focus-visible:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               />
             </div>
@@ -155,7 +115,7 @@ export default function Hero() {
               type="submit"
               className="shrink-0 rounded-xl bg-primary-600 px-6 py-3.5 font-semibold text-white shadow-sm transition-colors hover:bg-primary-500 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none"
             >
-              Search
+              {t('hero.searchButton')}
             </button>
           </div>
         </form>
@@ -164,22 +124,25 @@ export default function Hero() {
           className={`animate-fade-in ${FILL} mt-4 max-w-2xl text-sm text-gray-700`}
           style={{ animationDelay: '220ms' }}
         >
-          Not the official city website. For official business, visit{' '}
-          <a
-            href="https://manila.gov.ph"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-          >
-            manila.gov.ph
-          </a>
-          .
+          <Trans
+            i18nKey="hero.disclaimer"
+            components={{
+              link: (
+                <a
+                  href="https://manila.gov.ph"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                />
+              ),
+            }}
+          />
         </p>
 
         {/* The things people actually come here for */}
         <div className="mt-10 border-t border-gray-200 pt-8">
           <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-700 uppercase">
-            Start here
+            {t('hero.startHere')}
           </h2>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {QUICK_LINKS.map((link, i) => {
@@ -199,10 +162,10 @@ export default function Hero() {
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="font-display block text-sm leading-tight font-bold tracking-tight text-primary-800">
-                        {link.label}
+                        {t(`quickLinks.${link.key}.label`)}
                       </span>
                       <span className="mt-1 block text-sm leading-snug text-gray-700">
-                        {link.note}
+                        {t(`quickLinks.${link.key}.note`)}
                       </span>
                     </span>
                     <ArrowRight
@@ -222,17 +185,17 @@ export default function Hero() {
         <div className="container mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3.5 text-center text-sm">
           <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
             {CITY_FACTS.map(fact => (
-              <li key={fact.label} className="flex items-baseline gap-1.5">
+              <li key={fact.key} className="flex items-baseline gap-1.5">
                 <span className="font-display font-extrabold">
                   {fact.value}
                 </span>
-                <span className="text-primary-200">{fact.label}</span>
+                <span className="text-primary-200">
+                  {t(`hero.facts.${fact.key}`)}
+                </span>
               </li>
             ))}
           </ul>
-          <p className="text-primary-200">
-            A city-run hospital in every legislative district
-          </p>
+          <p className="text-primary-200">{t('hero.hospitalNote')}</p>
         </div>
       </div>
     </section>

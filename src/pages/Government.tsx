@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Banner } from '@bettergov/kapwa/banner';
 import Section from '../components/ui/Section';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
@@ -30,6 +31,7 @@ import {
  */
 const Government: React.FC = () => {
   const { category } = useParams();
+  const { t } = useTranslation();
   const [pagesBySlug, setPagesBySlug] = useState<Record<
     string,
     Subcategory[]
@@ -60,19 +62,26 @@ const Government: React.FC = () => {
     return (
       <>
         <SEO
-          title="Government"
-          description={`How the ${import.meta.env.VITE_GOVERNMENT_NAME || 'local'} government is organized: departments, emergency hotlines, news and transparency documents.`}
-          keywords="local government, city departments, emergency hotlines, transparency, government offices"
+          title={t('seo.government.title')}
+          description={t('seo.government.description', {
+            name:
+              import.meta.env.VITE_GOVERNMENT_NAME ||
+              t('seo.governmentFallback'),
+          })}
+          keywords={t('seo.government.keywords')}
         />
         <Section className="pb-16">
           <Breadcrumbs className="mb-8" />
           <PageHeader
-            eyebrow="City government"
-            title="The people, offices and records behind the city"
-            lead="Who runs the City of Manila, the hotlines that answer when something goes wrong, and the documents every city is required to publish."
+            eyebrow={t('government.directory.eyebrow')}
+            title={t('government.directory.title')}
+            lead={t('government.directory.lead')}
             meta={
               loaded && totalPages > 0
-                ? `${totalPages} pages in ${activeGovernmentCategories.length} sections so far, with more being added.`
+                ? t('government.directory.meta', {
+                    count: totalPages,
+                    sections: activeGovernmentCategories.length,
+                  })
                 : undefined
             }
           />
@@ -89,7 +98,9 @@ const Government: React.FC = () => {
                   description={c.description}
                   meta={
                     loaded
-                      ? `${pages.length} ${pages.length === 1 ? 'page' : 'pages'}`
+                      ? t('government.directory.pageCount', {
+                          count: pages.length,
+                        })
                       : undefined
                   }
                   pages={pages.map(page => ({
@@ -112,11 +123,10 @@ const Government: React.FC = () => {
               />
               <span className="min-w-0 flex-1">
                 <span className="font-display block text-base leading-tight font-bold tracking-tight text-primary-800">
-                  Looking for a service instead?
+                  {t('government.directory.crossLinkTitle')}
                 </span>
                 <span className="mt-1 block text-sm leading-relaxed text-gray-700">
-                  Step-by-step guides to clinics, permits, schools and garbage
-                  collection.
+                  {t('government.directory.crossLinkNote')}
                 </span>
               </span>
               <ArrowRight
@@ -142,15 +152,15 @@ const Government: React.FC = () => {
         <Breadcrumbs className="mb-8" />
         <Banner
           type="error"
-          title="Section not found"
-          description="The section you are looking for does not exist."
+          title={t('government.section.notFoundTitle')}
+          description={t('government.section.notFoundBody')}
           icon
         />
         <Link
           to="/government"
           className="mt-6 inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-700 transition-colors hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
         >
-          Browse the government section
+          {t('government.section.notFoundCta')}
           <ArrowRight aria-hidden="true" className="h-4 w-4" />
         </Link>
       </Section>
@@ -171,14 +181,16 @@ const Government: React.FC = () => {
       <SEO
         title={categoryData.category || category}
         description={categoryData.description}
-        keywords={`${categoryData.category}, local government, city government, government offices`}
+        keywords={t('seo.government.categoryKeywords', {
+          category: categoryData.category,
+        })}
       />
       <Section className="pb-16">
         <Breadcrumbs
           className="mb-8"
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Government', href: '/government' },
+            { label: t('common.home'), href: '/' },
+            { label: t('common.government'), href: '/government' },
             { label: categoryData.category },
           ]}
         />
@@ -186,7 +198,7 @@ const Government: React.FC = () => {
           <div>
             <PageHeader
               size="md"
-              eyebrow="City government"
+              eyebrow={t('government.directory.eyebrow')}
               icon={categoryData.icon}
               title={categoryData.category}
               lead={categoryData.description}
@@ -194,22 +206,22 @@ const Government: React.FC = () => {
 
             <div className="mt-9">
               <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-700 uppercase">
-                In this section
+                {t('government.section.inThisSection')}
               </h2>
               {!loaded ? (
-                <p className="mt-4 text-sm text-gray-700">Loading pages...</p>
+                <p className="mt-4 text-sm text-gray-700">
+                  {t('government.section.loading')}
+                </p>
               ) : pages.length === 0 ? (
                 <div className="mt-4 max-w-2xl rounded-xl border border-dashed border-gray-300 bg-gray-50 p-6">
                   <p className="text-sm leading-relaxed text-gray-700">
-                    Nothing has been published in this section yet. This site is
-                    volunteer-built, and sections open as the research is
-                    finished.
+                    {t('government.section.emptyBody')}
                   </p>
                   <Link
                     to="/government"
                     className="mt-3 inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-700 transition-colors hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
                   >
-                    See the sections that are ready
+                    {t('government.section.emptyCta')}
                     <ArrowRight aria-hidden="true" className="h-4 w-4" />
                   </Link>
                 </div>
@@ -219,10 +231,10 @@ const Government: React.FC = () => {
                     to={`/government/${category}/${pages[0].slug}`}
                     title={pages[0].name}
                     description={pages[0].description}
-                    cta="Open the page"
+                    cta={t('government.section.singleCta')}
                   />
                   <p className="mt-3 text-sm text-gray-700">
-                    Everything in this section lives on one page.
+                    {t('government.section.singleNote')}
                   </p>
                 </div>
               ) : (
@@ -241,20 +253,23 @@ const Government: React.FC = () => {
           </div>
 
           <aside className="mt-12 lg:mt-0">
-            <CategoryRail heading="All government sections" items={railItems} />
+            <CategoryRail
+              heading={t('government.section.railHeading')}
+              items={railItems}
+            />
             <div className="mt-8 border-t border-gray-200 pt-6">
               <Link
                 to="/services"
                 className="group inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-700 transition-colors hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               >
-                City services guides
+                {t('government.section.crossLink')}
                 <ArrowRight
                   aria-hidden="true"
                   className="h-4 w-4 transition-transform group-hover:translate-x-0.5 motion-reduce:transform-none"
                 />
               </Link>
               <p className="mt-1 text-sm text-gray-700">
-                Step-by-step help with permits, clinics and city programs.
+                {t('government.section.crossLinkNote')}
               </p>
             </div>
           </aside>

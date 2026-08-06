@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
 interface SEOProps {
   title?: string;
@@ -22,6 +23,11 @@ export default function SEO({
   siteName = import.meta.env.VITE_SITE_NAME || 'BetterManila',
   noindex = false,
 }: SEOProps) {
+  const { i18n } = useTranslation();
+  // og:locale has to name the language actually rendered. It was pinned to
+  // en_PH, which mislabelled every page once the site started shipping
+  // Filipino.
+  const ogLocale = `${i18n.resolvedLanguage ?? 'en'}_PH`;
   // This is an independent volunteer project. The fallbacks must never claim
   // to be the official government website — that is the one thing every
   // disclaimer on the site exists to deny.
@@ -70,7 +76,7 @@ export default function SEO({
       <meta property="og:description" content={fullDescription} />
       <meta property="og:image" content={fullImage} />
       <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content="en_PH" />
+      <meta property="og:locale" content={ogLocale} />
 
       {/* Twitter card tags use name=, not property=, per their spec */}
       <meta name="twitter:card" content="summary_large_image" />

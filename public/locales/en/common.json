@@ -1,32 +1,230 @@
 {
   "site_name": "BetterManila",
   "site_description": "A community-run portal for the City of Manila",
+  "common": {
+    "home": "Home",
+    "services": "Services",
+    "government": "Government",
+    "search": "Search",
+    "searchLabel": "Search BetterManila",
+    "searchPlaceholder": "Try ospital, business permit, amilyar",
+    "eyebrowIndependent": "Independent. Open source. Volunteer-built.",
+    "officialSiteDomain": "manila.gov.ph",
+    "breadcrumbLabel": "Breadcrumb"
+  },
+  "quickLinks": {
+    "hotlines": {
+      "label": "Emergency hotlines",
+      "note": "Fire, flood, rescue and police numbers"
+    },
+    "hospitals": {
+      "label": "City hospitals",
+      "note": "One in every district, and what is free"
+    },
+    "permits": {
+      "label": "Business permits",
+      "note": "Apply, renew and pay local taxes"
+    },
+    "suspensions": {
+      "label": "Class suspensions",
+      "note": "Where advisories get announced"
+    },
+    "garbage": {
+      "label": "Garbage collection",
+      "note": "Schedules and pickup requests"
+    },
+    "mayor": {
+      "label": "Your Mayor",
+      "note": "Who leads the city, and how to reach them"
+    }
+  },
   "hero": {
-    "title": "Find what you need from the City of Manila",
-    "subtitle": "A free guide to city services, departments, budgets and ordinances, written by volunteers who live here.",
-    "nationalId": "National ID",
-    "birthCertificate": "Birth Certificate",
-    "businessRegistration": "Business Registration"
+    "title": "Find what you need from the <city>City of Manila</city>",
+    "subtitle": "BetterManila is a free guide to city services, departments, budgets and ordinances, researched and written by volunteers who live here.",
+    "searchButton": "Search",
+    "disclaimer": "Not the official city website. For official business, visit <link>manila.gov.ph</link>.",
+    "startHere": "Start here",
+    "facts": {
+      "barangays": "barangays",
+      "districts": "districts",
+      "legislativeDistricts": "legislative districts"
+    },
+    "hospitalNote": "A city-run hospital in every legislative district"
   },
   "services": {
     "title": "Services & Information",
-    "governmentServices": "Government Services",
     "description": "City services explained in plain language: what you can get, what to bring, where to go, and what it costs.",
-    "viewAll": "View All Services",
-    "viewAllCategory": "View All"
+    "catalogue": {
+      "eyebrow": "City services",
+      "title": "City services, explained step by step",
+      "lead": "What the City of Manila offers, who qualifies, what to bring, and where to go. Volunteers research each guide and check it against official sources.",
+      "meta_one": "{{count}} guide in {{categories}} categories so far, with more being written.",
+      "meta_other": "{{count}} guides in {{categories}} categories so far, with more being written.",
+      "guideCount_one": "{{count}} guide",
+      "guideCount_other": "{{count}} guides",
+      "crossLinkTitle": "Looking for City Hall itself?",
+      "crossLinkNote": "Departments, emergency hotlines, advisories and transparency records."
+    },
+    "category": {
+      "notFoundTitle": "Category not found",
+      "notFoundBody": "The category you are looking for does not exist.",
+      "notFoundCta": "Browse all service categories",
+      "inThisCategory": "In this category",
+      "loading": "Loading guides...",
+      "emptyBody": "No guides have been written for this category yet. This site is volunteer-built, and sections open as the research is finished.",
+      "emptyCta": "See the categories that are ready",
+      "singleCta": "Read the guide",
+      "singleNote": "Everything in this category lives on one page.",
+      "railHeading": "All service categories",
+      "crossLink": "City government section",
+      "crossLinkNote": "Departments, hotlines, advisories and city records."
+    }
   },
   "governmentActivity": {
     "title": "Government Activity",
     "description": "The offices that run Manila, the records they publish, and the announcements worth watching."
   },
-  "weather": {
-    "title": "Weather Updates"
+  "government": {
+    "directory": {
+      "eyebrow": "City government",
+      "title": "The people, offices and records behind the city",
+      "lead": "Who runs the City of Manila, the hotlines that answer when something goes wrong, and the documents every city is required to publish.",
+      "meta_one": "{{count}} page in {{sections}} sections so far, with more being added.",
+      "meta_other": "{{count}} pages in {{sections}} sections so far, with more being added.",
+      "pageCount_one": "{{count}} page",
+      "pageCount_other": "{{count}} pages",
+      "crossLinkTitle": "Looking for a service instead?",
+      "crossLinkNote": "Step-by-step guides to clinics, permits, schools and garbage collection."
+    },
+    "section": {
+      "notFoundTitle": "Section not found",
+      "notFoundBody": "The section you are looking for does not exist.",
+      "notFoundCta": "Browse the government section",
+      "inThisSection": "In this section",
+      "loading": "Loading pages...",
+      "emptyBody": "Nothing has been published in this section yet. This site is volunteer-built, and sections open as the research is finished.",
+      "emptyCta": "See the sections that are ready",
+      "singleCta": "Open the page",
+      "singleNote": "Everything in this section lives on one page.",
+      "railHeading": "All government sections",
+      "crossLink": "City services guides",
+      "crossLinkNote": "Step-by-step help with permits, clinics and city programs."
+    }
   },
-  "forex": {
-    "title": "Foreign Exchange Rates"
+  "document": {
+    "loading": "Loading document",
+    "notFoundTitle": "Document Not Found",
+    "noneSpecified": "No document specified",
+    "loadFailed": "Failed to load document",
+    "staleSession": "This page failed to load, which usually means the site was updated while this tab was open. Please refresh the page; if that does not help, try the search box."
   },
-  "news": {
-    "title": "Latest News & Updates"
+  "holidays": {
+    "title": "Upcoming holidays",
+    "lead": "Regular holidays and special days declared for {{year}}. City offices generally close on these, so plan any transaction around them.",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "inDays": "In {{count}} days",
+    "regular": "Regular holiday",
+    "special": "Special non-working day",
+    "working": "Special working day, offices open",
+    "source": "Source: {{source}}. Later proclamations can add, move or cancel dates.",
+    "readProclamation": "Read the proclamation"
+  },
+  "liveStrip": {
+    "manilaTime": "Manila time",
+    "temperature": "current temperature in Manila",
+    "rateCaveat": "Indicative market rate, not the Bangko Sentral reference rate",
+    "rateCaveatSr": "(indicative market rate, not the Bangko Sentral reference rate)"
+  },
+  "searchPage": {
+    "eyebrow": "Search",
+    "title": "Search the whole site",
+    "lead": "Every service page, department and transparency document on BetterManila, in one box.",
+    "placeholder": "Try hospital, business permit, basura",
+    "clear": "Clear search",
+    "hint": "Press <kbd>/</kbd> to jump here, arrow keys to move through results, Enter to open.",
+    "resultCount_one": "<count>{{count}}</count> result for <query>{{query}}</query>",
+    "resultCount_other": "<count>{{count}}</count> results for <query>{{query}}</query>",
+    "announce_one": "1 result for {{query}}",
+    "announce_other": "{{count}} results for {{query}}",
+    "filterLabel": "Filter results by section",
+    "filterAll": "All",
+    "sectionListing": "Section listing",
+    "tooShort": "Keep typing. Search starts at two characters.",
+    "noResults": "No results for <query>{{query}}</query>",
+    "didYouMean": "Did you mean <suggestion>{{suggestion}}</suggestion>?",
+    "tipShort": "Try one or two words instead of a full sentence.",
+    "tipTask": "Search the task, not the office. Try <term>business permit</term> rather than a department name.",
+    "tipTaskTerm": "business permit",
+    "tipFilipino": "Filipino words work.",
+    "tipIncomplete": "Not everything is written up yet. This portal is built by volunteers and pages are still being added.",
+    "commonSearches": "Common searches",
+    "commonTerms": [
+      "hospital",
+      "garbage schedule",
+      "business permit",
+      "scholarship",
+      "class suspension",
+      "city budget"
+    ],
+    "browseServices": "Browse services",
+    "browseGovernment": "Browse government"
+  },
+  "about": {
+    "title": "About BetterManila",
+    "lead": "A free guide to City of Manila services, departments, budgets and ordinances, written in plain language by volunteers who live here.",
+    "intro": "Most of what a resident needs to know is already public. It is just spread across separate portals, buried in PDFs, and written for auditors rather than for the person standing in the queue. This site gathers that material in one place, checks it against the office that published it, and rewrites it so it can be read on a phone in a few minutes.",
+    "disclaimer": {
+      "title": "This is not the official city website",
+      "body": "BetterManila is an independent project. It is not affiliated with, endorsed by, or operated by the City Government of Manila. Nothing published here is an official notice, and no transaction on this site is a government transaction.",
+      "official": "For official business, announcements and online services, go to <link>manila.gov.ph</link>. Where that site and this one disagree, that site is right."
+    },
+    "sources": {
+      "title": "Where the information comes from",
+      "lead": "Everything on this site is sourced from official Philippine government publications. Every page carries the source it came from and the date it was retrieved, so you can check the original yourself and judge how current it is. Where the document is public and stable, the page links straight to it.",
+      "manila": "The official city website. Departments, offices, announcements and online services.",
+      "dilg": "Budgets, financial statements and procurement disclosures that every LGU is required to publish.",
+      "coa": "Annual audit reports on how the city actually spent public money.",
+      "blgf": "Local revenue, income and fiscal performance data for cities and municipalities.",
+      "philgeps": "Public bid notices and contract awards from the government procurement system."
+    },
+    "corrections": {
+      "title": "Found a mistake? Tell us",
+      "body": "This site publishes facts about a real city government, so a wrong hotline number, an out of date fee or a department that has since moved is not a small thing. Reporting one is the single most useful thing you can do here, and you do not need to know how to code.",
+      "how": "Open an issue on GitHub. Say which page is wrong and what the correct information is. If you have the official source, link it. If you do not, report it anyway and it will be looked up.",
+      "report": "Report a mistake on GitHub",
+      "browse": "Browse the repository"
+    },
+    "help": {
+      "title": "How to help",
+      "lead": "BetterManila is open source and built by volunteers. The site, including every word of its content, lives in one public repository under the handle <link>grgdlm/bettermanila</link>, so anyone can read it, question it or add to it.",
+      "writeTitle": "Write and verify",
+      "writeBody": "Add a page that is missing, or check an existing one against its official source and cite it. Content lives as plain markdown in the same repository as the code.",
+      "translateTitle": "Translate",
+      "translateBody": "The site ships in English and Filipino today. Bisaya, Bikol, Ilocano and the other languages in the switcher are listed as needing a translator, and stay listed until a speaker writes them.",
+      "localTitle": "Share local knowledge",
+      "localBody": "Which window is actually open, which number gets answered, what you are asked to bring. No document records that, and it is often what a resident needs most."
+    },
+    "status": {
+      "title": "Where the site stands today",
+      "body": "This site is early, and it says so on the pages themselves. Where a fact could not be confirmed against an official source, the page carries a visible note asking readers to help complete the section instead of filling the gap with a confident guess.",
+      "why": "That is deliberate. A gap you can see is safer than a number that looks authoritative and is wrong. Those notes come down as sources are checked, and each one is an open invitation to anyone who knows the answer.",
+      "browse": "Looking for something specific? <services>Browse services</services>, <government>the city government</government>, or <search>search the site</search>."
+    }
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "We could not find that page",
+    "lead": "The address may have a typo in it, or the page may have moved since the link was written. Nothing is wrong on your end.",
+    "youAsked": "You asked for",
+    "searchButton": "Search",
+    "mostLookedUp": "Most looked up",
+    "startFromTop": "Or start from the top",
+    "allServicesLabel": "All services",
+    "allServicesNote": "Every guide, grouped by what you need to do",
+    "governmentLabel": "City government",
+    "governmentNote": "Departments, offices, budgets and ordinances",
+    "brokenLink": "Did a link on this site bring you here? That is our mistake, and we would like to fix it. <report>Report the broken link on GitHub</report>, or read more <about>about this site</about>."
   },
   "footer": {
     "landmark": "Site footer",
@@ -64,17 +262,39 @@
     "transparency": "Transparency",
     "news": "News"
   },
-  "joinUs": {
-    "stripTitle": "🚀 Join the #CivicTech Revolution",
-    "stripSubtitle": "Help build the future of the Philippines and governance through technology",
-    "joinNow": "Join Now",
-    "discord": "Discord",
-    "bannerTitle": "Join the #CivicTech Revolution",
-    "bannerSubtitle": "Help build the future of the Philippines and governance through technology.",
-    "bannerHighlight": "Volunteer-led. Open source. Community-driven.",
-    "joinMovement": "Join Our Movement",
-    "or": "or",
-    "joinDiscord": "Join Discord",
-    "features": "🚀 Infrastructure • 💡 Mentorship • 🤝 Community • 🏢 Office Space"
+  "seo": {
+    "home": {
+      "title": "Home",
+      "description": "An independent, volunteer-built guide to City of Manila services, departments, budgets and ordinances, in plain language.",
+      "keywords": "Manila, City of Manila, city services, barangay, hotlines, business permit, transparency"
+    },
+    "services": {
+      "title": "Services",
+      "description": "Step-by-step guides to {{name}} services: health, education, business permits, garbage collection and more.",
+      "keywords": "government services, public services, local government, civic services",
+      "categoryKeywords": "{{category}}, government services, public services, local government"
+    },
+    "government": {
+      "title": "Government",
+      "description": "How the {{name}} government is organized: departments, emergency hotlines, news and transparency documents.",
+      "keywords": "local government, city departments, emergency hotlines, transparency, government offices",
+      "categoryKeywords": "{{category}}, local government, city government, government offices"
+    },
+    "search": {
+      "title": "Search",
+      "description": "Search every service, office and document on BetterManila.",
+      "keywords": "search, Manila services, city hall, find a service"
+    },
+    "about": {
+      "title": "About",
+      "description": "BetterManila is a free, independent, volunteer-built guide to City of Manila services, departments, budgets and ordinances. Not the official city website.",
+      "keywords": "about bettermanila, independent, volunteer, open source, city of manila, sources, corrections"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "That page does not exist on BetterManila. Search the site, or jump to city hotlines, hospitals, permits and departments."
+    },
+    "governmentFallback": "local",
+    "servicesFallback": "local government"
   }
 }

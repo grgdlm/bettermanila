@@ -1,32 +1,230 @@
 {
   "site_name": "BetterManila",
   "site_description": "Portal ng komunidad para sa Lungsod ng Maynila",
+  "common": {
+    "home": "Unang pahina",
+    "services": "Mga Serbisyo",
+    "government": "Pamahalaan",
+    "search": "Maghanap",
+    "searchLabel": "Maghanap sa BetterManila",
+    "searchPlaceholder": "Subukan: ospital, permiso ng negosyo, amilyar",
+    "eyebrowIndependent": "Independent. Open source. Gawa ng mga boluntaryo.",
+    "officialSiteDomain": "manila.gov.ph",
+    "breadcrumbLabel": "Breadcrumb"
+  },
+  "quickLinks": {
+    "hotlines": {
+      "label": "Mga emergency hotline",
+      "note": "Mga numero para sa sunog, baha, rescue at pulis"
+    },
+    "hospitals": {
+      "label": "Mga ospital ng lungsod",
+      "note": "May isa sa bawat distrito, at kung ano ang libre"
+    },
+    "permits": {
+      "label": "Permiso ng negosyo",
+      "note": "Mag-apply, mag-renew at magbayad ng lokal na buwis"
+    },
+    "suspensions": {
+      "label": "Walang pasok",
+      "note": "Kung saan inaanunsiyo ang mga abiso"
+    },
+    "garbage": {
+      "label": "Koleksyon ng basura",
+      "note": "Mga iskedyul at request ng pickup"
+    },
+    "mayor": {
+      "label": "Ang inyong Alkalde",
+      "note": "Kung sino ang namumuno sa lungsod, at paano siya makokontak"
+    }
+  },
   "hero": {
-    "title": "Hanapin ang kailangan mo sa Lungsod ng Maynila",
-    "subtitle": "Libreng gabay sa mga serbisyo, tanggapan, badyet at ordinansa ng lungsod, isinulat ng mga boluntaryong taga-Maynila rin.",
-    "nationalId": "National ID",
-    "birthCertificate": "Birth Certificate",
-    "businessRegistration": "Pagpaparehistro ng Negosyo"
+    "title": "Hanapin ang kailangan mo sa <city>Lungsod ng Maynila</city>",
+    "subtitle": "Ang BetterManila ay libreng gabay sa mga serbisyo, tanggapan, badyet at ordinansa ng lungsod, sinaliksik at isinulat ng mga boluntaryong nakatira rito.",
+    "searchButton": "Maghanap",
+    "disclaimer": "Hindi ito ang opisyal na website ng lungsod. Para sa opisyal na transaksiyon, bisitahin ang <link>manila.gov.ph</link>.",
+    "startHere": "Magsimula rito",
+    "facts": {
+      "barangays": "barangay",
+      "districts": "distrito",
+      "legislativeDistricts": "lehislatibong distrito"
+    },
+    "hospitalNote": "May ospital ng lungsod sa bawat lehislatibong distrito"
   },
   "services": {
     "title": "Mga Serbisyo at Impormasyon",
-    "governmentServices": "Mga Serbisyo ng Pamahalaan",
     "description": "Malinaw na paliwanag sa mga serbisyo ng lungsod: ano ang makukuha mo, ano ang dalhin, saan pupunta, at magkano.",
-    "viewAll": "Tingnan lahat ng serbisyo",
-    "viewAllCategory": "Tingnan lahat"
+    "catalogue": {
+      "eyebrow": "Mga serbisyo ng lungsod",
+      "title": "Mga serbisyo ng lungsod, hakbang-hakbang",
+      "lead": "Ano ang inaalok ng Lungsod ng Maynila, sino ang kwalipikado, ano ang dalhin, at saan pupunta. Sinasaliksik ng mga boluntaryo ang bawat gabay at itinatapat ito sa opisyal na pinagmulan.",
+      "meta_one": "{{count}} gabay sa {{categories}} kategorya sa ngayon, at may mga isinusulat pa.",
+      "meta_other": "{{count}} gabay sa {{categories}} kategorya sa ngayon, at may mga isinusulat pa.",
+      "guideCount_one": "{{count}} gabay",
+      "guideCount_other": "{{count}} gabay",
+      "crossLinkTitle": "Ang mismong City Hall ba ang hinahanap mo?",
+      "crossLinkNote": "Mga tanggapan, emergency hotline, abiso at talaan ng transparency."
+    },
+    "category": {
+      "notFoundTitle": "Hindi natagpuan ang kategorya",
+      "notFoundBody": "Wala ang kategoryang hinahanap mo.",
+      "notFoundCta": "Tingnan lahat ng kategorya ng serbisyo",
+      "inThisCategory": "Nasa kategoryang ito",
+      "loading": "Ikinakarga ang mga gabay...",
+      "emptyBody": "Wala pang naisusulat na gabay para sa kategoryang ito. Gawa ng mga boluntaryo ang site na ito, at nabubuksan ang mga seksiyon kapag tapos na ang pagsasaliksik.",
+      "emptyCta": "Tingnan ang mga kategoryang handa na",
+      "singleCta": "Basahin ang gabay",
+      "singleNote": "Nasa iisang pahina ang lahat ng nasa kategoryang ito.",
+      "railHeading": "Lahat ng kategorya ng serbisyo",
+      "crossLink": "Seksiyon ng pamahalaang lungsod",
+      "crossLinkNote": "Mga tanggapan, hotline, abiso at talaan ng lungsod."
+    }
   },
   "governmentActivity": {
     "title": "Pamahalaang Lungsod",
     "description": "Ang mga tanggapang namamahala sa Maynila, ang mga dokumentong inilalabas nila, at ang mga abisong dapat bantayan."
   },
-  "weather": {
-    "title": "Panahon"
+  "government": {
+    "directory": {
+      "eyebrow": "Pamahalaang lungsod",
+      "title": "Ang mga tao, tanggapan at talaan sa likod ng lungsod",
+      "lead": "Sino ang namamahala sa Lungsod ng Maynila, ang mga hotline na sumasagot kapag may nangyaring masama, at ang mga dokumentong kailangang ilathala ng bawat lungsod.",
+      "meta_one": "{{count}} pahina sa {{sections}} seksiyon sa ngayon, at may mga idinadagdag pa.",
+      "meta_other": "{{count}} pahina sa {{sections}} seksiyon sa ngayon, at may mga idinadagdag pa.",
+      "pageCount_one": "{{count}} pahina",
+      "pageCount_other": "{{count}} pahina",
+      "crossLinkTitle": "Serbisyo ba ang hinahanap mo?",
+      "crossLinkNote": "Hakbang-hakbang na gabay sa mga klinika, permit, paaralan at koleksyon ng basura."
+    },
+    "section": {
+      "notFoundTitle": "Hindi natagpuan ang seksiyon",
+      "notFoundBody": "Wala ang seksiyong hinahanap mo.",
+      "notFoundCta": "Tingnan ang seksiyon ng pamahalaan",
+      "inThisSection": "Nasa seksiyong ito",
+      "loading": "Ikinakarga ang mga pahina...",
+      "emptyBody": "Wala pang nailalathala sa seksiyong ito. Gawa ng mga boluntaryo ang site na ito, at nabubuksan ang mga seksiyon kapag tapos na ang pagsasaliksik.",
+      "emptyCta": "Tingnan ang mga seksiyong handa na",
+      "singleCta": "Buksan ang pahina",
+      "singleNote": "Nasa iisang pahina ang lahat ng nasa seksiyong ito.",
+      "railHeading": "Lahat ng seksiyon ng pamahalaan",
+      "crossLink": "Mga gabay sa serbisyo ng lungsod",
+      "crossLinkNote": "Hakbang-hakbang na tulong sa mga permit, klinika at programa ng lungsod."
+    }
   },
-  "forex": {
-    "title": "Palitan ng Salapi"
+  "document": {
+    "loading": "Ikinakarga ang dokumento",
+    "notFoundTitle": "Hindi Natagpuan ang Dokumento",
+    "noneSpecified": "Walang tinukoy na dokumento",
+    "loadFailed": "Hindi na-load ang dokumento",
+    "staleSession": "Hindi na-load ang pahinang ito. Kadalasan, ibig sabihin nito ay na-update ang site habang bukas ang tab na ito. Paki-refresh ang pahina; kung hindi pa rin gumana, subukan ang search box."
   },
-  "news": {
-    "title": "Mga Balita at Abiso"
+  "holidays": {
+    "title": "Mga paparating na pista opisyal",
+    "lead": "Mga regular na holiday at espesyal na araw na idineklara para sa {{year}}. Karaniwang sarado ang mga tanggapan ng lungsod sa mga araw na ito, kaya iplano ang anumang transaksiyon sa palibot ng mga ito.",
+    "today": "Ngayon",
+    "tomorrow": "Bukas",
+    "inDays": "Sa loob ng {{count}} araw",
+    "regular": "Regular na holiday",
+    "special": "Espesyal na araw na walang pasok",
+    "working": "Espesyal na araw na may pasok, bukas ang mga tanggapan",
+    "source": "Pinagmulan: {{source}}. Puwedeng magdagdag, maglipat o magkansela ng petsa ang mga susunod na proklamasyon.",
+    "readProclamation": "Basahin ang proklamasyon"
+  },
+  "liveStrip": {
+    "manilaTime": "Oras sa Maynila",
+    "temperature": "kasalukuyang temperatura sa Maynila",
+    "rateCaveat": "Indicative market rate, hindi ang reference rate ng Bangko Sentral",
+    "rateCaveatSr": "(indicative market rate, hindi ang reference rate ng Bangko Sentral)"
+  },
+  "searchPage": {
+    "eyebrow": "Maghanap",
+    "title": "Maghanap sa buong site",
+    "lead": "Bawat pahina ng serbisyo, tanggapan at dokumento ng transparency sa BetterManila, sa isang kahon.",
+    "placeholder": "Subukan: ospital, permiso ng negosyo, basura",
+    "clear": "Burahin ang hinanap",
+    "hint": "Pindutin ang <kbd>/</kbd> para tumalon dito, arrow keys para gumalaw sa mga resulta, Enter para buksan.",
+    "resultCount_one": "<count>{{count}}</count> resulta para sa <query>{{query}}</query>",
+    "resultCount_other": "<count>{{count}}</count> resulta para sa <query>{{query}}</query>",
+    "announce_one": "1 resulta para sa {{query}}",
+    "announce_other": "{{count}} resulta para sa {{query}}",
+    "filterLabel": "Salain ang mga resulta ayon sa seksiyon",
+    "filterAll": "Lahat",
+    "sectionListing": "Listahan ng seksiyon",
+    "tooShort": "Magpatuloy sa pag-type. Nagsisimula ang paghahanap sa dalawang letra.",
+    "noResults": "Walang resulta para sa <query>{{query}}</query>",
+    "didYouMean": "Ang ibig mo bang sabihin ay <suggestion>{{suggestion}}</suggestion>?",
+    "tipShort": "Subukan ang isa o dalawang salita sa halip na buong pangungusap.",
+    "tipTask": "Hanapin ang gawain, hindi ang tanggapan. Subukan ang <term>permiso ng negosyo</term> sa halip na pangalan ng departamento.",
+    "tipTaskTerm": "permiso ng negosyo",
+    "tipFilipino": "Gumagana rin ang mga salitang Filipino.",
+    "tipIncomplete": "Hindi pa lahat ay naisusulat. Gawa ng mga boluntaryo ang portal na ito at patuloy pa ang pagdaragdag ng mga pahina.",
+    "commonSearches": "Karaniwang hinahanap",
+    "commonTerms": [
+      "ospital",
+      "iskedyul ng basura",
+      "permiso ng negosyo",
+      "iskolarship",
+      "walang pasok",
+      "badyet ng lungsod"
+    ],
+    "browseServices": "Tingnan ang mga serbisyo",
+    "browseGovernment": "Tingnan ang pamahalaan"
+  },
+  "about": {
+    "title": "Tungkol sa BetterManila",
+    "lead": "Libreng gabay sa mga serbisyo, tanggapan, badyet at ordinansa ng Lungsod ng Maynila, nakasulat sa malinaw na wika ng mga boluntaryong nakatira rito.",
+    "intro": "Karamihan sa kailangang malaman ng isang residente ay pampubliko na. Nakakalat lang ito sa magkakahiwalay na portal, nakabaon sa mga PDF, at isinulat para sa mga auditor sa halip na para sa taong nakapila. Tinitipon ng site na ito ang mga materyal na iyon sa isang lugar, itinatapat ito sa tanggapang naglathala nito, at isinusulat muli para mabasa sa telepono sa loob ng ilang minuto.",
+    "disclaimer": {
+      "title": "Hindi ito ang opisyal na website ng lungsod",
+      "body": "Independent na proyekto ang BetterManila. Hindi ito kaugnay, hindi ineendorso, at hindi pinapatakbo ng Pamahalaang Lungsod ng Maynila. Walang inilalathala rito na opisyal na abiso, at walang transaksiyon sa site na ito na transaksiyon ng pamahalaan.",
+      "official": "Para sa opisyal na transaksiyon, anunsiyo at online na serbisyo, pumunta sa <link>manila.gov.ph</link>. Kung magkaiba ang sinasabi ng site na iyon at ng site na ito, ang site na iyon ang tama."
+    },
+    "sources": {
+      "title": "Saan nanggagaling ang impormasyon",
+      "lead": "Lahat ng nasa site na ito ay mula sa opisyal na publikasyon ng pamahalaan ng Pilipinas. Bawat pahina ay may nakasaad na pinagmulan at petsa kung kailan ito kinuha, para masuri mo mismo ang orihinal at mahusgahan kung gaano ito kabago. Kung pampubliko at matatag ang dokumento, direktang nililink ito ng pahina.",
+      "manila": "Ang opisyal na website ng lungsod. Mga tanggapan, opisina, anunsiyo at online na serbisyo.",
+      "dilg": "Mga badyet, financial statement at procurement disclosure na kailangang ilathala ng bawat LGU.",
+      "coa": "Taunang audit report kung paano talaga ginastos ng lungsod ang pondo ng bayan.",
+      "blgf": "Datos sa lokal na kita at fiscal performance ng mga lungsod at munisipalidad.",
+      "philgeps": "Mga pampublikong bid notice at contract award mula sa sistema ng procurement ng pamahalaan."
+    },
+    "corrections": {
+      "title": "May nakita kang mali? Sabihin mo",
+      "body": "Naglalathala ang site na ito ng mga datos tungkol sa isang tunay na pamahalaang lungsod, kaya hindi maliit na bagay ang maling numero ng hotline, lumang bayarin, o tanggapang lumipat na. Ang pag-uulat nito ang pinakamakabuluhang magagawa mo rito, at hindi mo kailangang marunong mag-code.",
+      "how": "Magbukas ng issue sa GitHub. Sabihin kung aling pahina ang mali at ano ang tamang impormasyon. Kung mayroon kang opisyal na pinagmulan, ilink ito. Kung wala, iulat pa rin at hahanapin ito.",
+      "report": "Mag-ulat ng mali sa GitHub",
+      "browse": "Tingnan ang repository"
+    },
+    "help": {
+      "title": "Paano makakatulong",
+      "lead": "Open source ang BetterManila at gawa ng mga boluntaryo. Ang site, kasama ang bawat salita ng nilalaman nito, ay nasa iisang pampublikong repository sa ilalim ng handle na <link>grgdlm/bettermanila</link>, kaya kahit sino ay puwedeng magbasa, magtanong o magdagdag.",
+      "writeTitle": "Magsulat at magpatunay",
+      "writeBody": "Magdagdag ng pahinang wala pa, o suriin ang mayroon na laban sa opisyal na pinagmulan nito at banggitin ito. Nakalagay ang nilalaman bilang plain markdown sa parehong repository ng code.",
+      "translateTitle": "Magsalin",
+      "translateBody": "Ingles at Filipino ang inilalabas ng site ngayon. Ang Bisaya, Bikol, Ilocano at iba pang wika sa switcher ay nakalista bilang kailangan ng tagasalin, at mananatiling nakalista hangga't walang nagsusulat nito.",
+      "localTitle": "Magbahagi ng lokal na kaalaman",
+      "localBody": "Aling bintana ang talagang bukas, aling numero ang sinasagot, ano ang ipinapadalang dalhin. Walang dokumentong nagtatala niyan, at madalas iyon ang pinakakailangan ng residente."
+    },
+    "status": {
+      "title": "Nasaan ang site ngayon",
+      "body": "Maaga pa ang site na ito, at sinasabi mismo iyon sa mga pahina. Kung may datos na hindi makumpirma laban sa opisyal na pinagmulan, may nakikitang paalala ang pahina na humihingi ng tulong para makumpleto ang seksiyon sa halip na punan ang puwang ng kumpiyansang hula.",
+      "why": "Sinadya iyon. Mas ligtas ang puwang na nakikita mo kaysa sa numerong mukhang opisyal pero mali. Naaalis ang mga paalalang iyon habang sinusuri ang mga pinagmulan, at bawat isa ay bukas na paanyaya sa sinumang nakakaalam ng sagot.",
+      "browse": "May hinahanap ka bang partikular? <services>Tingnan ang mga serbisyo</services>, <government>ang pamahalaang lungsod</government>, o <search>maghanap sa site</search>."
+    }
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Hindi namin natagpuan ang pahinang iyon",
+    "lead": "Maaaring may mali sa pagkakasulat ng address, o inilipat na ang pahina mula nang isulat ang link. Walang mali sa panig mo.",
+    "youAsked": "Hinanap mo ang",
+    "searchButton": "Maghanap",
+    "mostLookedUp": "Pinakamadalas hanapin",
+    "startFromTop": "O magsimula sa itaas",
+    "allServicesLabel": "Lahat ng serbisyo",
+    "allServicesNote": "Bawat gabay, nakagrupo ayon sa kailangan mong gawin",
+    "governmentLabel": "Pamahalaang lungsod",
+    "governmentNote": "Mga tanggapan, opisina, badyet at ordinansa",
+    "brokenLink": "May link ba sa site na ito ang nagdala sa iyo rito? Kasalanan namin iyon, at gusto naming ayusin. <report>Iulat ang sirang link sa GitHub</report>, o magbasa pa <about>tungkol sa site na ito</about>."
   },
   "footer": {
     "landmark": "Footer ng site",
@@ -64,17 +262,39 @@
     "transparency": "Transparency",
     "news": "Balita"
   },
-  "joinUs": {
-    "stripTitle": "Sumali sa #CivicTech",
-    "stripSubtitle": "Tumulong sa pagbuo ng mas mahusay na serbisyo publiko sa pamamagitan ng teknolohiya",
-    "joinNow": "Sumali na",
-    "discord": "Discord",
-    "bannerTitle": "Sumali sa #CivicTech",
-    "bannerSubtitle": "Tumulong sa pagbuo ng mas mahusay na serbisyo publiko sa pamamagitan ng teknolohiya.",
-    "bannerHighlight": "Pinamumunuan ng boluntaryo. Open source. Mula sa komunidad.",
-    "joinMovement": "Sumali sa amin",
-    "or": "o",
-    "joinDiscord": "Sumali sa Discord",
-    "features": "Imprastraktura • Mentorship • Komunidad • Office Space"
+  "seo": {
+    "home": {
+      "title": "Unang pahina",
+      "description": "Independent na gabay, gawa ng mga boluntaryo, sa mga serbisyo, tanggapan, badyet at ordinansa ng Lungsod ng Maynila, sa malinaw na wika.",
+      "keywords": "Maynila, Lungsod ng Maynila, serbisyo ng lungsod, barangay, hotline, permiso ng negosyo, transparency"
+    },
+    "services": {
+      "title": "Mga Serbisyo",
+      "description": "Hakbang-hakbang na gabay sa mga serbisyo ng {{name}}: kalusugan, edukasyon, permiso ng negosyo, koleksyon ng basura at iba pa.",
+      "keywords": "serbisyo ng pamahalaan, pampublikong serbisyo, lokal na pamahalaan, serbisyong sibiko",
+      "categoryKeywords": "{{category}}, serbisyo ng pamahalaan, pampublikong serbisyo, lokal na pamahalaan"
+    },
+    "government": {
+      "title": "Pamahalaan",
+      "description": "Paano nakaayos ang pamahalaan ng {{name}}: mga tanggapan, emergency hotline, balita at dokumento ng transparency.",
+      "keywords": "lokal na pamahalaan, tanggapan ng lungsod, emergency hotline, transparency, opisina ng pamahalaan",
+      "categoryKeywords": "{{category}}, lokal na pamahalaan, pamahalaang lungsod, opisina ng pamahalaan"
+    },
+    "search": {
+      "title": "Maghanap",
+      "description": "Hanapin ang bawat serbisyo, tanggapan at dokumento sa BetterManila.",
+      "keywords": "maghanap, serbisyo ng Maynila, city hall, humanap ng serbisyo"
+    },
+    "about": {
+      "title": "Tungkol",
+      "description": "Ang BetterManila ay libre at independent na gabay, gawa ng mga boluntaryo, sa mga serbisyo, tanggapan, badyet at ordinansa ng Lungsod ng Maynila. Hindi ito ang opisyal na website ng lungsod.",
+      "keywords": "tungkol sa bettermanila, independent, boluntaryo, open source, lungsod ng maynila, pinagmulan, pagwawasto"
+    },
+    "notFound": {
+      "title": "Hindi natagpuan ang pahina",
+      "description": "Wala ang pahinang iyon sa BetterManila. Maghanap sa site, o pumunta sa mga hotline, ospital, permit at tanggapan ng lungsod."
+    },
+    "governmentFallback": "lokal",
+    "servicesFallback": "lokal na pamahalaan"
   }
 }

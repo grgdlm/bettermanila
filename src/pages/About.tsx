@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   TriangleAlert,
 } from 'lucide-react';
+import { Trans, useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
 import { Heading } from '../components/ui/Heading';
 import { REPO_URL } from '../data/navigation';
@@ -40,71 +41,66 @@ import { REPO_URL } from '../data/navigation';
 /** Keeps staggered elements hidden until their delay elapses. */
 const FILL = '[animation-fill-mode:both] motion-reduce:animate-none';
 
-/** Where the facts on this site come from. Official publications only. */
+/**
+ * Where the facts on this site come from. Official publications only.
+ *
+ * Names and domains are proper nouns and stay as published in every language;
+ * only the note explaining what each source carries is translated, under
+ * `about.sources.<key>`.
+ */
 const SOURCES = [
   {
     icon: Building2,
+    key: 'manila',
     name: 'City Government of Manila',
     domain: 'manila.gov.ph',
     href: 'https://manila.gov.ph',
-    note: 'The official city website. Departments, offices, announcements and online services.',
   },
   {
     icon: FolderOpen,
+    key: 'dilg',
     name: 'DILG Full Disclosure Policy Portal',
     domain: 'fdpp.dilg.gov.ph',
     href: 'https://fdpp.dilg.gov.ph',
-    note: 'Budgets, financial statements and procurement disclosures that every LGU is required to publish.',
   },
   {
     icon: ShieldCheck,
+    key: 'coa',
     name: 'Commission on Audit',
     domain: 'coa.gov.ph',
     href: 'https://www.coa.gov.ph',
-    note: 'Annual audit reports on how the city actually spent public money.',
   },
   {
     icon: Banknote,
+    key: 'blgf',
     name: 'Bureau of Local Government Finance',
     domain: 'blgf.gov.ph',
     href: 'https://blgf.gov.ph',
-    note: 'Local revenue, income and fiscal performance data for cities and municipalities.',
   },
   {
     icon: Gavel,
+    key: 'philgeps',
     name: 'PhilGEPS',
     domain: 'open.philgeps.gov.ph',
     href: 'https://open.philgeps.gov.ph',
-    note: 'Public bid notices and contract awards from the government procurement system.',
   },
 ];
 
 /** The kinds of contribution the project needs. */
 const WAYS_TO_HELP = [
-  {
-    icon: PenLine,
-    title: 'Write and verify',
-    body: 'Add a page that is missing, or check an existing one against its official source and cite it. Content lives as plain markdown in the same repository as the code.',
-  },
-  {
-    icon: Languages,
-    title: 'Translate',
-    body: 'The site ships in English and Filipino today. Bisaya, Bikol, Ilocano and the other languages in the switcher are listed as needing a translator, and stay listed until a speaker writes them.',
-  },
-  {
-    icon: MapPin,
-    title: 'Share local knowledge',
-    body: 'Which window is actually open, which number gets answered, what you are asked to bring. No document records that, and it is often what a resident needs most.',
-  },
+  { icon: PenLine, key: 'write' },
+  { icon: Languages, key: 'translate' },
+  { icon: MapPin, key: 'local' },
 ];
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <>
       <SEO
-        title="About"
-        description="BetterManila is a free, independent, volunteer-built guide to City of Manila services, departments, budgets and ordinances. Not the official city website."
-        keywords="about bettermanila, independent, volunteer, open source, city of manila, sources, corrections"
+        title={t('seo.about.title')}
+        description={t('seo.about.description')}
+        keywords={t('seo.about.keywords')}
       />
       <div>
         {/* Headline and the disclaimer, in that order and nothing between */}
@@ -120,34 +116,28 @@ export default function About() {
             <p
               className={`animate-fade-in ${FILL} text-xs font-semibold tracking-[0.2em] text-primary-700 uppercase`}
             >
-              Independent. Open source. Volunteer-built.
+              {t('common.eyebrowIndependent')}
             </p>
 
             <Heading
               level={1}
               className={`animate-slide-in ${FILL} mt-3 mb-0 max-w-3xl text-3xl leading-[1.1] font-extrabold tracking-tight text-primary-800 sm:text-4xl md:text-5xl`}
             >
-              About BetterManila
+              {t('about.title')}
             </Heading>
 
             <p
               className={`animate-slide-in ${FILL} mt-4 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg`}
               style={{ animationDelay: '100ms' }}
             >
-              A free guide to City of Manila services, departments, budgets and
-              ordinances, written in plain language by volunteers who live here.
+              {t('about.lead')}
             </p>
 
             <p
               className={`animate-slide-in ${FILL} mt-4 max-w-2xl text-base leading-relaxed text-gray-700`}
               style={{ animationDelay: '140ms' }}
             >
-              Most of what a resident needs to know is already public. It is
-              just spread across separate portals, buried in PDFs, and written
-              for auditors rather than for the person standing in the queue.
-              This site gathers that material in one place, checks it against
-              the office that published it, and rewrites it so it can be read on
-              a phone in a few minutes.
+              {t('about.intro')}
             </p>
 
             {/* Unmissable, and deliberately above everything else */}
@@ -164,26 +154,25 @@ export default function About() {
                 </span>
                 <div className="min-w-0">
                   <h2 className="font-display text-lg font-extrabold tracking-tight text-primary-800 sm:text-xl">
-                    This is not the official city website
+                    {t('about.disclaimer.title')}
                   </h2>
                   <p className="mt-2 text-base leading-relaxed text-gray-700">
-                    BetterManila is an independent project. It is not affiliated
-                    with, endorsed by, or operated by the City Government of
-                    Manila. Nothing published here is an official notice, and no
-                    transaction on this site is a government transaction.
+                    {t('about.disclaimer.body')}
                   </p>
                   <p className="mt-3 text-base leading-relaxed text-gray-700">
-                    For official business, announcements and online services, go
-                    to{' '}
-                    <a
-                      href="https://manila.gov.ph"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded font-semibold text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-                    >
-                      manila.gov.ph
-                    </a>
-                    . Where that site and this one disagree, that site is right.
+                    <Trans
+                      i18nKey="about.disclaimer.official"
+                      components={{
+                        link: (
+                          <a
+                            href="https://manila.gov.ph"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded font-semibold text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                          />
+                        ),
+                      }}
+                    />
                   </p>
                 </div>
               </div>
@@ -195,14 +184,10 @@ export default function About() {
         <section className="border-t border-gray-200 bg-white">
           <div className="container mx-auto px-4 py-12 md:py-14">
             <h2 className="font-display max-w-3xl text-2xl font-extrabold tracking-tight text-primary-800 sm:text-3xl">
-              Where the information comes from
+              {t('about.sources.title')}
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-700">
-              Everything on this site is sourced from official Philippine
-              government publications. Every page carries the source it came
-              from and the date it was retrieved, so you can check the original
-              yourself and judge how current it is. Where the document is public
-              and stable, the page links straight to it.
+              {t('about.sources.lead')}
             </p>
 
             <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -230,7 +215,7 @@ export default function About() {
                           {source.domain}
                         </span>
                         <span className="mt-1.5 block text-sm leading-snug text-gray-700">
-                          {source.note}
+                          {t(`about.sources.${source.key}`)}
                         </span>
                       </span>
                       <ExternalLink
@@ -258,20 +243,13 @@ export default function About() {
                 </span>
                 <div className="min-w-0">
                   <h2 className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-                    Found a mistake? Tell us
+                    {t('about.corrections.title')}
                   </h2>
                   <p className="mt-3 max-w-2xl text-base leading-relaxed text-primary-100">
-                    This site publishes facts about a real city government, so a
-                    wrong hotline number, an out of date fee or a department
-                    that has since moved is not a small thing. Reporting one is
-                    the single most useful thing you can do here, and you do not
-                    need to know how to code.
+                    {t('about.corrections.body')}
                   </p>
                   <p className="mt-3 max-w-2xl text-base leading-relaxed text-primary-100">
-                    Open an issue on GitHub. Say which page is wrong and what
-                    the correct information is. If you have the official source,
-                    link it. If you do not, report it anyway and it will be
-                    looked up.
+                    {t('about.corrections.how')}
                   </p>
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <a
@@ -280,7 +258,7 @@ export default function About() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-semibold text-primary-800 shadow-sm transition-colors hover:bg-primary-50 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-800 focus-visible:outline-none"
                     >
-                      Report a mistake on GitHub
+                      {t('about.corrections.report')}
                       <ExternalLink aria-hidden="true" className="h-4 w-4" />
                     </a>
                     <a
@@ -289,7 +267,7 @@ export default function About() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-xl border border-white/30 px-5 py-3 font-semibold text-white transition-colors hover:border-white/70 hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-800 focus-visible:outline-none"
                     >
-                      Browse the repository
+                      {t('about.corrections.browse')}
                       <ExternalLink aria-hidden="true" className="h-4 w-4" />
                     </a>
                   </div>
@@ -303,21 +281,22 @@ export default function About() {
         <section className="border-t border-gray-200 bg-white">
           <div className="container mx-auto px-4 py-12 md:py-14">
             <h2 className="font-display max-w-3xl text-2xl font-extrabold tracking-tight text-primary-800 sm:text-3xl">
-              How to help
+              {t('about.help.title')}
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-700">
-              BetterManila is open source and built by volunteers. The site,
-              including every word of its content, lives in one public
-              repository under the handle{' '}
-              <a
-                href={REPO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-              >
-                grgdlm/bettermanila
-              </a>
-              , so anyone can read it, question it or add to it.
+              <Trans
+                i18nKey="about.help.lead"
+                components={{
+                  link: (
+                    <a
+                      href={REPO_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                    />
+                  ),
+                }}
+              />
             </p>
 
             <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -325,7 +304,7 @@ export default function About() {
                 const Icon = way.icon;
                 return (
                   <li
-                    key={way.title}
+                    key={way.key}
                     className="h-full rounded-xl border border-gray-200 bg-white p-5"
                   >
                     <span
@@ -335,10 +314,10 @@ export default function About() {
                       <Icon className="h-5 w-5" />
                     </span>
                     <h3 className="font-display mt-3.5 text-base font-bold tracking-tight text-primary-800">
-                      {way.title}
+                      {t(`about.help.${way.key}Title`)}
                     </h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-gray-700">
-                      {way.body}
+                      {t(`about.help.${way.key}Body`)}
                     </p>
                   </li>
                 );
@@ -360,44 +339,38 @@ export default function About() {
                 </span>
                 <div className="min-w-0">
                   <h2 className="font-display text-lg font-extrabold tracking-tight text-primary-800 sm:text-xl">
-                    Where the site stands today
+                    {t('about.status.title')}
                   </h2>
                   <p className="mt-2 text-base leading-relaxed text-gray-700">
-                    This site is early, and it says so on the pages themselves.
-                    Where a fact could not be confirmed against an official
-                    source, the page carries a visible note asking readers to
-                    help complete the section instead of filling the gap with a
-                    confident guess.
+                    {t('about.status.body')}
                   </p>
                   <p className="mt-3 text-base leading-relaxed text-gray-700">
-                    That is deliberate. A gap you can see is safer than a number
-                    that looks authoritative and is wrong. Those notes come down
-                    as sources are checked, and each one is an open invitation
-                    to anyone who knows the answer.
+                    {t('about.status.why')}
                   </p>
                   <p className="mt-4 text-sm leading-relaxed text-gray-700">
-                    Looking for something specific?{' '}
-                    <Link
-                      to="/services"
-                      className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-                    >
-                      Browse services
-                    </Link>
-                    ,{' '}
-                    <Link
-                      to="/government"
-                      className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-                    >
-                      the city government
-                    </Link>
-                    , or{' '}
-                    <Link
-                      to="/search"
-                      className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-                    >
-                      search the site
-                    </Link>
-                    .
+                    <Trans
+                      i18nKey="about.status.browse"
+                      components={{
+                        services: (
+                          <Link
+                            to="/services"
+                            className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                          />
+                        ),
+                        government: (
+                          <Link
+                            to="/government"
+                            className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                          />
+                        ),
+                        search: (
+                          <Link
+                            to="/search"
+                            className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                          />
+                        ),
+                      }}
+                    />
                   </p>
                 </div>
               </div>

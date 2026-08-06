@@ -3,6 +3,7 @@ import Breadcrumbs from '../components/ui/Breadcrumbs';
 import { Banner } from '@bettergov/kapwa/banner';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {
@@ -49,6 +50,7 @@ export default function Document({
   categoryType,
 }: DocumentProps) {
   const { documentSlug, category } = useParams();
+  const { t } = useTranslation();
   const [markdownContent, setMarkdownContent] =
     useState<MarkdownContent | null>(null);
   const [nestedIndex, setNestedIndex] = useState<CategoryIndex | null>(null);
@@ -63,11 +65,11 @@ export default function Document({
   // current page as aria-current text rather than a link to itself.
   const [breadcrumbs, setBreadcrumbs] = useState<
     { label: string; href?: string }[]
-  >([{ label: 'Home', href: '/' }]);
+  >([{ label: t('common.home'), href: '/' }]);
 
   useEffect(() => {
     if (!documentSlug || !category || !categoryType) {
-      setError('No document specified');
+      setError(t('document.noneSpecified'));
       setLoading(false);
       return;
     }
@@ -86,7 +88,9 @@ export default function Document({
         const categories = isGovernment
           ? governmentCategories.categories
           : serviceCategories.categories;
-        const sectionLabel = isGovernment ? 'Government' : 'Services';
+        const sectionLabel = isGovernment
+          ? t('common.government')
+          : t('common.services');
         const sectionHref = isGovernment ? '/government' : '/services';
         const categoryData = categories.find(c => c.slug === category);
 
@@ -95,7 +99,7 @@ export default function Document({
           const index = await getCategorySubcategories(documentSlug);
           setNestedIndex(index);
           setBreadcrumbs([
-            { label: 'Home', href: '/' },
+            { label: t('common.home'), href: '/' },
             { label: sectionLabel, href: sectionHref },
             {
               label: categoryData?.category ?? category,
@@ -119,7 +123,7 @@ export default function Document({
         sessionStorage.removeItem(`reloaded:${window.location.pathname}`);
 
         setBreadcrumbs([
-          { label: 'Home', href: '/' },
+          { label: t('common.home'), href: '/' },
           { label: sectionLabel, href: sectionHref },
           {
             label: categoryData?.category ?? category,
@@ -139,29 +143,23 @@ export default function Document({
             window.location.reload();
             return;
           }
-          setError(
-            'This page failed to load, which usually means the site was ' +
-              'updated while this tab was open. Please refresh the page; ' +
-              'if that does not help, try the search box.'
-          );
+          setError(t('document.staleSession'));
           return;
         }
-        setError(
-          err instanceof Error ? err.message : 'Failed to load document'
-        );
+        setError(err instanceof Error ? err.message : t('document.loadFailed'));
       } finally {
         setLoading(false);
       }
     };
 
     loadContent();
-  }, [documentSlug, category, categoryType]);
+  }, [documentSlug, category, categoryType, t]);
 
   if (loading) {
     return (
       <Section className="pb-16">
         <div className="max-w-4xl" aria-busy="true">
-          <span className="sr-only">Loading document</span>
+          <span className="sr-only">{t('document.loading')}</span>
           <div className={skeletonLine('h-4 w-56')} />
           <div className={skeletonLine('mt-10 h-9 w-3/4 rounded-lg')} />
           <div className="mt-6 space-y-3">
@@ -181,7 +179,7 @@ export default function Document({
           <Breadcrumbs className="mb-8" items={breadcrumbs} />
           <Banner
             type="error"
-            title="Document Not Found"
+            title={t('document.notFoundTitle')}
             description={error}
             icon
           />
@@ -205,8 +203,8 @@ export default function Document({
               size="md"
               eyebrow={
                 categoryType === 'government'
-                  ? 'City government'
-                  : 'City services'
+                  ? t('government.directory.eyebrow')
+                  : t('services.catalogue.eyebrow')
               }
               title={nestedIndex.title ?? documentSlug}
               lead={nestedIndex.description}

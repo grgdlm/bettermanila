@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Banner } from '@bettergov/kapwa/banner';
 import Section from '../components/ui/Section';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
@@ -31,6 +32,7 @@ import {
  */
 const Services: React.FC = () => {
   const { category } = useParams();
+  const { t } = useTranslation();
   const [pagesBySlug, setPagesBySlug] = useState<Record<
     string,
     Subcategory[]
@@ -61,19 +63,25 @@ const Services: React.FC = () => {
     return (
       <>
         <SEO
-          title="Services"
-          description={`Step-by-step guides to ${import.meta.env.VITE_GOVERNMENT_NAME || 'local government'} services: health, education, business permits, garbage collection and more.`}
-          keywords="government services, public services, local government, civic services"
+          title={t('seo.services.title')}
+          description={t('seo.services.description', {
+            name:
+              import.meta.env.VITE_GOVERNMENT_NAME || t('seo.servicesFallback'),
+          })}
+          keywords={t('seo.services.keywords')}
         />
         <Section className="pb-16">
           <Breadcrumbs className="mb-8" />
           <PageHeader
-            eyebrow="City services"
-            title="City services, explained step by step"
-            lead="What the City of Manila offers, who qualifies, what to bring, and where to go. Volunteers research each guide and check it against official sources."
+            eyebrow={t('services.catalogue.eyebrow')}
+            title={t('services.catalogue.title')}
+            lead={t('services.catalogue.lead')}
             meta={
               loaded && totalGuides > 0
-                ? `${totalGuides} guides in ${activeServiceCategories.length} categories so far, with more being written.`
+                ? t('services.catalogue.meta', {
+                    count: totalGuides,
+                    categories: activeServiceCategories.length,
+                  })
                 : undefined
             }
           />
@@ -90,7 +98,9 @@ const Services: React.FC = () => {
                   description={c.description}
                   meta={
                     loaded
-                      ? `${pages.length} ${pages.length === 1 ? 'guide' : 'guides'}`
+                      ? t('services.catalogue.guideCount', {
+                          count: pages.length,
+                        })
                       : undefined
                   }
                   pages={pages.map(page => ({
@@ -113,11 +123,10 @@ const Services: React.FC = () => {
               />
               <span className="min-w-0 flex-1">
                 <span className="font-display block text-base leading-tight font-bold tracking-tight text-primary-800">
-                  Looking for City Hall itself?
+                  {t('services.catalogue.crossLinkTitle')}
                 </span>
                 <span className="mt-1 block text-sm leading-relaxed text-gray-700">
-                  Departments, emergency hotlines, advisories and transparency
-                  records.
+                  {t('services.catalogue.crossLinkNote')}
                 </span>
               </span>
               <ArrowRight
@@ -143,15 +152,15 @@ const Services: React.FC = () => {
         <Breadcrumbs className="mb-8" />
         <Banner
           type="error"
-          title="Category not found"
-          description="The category you are looking for does not exist."
+          title={t('services.category.notFoundTitle')}
+          description={t('services.category.notFoundBody')}
           icon
         />
         <Link
           to="/services"
           className="mt-6 inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-700 transition-colors hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
         >
-          Browse all service categories
+          {t('services.category.notFoundCta')}
           <ArrowRight aria-hidden="true" className="h-4 w-4" />
         </Link>
       </Section>
@@ -172,14 +181,16 @@ const Services: React.FC = () => {
       <SEO
         title={categoryData.category || category}
         description={categoryData.description}
-        keywords={`${categoryData.category}, government services, public services, local government`}
+        keywords={t('seo.services.categoryKeywords', {
+          category: categoryData.category,
+        })}
       />
       <Section className="pb-16">
         <Breadcrumbs
           className="mb-8"
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Services', href: '/services' },
+            { label: t('common.home'), href: '/' },
+            { label: t('common.services'), href: '/services' },
             { label: categoryData.category },
           ]}
         />
@@ -187,7 +198,7 @@ const Services: React.FC = () => {
           <div>
             <PageHeader
               size="md"
-              eyebrow="City services"
+              eyebrow={t('services.catalogue.eyebrow')}
               icon={categoryData.icon}
               title={categoryData.category}
               lead={categoryData.description}
@@ -195,22 +206,22 @@ const Services: React.FC = () => {
 
             <div className="mt-9">
               <h2 className="text-xs font-semibold tracking-[0.2em] text-gray-700 uppercase">
-                In this category
+                {t('services.category.inThisCategory')}
               </h2>
               {!loaded ? (
-                <p className="mt-4 text-sm text-gray-700">Loading guides...</p>
+                <p className="mt-4 text-sm text-gray-700">
+                  {t('services.category.loading')}
+                </p>
               ) : pages.length === 0 ? (
                 <div className="mt-4 max-w-2xl rounded-xl border border-dashed border-gray-300 bg-gray-50 p-6">
                   <p className="text-sm leading-relaxed text-gray-700">
-                    No guides have been written for this category yet. This site
-                    is volunteer-built, and sections open as the research is
-                    finished.
+                    {t('services.category.emptyBody')}
                   </p>
                   <Link
                     to="/services"
                     className="mt-3 inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-700 transition-colors hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
                   >
-                    See the categories that are ready
+                    {t('services.category.emptyCta')}
                     <ArrowRight aria-hidden="true" className="h-4 w-4" />
                   </Link>
                 </div>
@@ -220,10 +231,10 @@ const Services: React.FC = () => {
                     to={`/services/${category}/${pages[0].slug}`}
                     title={pages[0].name}
                     description={pages[0].description}
-                    cta="Read the guide"
+                    cta={t('services.category.singleCta')}
                   />
                   <p className="mt-3 text-sm text-gray-700">
-                    Everything in this category lives on one page.
+                    {t('services.category.singleNote')}
                   </p>
                 </div>
               ) : (
@@ -242,20 +253,23 @@ const Services: React.FC = () => {
           </div>
 
           <aside className="mt-12 lg:mt-0">
-            <CategoryRail heading="All service categories" items={railItems} />
+            <CategoryRail
+              heading={t('services.category.railHeading')}
+              items={railItems}
+            />
             <div className="mt-8 border-t border-gray-200 pt-6">
               <Link
                 to="/government"
                 className="group inline-flex items-center gap-1.5 rounded text-sm font-semibold text-primary-700 transition-colors hover:text-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               >
-                City government section
+                {t('services.category.crossLink')}
                 <ArrowRight
                   aria-hidden="true"
                   className="h-4 w-4 transition-transform group-hover:translate-x-0.5 motion-reduce:transform-none"
                 />
               </Link>
               <p className="mt-1 text-sm text-gray-700">
-                Departments, hotlines, advisories and city records.
+                {t('services.category.crossLinkNote')}
               </p>
             </div>
           </aside>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CloudSun, Clock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * The live Manila strip that rides in the navbar's utility band.
@@ -21,9 +22,11 @@ import { CloudSun, Clock } from 'lucide-react';
 const MANILA = 'Asia/Manila';
 
 export default function LiveStrip() {
+  const { t, i18n } = useTranslation();
   const [now, setNow] = useState(() => new Date());
   const [weather, setWeather] = useState<number | null>(null);
   const [usd, setUsd] = useState<number | null>(null);
+  const dateLocale = `${i18n.resolvedLanguage ?? 'en'}-PH`;
 
   useEffect(() => {
     // Half a minute is enough resolution for a header clock, and it avoids
@@ -54,6 +57,9 @@ export default function LiveStrip() {
     return () => controller.abort();
   }, []);
 
+  // The clock stays en-PH: a 12-hour "3:40 PM" is how the time is written in
+  // Manila in either language. Only the weekday and month names below change
+  // with the reader's language.
   const time = new Intl.DateTimeFormat('en-PH', {
     timeZone: MANILA,
     hour: 'numeric',
@@ -61,7 +67,7 @@ export default function LiveStrip() {
     hour12: true,
   }).format(now);
 
-  const date = new Intl.DateTimeFormat('en-PH', {
+  const date = new Intl.DateTimeFormat(dateLocale, {
     timeZone: MANILA,
     weekday: 'short',
     day: 'numeric',
@@ -78,7 +84,7 @@ export default function LiveStrip() {
         <Clock aria-hidden="true" className="h-3.5 w-3.5 text-primary-300" />
         <span className="tabular-nums">{time}</span>
         <span className="text-primary-200 max-sm:hidden">{date}</span>
-        <span className="sr-only">Manila time</span>
+        <span className="sr-only">{t('liveStrip.manilaTime')}</span>
       </span>
 
       {weather !== null && (
@@ -90,7 +96,7 @@ export default function LiveStrip() {
               className="h-3.5 w-3.5 text-primary-300"
             />
             <span className="tabular-nums">{weather}&deg;C</span>
-            <span className="sr-only">current temperature in Manila</span>
+            <span className="sr-only">{t('liveStrip.temperature')}</span>
           </span>
         </>
       )}
@@ -100,15 +106,13 @@ export default function LiveStrip() {
           {divider}
           <span
             className="whitespace-nowrap text-white max-sm:hidden"
-            title="Indicative market rate, not the Bangko Sentral reference rate"
+            title={t('liveStrip.rateCaveat')}
           >
             <span className="text-primary-200">$1 = </span>
             <span className="tabular-nums">&#8369;{usd.toFixed(2)}</span>
             {/* The title attribute is invisible to keyboard, touch and
                 screen-reader users, so state the caveat for them too. */}
-            <span className="sr-only">
-              (indicative market rate, not the Bangko Sentral reference rate)
-            </span>
+            <span className="sr-only">{t('liveStrip.rateCaveatSr')}</span>
           </span>
         </>
       )}
