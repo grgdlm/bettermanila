@@ -2,6 +2,8 @@
 
 Intramuros is where Manila began: the walled city the Spanish built after the city's founding in 1571, and the one district where four centuries of that history still stand together. This page carries the entrance fees and opening hours as the Intramuros Administration publishes them, so you can plan the visit before you go.
 
+![The stone gateway of Fort Santiago, its carved relief weathered above the arch, framed by the fort's thick walls.](/images/tourism/fort-santiago.webp 'Fort Santiago guards the mouth of the Pasig at the northern corner of the walled city.')
+
 ---
 
 ## Hours and fees, per site
@@ -40,6 +42,8 @@ TODO: Add San Agustin Museum's admission fee and both churches' visiting hours f
 ---
 
 ## Getting there
+
+![A garden inside the Intramuros walls, with clipped lawns and palms below the old stone ramparts.](/images/tourism/intramuros-gardens.webp 'Inside the walls. The district itself is a public neighborhood — walking through the streets, plazas and gardens costs nothing.')
 
 Intramuros sits directly across Padre Burgos Avenue from Manila City Hall. The nearest LRT-1 station is Central Terminal; from there it is a short walk past City Hall into the Victoria Street or General Luna gates. Calesas and pedicabs circulate inside the district — agree on the fare before boarding.
 

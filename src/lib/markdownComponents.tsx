@@ -22,8 +22,23 @@ import { BookOpenCheck } from 'lucide-react';
 import { TableWithToggle, type HastLike } from './TableWithToggle';
 import { VerifyNotice } from '../components/ui/VerifyNotice';
 import { linkifyTelChildren } from './telLinks';
+import { Figure } from '../components/ui/Figure';
 
 const TODO_PREFIX = /^\s*TODO:\s*/;
+
+/**
+ * True when a paragraph's only content is a single image.
+ *
+ * Markdown wraps a lone image in a paragraph, and a <figure> inside a <p> is
+ * invalid HTML that React will complain about at hydration. The paragraph
+ * renderer checks this and yields the figure directly instead of nesting it.
+ */
+function isLoneImage(node?: HastLike): boolean {
+  const children = (node?.children ?? []).filter(
+    child => !(child.type === 'text' && !String(child.value ?? '').trim())
+  );
+  return children.length === 1 && children[0]?.tagName === 'img';
+}
 
 /**
  * If a markdown paragraph's text begins with "TODO:", return its children
@@ -140,7 +155,31 @@ export function createMarkdownComponents(theme: TypographyTheme) {
         {children}
       </h6>
     ),
-    p: ({ children, ...props }: MdProps<HTMLParagraphElement>) => {
+    img: ({
+      src,
+      alt,
+      title,
+    }: {
+      src?: string;
+      alt?: string;
+      title?: string;
+    } & MdProps<HTMLElement>) => (
+      <Figure
+        src={typeof src === 'string' ? src : ''}
+        alt={alt ?? ''}
+        caption={title}
+        theme={theme}
+      />
+    ),
+    p: ({
+      node,
+      children,
+      ...props
+    }: { node?: HastLike } & MdProps<HTMLParagraphElement>) => {
+      // A lone image is rendered as a figure, which cannot live inside a <p>.
+      // Hand the child straight through rather than wrapping it.
+      if (isLoneImage(node)) return <>{children}</>;
+
       // Paragraphs starting with "TODO:" mark unverified facts in the
       // content. Render them as a contribution callout instead of body copy.
       const notice = extractVerifyNotice(children);

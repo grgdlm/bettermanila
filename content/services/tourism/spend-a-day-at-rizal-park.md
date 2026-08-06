@@ -2,6 +2,8 @@
 
 Rizal Park — Luneta to most Manileños — is the country's best-known public park: open ground stretching from Taft Avenue to Manila Bay, free to enter, and carrying more national history per hectare than anywhere outside Intramuros next door.
 
+![The Rizal Monument: a bronze figure of José Rizal standing before a tall granite obelisk, with sentries posted either side.](/images/tourism/rizal-monument.webp 'The Rizal Monument, under permanent honor guard.')
+
 ---
 
 ## What you are standing on
@@ -23,6 +25,8 @@ TODO: The park also contains ticketed and scheduled attractions — the Chinese 
 ---
 
 ## Getting there
+
+![Open lawns and paths across Rizal Park, with Manila's buildings rising along the far edge.](/images/tourism/rizal-park-skyline.webp "The park's open ground runs from Taft Avenue toward Manila Bay, with the city behind it.")
 
 The nearest LRT-1 stations are United Nations and Central Terminal, both a short walk from the park's Taft Avenue side. The park sits between Taft Avenue, Padre Burgos Avenue, and Roxas Boulevard — any Taft-bound jeepney or bus passing "Luneta" stops within reach.
 

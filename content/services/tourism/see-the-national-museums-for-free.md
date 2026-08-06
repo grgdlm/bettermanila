@@ -2,6 +2,8 @@
 
 The country's three flagship museums — the National Museum of Fine Arts, the National Museum of Anthropology, and the National Museum of Natural History — stand side by side at the edge of Rizal Park, and admission to all three is **free**. That is the National Museum of the Philippines' own standing policy: "Open to the general public. Admission is FREE."
 
+![A neoclassical National Museum building in Ermita, a long colonnade running the width of its front.](/images/tourism/national-museum.webp 'The National Museum complex in Ermita, at the northeastern edge of Rizal Park.')
+
 ---
 
 ## The three museums
@@ -38,6 +40,8 @@ Every Sunday, the museum runs the **Museum Sunday Joiners' Tour** — a comprehe
 ---
 
 ## Worth knowing before you go
+
+![The National Museum of Fine Arts at golden hour, its columned facade lit warm against the evening sky.](/images/tourism/fine-arts-golden-hour.webp 'The National Museum of Fine Arts, housed in the old Legislative Building.')
 
 - All visitors and bags pass security inspection; baggage counters sit at the entrances.
 - Wheelchairs can be borrowed free of charge, subject to availability; some galleries have access limits.
