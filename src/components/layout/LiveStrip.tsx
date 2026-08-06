@@ -26,7 +26,11 @@ export default function LiveStrip() {
   const [now, setNow] = useState(() => new Date());
   const [weather, setWeather] = useState<number | null>(null);
   const [usd, setUsd] = useState<number | null>(null);
-  const dateLocale = `${i18n.resolvedLanguage ?? 'en'}-PH`;
+  // Filipino sits between the reader's language and English because browsers
+  // ship CLDR data for en and fil only — every other Philippine language
+  // would otherwise print US English weekday and month names. See the same
+  // chain in UpcomingHolidays.
+  const dateLocale = [`${i18n.resolvedLanguage ?? 'en'}-PH`, 'fil-PH', 'en-PH'];
 
   useEffect(() => {
     // Half a minute is enough resolution for a header clock, and it avoids

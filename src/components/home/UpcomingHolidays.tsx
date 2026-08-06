@@ -29,9 +29,15 @@ export default function UpcomingHolidays() {
 
   // Weekday and month names follow the reader's language, not the site's
   // default. `resolvedLanguage` is the one that actually has a translation
-  // file, so a browser reporting en-GB still formats as en-PH rather than
-  // falling through to a locale we do not ship.
-  const dateLocale = `${i18n.resolvedLanguage ?? 'en'}-PH`;
+  // file, so a browser reporting en-GB still formats as en-PH.
+  //
+  // Filipino sits in the middle of the chain because browsers ship CLDR data
+  // for en and fil and for none of the other Philippine languages: without
+  // it, a Cebuano or Ilocano page falls all the way back to US English and
+  // prints "Fri, Aug 7". Filipino gives "Biy, Ago 7", and those month and
+  // weekday names are shared across these languages, so it reads correctly
+  // even where it is not strictly the reader's own spelling.
+  const dateLocale = [`${i18n.resolvedLanguage ?? 'en'}-PH`, 'fil-PH', 'en-PH'];
 
   return (
     <Section className="bg-gray-50">
