@@ -201,7 +201,7 @@
       "writeTitle": "Manulat at magpatune",
       "writeBody": "Magdagdag kang bulung a ala pa, o saliksikan me ing atin na laban king opisyal a pikuanan na at banggitan me ini. Ing laman atiu bilang plain markdown king parehung repository ning code.",
       "translateTitle": "Maglito",
-      "translateBody": "Ingles ampong Filipino ing papalual ning site ngeni. Ing Bisaya, Bikol, Ilocano ampo reng aliwang amanu king switcher makalista lang bilang kailangan dang taglito, at manatili lang makalista angga king alang manulat kareti.",
+      "translateBody": "Atin amanu keni a draft a gewa ning makina at ala pang magsalita a sinaliksik kareti, at atin aliwa a alang lito. Kaparehu ka-importante ning pamagumpisa king bayung amanu ing pamanyaliksik king draft, at metung mu a JSON file ing adua.",
       "localTitle": "Magbahagi lokal a kabaluan",
       "localBody": "Nokarin a bintana ing tune mabuklat, nokarin a numeru ing sasagutan, nanu ing pepadala rang daralan. Alang dokumentu a magrekord kaniti, at karaniwan ita ing pekakailangan ning residente."
     },

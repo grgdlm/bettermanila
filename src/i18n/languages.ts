@@ -8,7 +8,9 @@ export interface LanguageInfo {
    * True when `public/locales/<code>/common.json` exists. i18next falls back
    * to English when a file is missing, so a language without one must never
    * be selectable: the reader would ask for their language and be shown
-   * English. Languages with no file are surfaced as a call for help instead.
+   * English. Languages with no file simply do not appear in the switcher —
+   * the call for help lives in CONTRIBUTING and on the About page, where it
+   * can be explained, rather than as a row of dead entries in a dropdown.
    */
   available: boolean;
   /**
@@ -129,11 +131,6 @@ export const REVIEWED_LANGUAGES = AVAILABLE_LANGUAGES.filter(
 /** Translated, but by a machine and not yet read by a speaker. */
 export const DRAFT_LANGUAGES = AVAILABLE_LANGUAGES.filter(
   language => !language.reviewed
-);
-
-/** Languages we want, and need a speaker to write. */
-export const WANTED_LANGUAGES = Object.values(LANGUAGES).filter(
-  language => !language.available
 );
 
 export const isDraftLanguage = (code?: string) =>

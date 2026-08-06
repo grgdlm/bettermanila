@@ -5,11 +5,7 @@ import type { LanguageType } from '../../types/index';
 import { Link } from 'react-router-dom';
 import LiveStrip from './LiveStrip';
 import { useTranslation } from 'react-i18next';
-import {
-  DRAFT_LANGUAGES,
-  REVIEWED_LANGUAGES,
-  WANTED_LANGUAGES,
-} from '../../i18n/languages';
+import { DRAFT_LANGUAGES, REVIEWED_LANGUAGES } from '../../i18n/languages';
 
 /**
  * Colour comes from the shared `primary` scale in `src/index.css`, which is
@@ -114,13 +110,6 @@ const Navbar: React.FC = () => {
                       value={lang.code}
                       className="text-gray-900"
                     >
-                      {lang.nativeName}
-                    </option>
-                  ))}
-                </optgroup>
-                <optgroup label="Needs a translator" className="text-gray-900">
-                  {WANTED_LANGUAGES.map(lang => (
-                    <option key={lang.code} value={lang.code} disabled>
                       {lang.nativeName}
                     </option>
                   ))}
@@ -331,13 +320,6 @@ const Navbar: React.FC = () => {
                 <optgroup label="Draft, not yet checked">
                   {DRAFT_LANGUAGES.map(lang => (
                     <option key={lang.code} value={lang.code}>
-                      {lang.nativeName}
-                    </option>
-                  ))}
-                </optgroup>
-                <optgroup label="Needs a translator">
-                  {WANTED_LANGUAGES.map(lang => (
-                    <option key={lang.code} value={lang.code} disabled>
                       {lang.nativeName}
                     </option>
                   ))}

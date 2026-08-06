@@ -201,7 +201,7 @@
       "writeTitle": "Write and verify",
       "writeBody": "Add a page that is missing, or check an existing one against its official source and cite it. Content lives as plain markdown in the same repository as the code.",
       "translateTitle": "Translate",
-      "translateBody": "The site ships in English and Filipino today. Bisaya, Bikol, Ilocano and the other languages in the switcher are listed as needing a translator, and stay listed until a speaker writes them.",
+      "translateBody": "Some languages here are machine-written drafts that no speaker has checked, and others have no translation at all. Reviewing a draft matters as much as starting a new language, and either way it is one JSON file.",
       "localTitle": "Share local knowledge",
       "localBody": "Which window is actually open, which number gets answered, what you are asked to bring. No document records that, and it is often what a resident needs most."
     },

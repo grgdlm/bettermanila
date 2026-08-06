@@ -201,7 +201,7 @@
       "writeTitle": "Magsurat asin magpatunay",
       "writeBody": "Magdagdag nin pahina na mayo pa, o siyasaton an yaon na tumang sa opisyal na gikanan kaini asin sambiton ini. An laog yaon bilang plain markdown sa parehong repository kan code.",
       "translateTitle": "Magtradusir",
-      "translateBody": "Ingles asin Filipino an ipinapaluwas kan site ngunyan. An Bisaya, Bikol, Ilocano asin iba pang tataramon sa switcher nakalista bilang nangangaipo nin paratradusir, asin magdadanay na nakalista sagkod na mayong magsurat kaini.",
+      "translateBody": "Igwang mga tataramon digdi na draft na ginibo kan makina asin mayo pang nagtataram na nagsiyasat kaini, asin igwang iba na mayong tradusiron. Kaparehong importante kan pagpoon nin bagong tataramon an pagsiyasat kan draft, asin sarong JSON file sana an duwa.",
       "localTitle": "Magpaambit nin lokal na kaaraman",
       "localBody": "Sain na bintana an tunay na bukas, sain na numero an sinisimbag, ano an saindang ipinapadara na dadarahon. Mayong dokumento na nagrerekord kaiyan, asin parate iyan an pinakakaipuhan kan residente."
     },

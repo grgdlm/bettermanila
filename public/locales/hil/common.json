@@ -201,7 +201,7 @@
       "writeTitle": "Magsulat kag magpamatuod",
       "writeBody": "Magdugang sang pahina nga wala pa, ukon usisaa ang ara na batok sa opisyal nga ginhalinan sini kag sambita ini. Ang unod ara bilang plain markdown sa amo man nga repository sang code.",
       "translateTitle": "Magbadbad",
-      "translateBody": "Ingles kag Filipino ang ginapaguwa sang site subong. Ang Bisaya, Bikol, Ilocano kag iban pa nga hambal sa switcher nakalista bilang nagakinahanglan sang manugbadbad, kag magapabilin nga nakalista tubtob wala sang magsulat sini.",
+      "translateBody": "May mga hambal diri nga draft nga ginhimo sang makina kag wala pa sang nagahambal nga nag-usisa sini, kag may iban nga wala sang badbad. Subong ka importante sang pagsugod sang bag-o nga hambal ang pag-usisa sang draft, kag isa lang ka JSON file ang duha.",
       "localTitle": "Magpaambit sang lokal nga kaalam",
       "localBody": "Diin nga bintana ang matuod nga bukas, diin nga numero ang ginasabat, ano ang ila ginapadala nga dalhon. Wala sang dokumento nga nagarekord sina, kag masami ina ang labi nga kinahanglan sang residente."
     },

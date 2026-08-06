@@ -201,7 +201,7 @@
       "writeTitle": "Agsurat ken agpasingked",
       "writeBody": "Mangnayon iti panid nga awan pay, wenno sukimatem ti addan maibusor iti opisial a taudanna ken dakamatem daytoy. Ti linaon ket adda kas plain markdown iti isu met laeng a repository ti code.",
       "translateTitle": "Agipatarus",
-      "translateBody": "Ingles ken Filipino ti iruar ti site ita. Ti Bisaya, Bikol, Ilocano ken dadduma pay a pagsasao iti switcher ket nakalista kas agkasapulan iti agipatarus, ken agtalinaed a nakalista agingga nga awan ti mangisurat kadagitoy.",
+      "translateBody": "Adda dagiti pagsasao ditoy a draft nga inaramid ti makina ken awan pay ti agsasao a nangsukisok kadagitoy, ken adda dagiti dadduma nga awan ti patarusna. Kapateg ti panangrugi iti baro a pagsasao ti panangsukisok iti draft, ken maysa laeng a JSON file ti agpada.",
       "localTitle": "Mangiranud iti lokal a pannakaammo",
       "localBody": "Ania a bintana ti pudno a nakalukat, ania a numero ti masungbatan, ania ti ibagada nga itugotmo. Awan ti dokumento a mangrekord iti dayta, ken kaaduanna dayta ti kapatgan a kasapulan ti residente."
     },

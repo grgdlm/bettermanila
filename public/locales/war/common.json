@@ -201,7 +201,7 @@
       "writeTitle": "Pagsurat ngan pagpamatuod",
       "writeBody": "Pagdugang hin pahina nga waray pa, o usisaha an aada na kontra ha opisyal nga tinikangan hini ngan unabiha ini. An sulod aada sugad nga plain markdown ha pareho nga repository han code.",
       "translateTitle": "Paghubad",
-      "translateBody": "Iningles ngan Filipino an iginpapagawas han site yana. An Bisaya, Bikol, Ilocano ngan iba pa nga yinaknan ha switcher nakalista sugad nga nagkikinahanglan hin parahubad, ngan magpapabilin nga nakalista tubtob waray magsurat hini.",
+      "translateBody": "May mga yinaknan dinhi nga draft nga ginhimo han makina ngan waray pa nga nagyayakan nga nag-usisa hini, ngan may iba nga waray hubad. Pariho kaimportante han pagtikang hin bag-o nga yinaknan an pag-usisa han draft, ngan usa la nga JSON file an duha.",
       "localTitle": "Pagpaambit hin lokal nga kahibaro",
       "localBody": "Hain nga bintana an tinuod nga abrido, hain nga numero an ginbabaton, ano an ira iginpapadara nga dad-on. Waray dokumento nga nagrerekord hito, ngan agsob ito an pinakakinahanglan han residente."
     },

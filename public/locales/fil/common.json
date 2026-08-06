@@ -201,7 +201,7 @@
       "writeTitle": "Magsulat at magpatunay",
       "writeBody": "Magdagdag ng pahinang wala pa, o suriin ang mayroon na laban sa opisyal na pinagmulan nito at banggitin ito. Nakalagay ang nilalaman bilang plain markdown sa parehong repository ng code.",
       "translateTitle": "Magsalin",
-      "translateBody": "Ingles at Filipino ang inilalabas ng site ngayon. Ang Bisaya, Bikol, Ilocano at iba pang wika sa switcher ay nakalista bilang kailangan ng tagasalin, at mananatiling nakalista hangga't walang nagsusulat nito.",
+      "translateBody": "May mga wika rito na draft na gawa ng makina at wala pang nagsasalita nito na nakasuri, at may iba namang walang salin. Kasinghalaga ng pagsisimula ng bagong wika ang pagsusuri ng draft, at iisang JSON file lang ang dalawa.",
       "localTitle": "Magbahagi ng lokal na kaalaman",
       "localBody": "Aling bintana ang talagang bukas, aling numero ang sinasagot, ano ang ipinapadalang dalhin. Walang dokumentong nagtatala niyan, at madalas iyon ang pinakakailangan ng residente."
     },

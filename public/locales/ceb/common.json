@@ -201,7 +201,7 @@
       "writeTitle": "Pagsulat ug pagsusi",
       "writeBody": "Pagdugang ug panid nga wala pa, o susiha ang naa na batok sa opisyal nga tinubdan niini ug hisgoti kini. Ang sulod naa isip plain markdown sa samang repository sa code.",
       "translateTitle": "Paghubad",
-      "translateBody": "Iningles ug Filipino ang gipagawas sa site karon. Ang Bisaya, Bikol, Ilocano ug uban pang pinulongan sa switcher nakalista isip nanginahanglan ug maghuhubad, ug magpabilin nga nakalista hangtod walay mosulat niini.",
+      "translateBody": "Naay mga pinulongan dinhi nga draft nga hinimo sa makina ug wala pay mamumulong nga nagsusi niini, ug naay uban nga walay hubad. Sama ka bililhon sa pagsugod ug bag-ong pinulongan ang pagsusi sa draft, ug usa ra ka JSON file ang duha.",
       "localTitle": "Pagpaambit sa lokal nga kahibalo",
       "localBody": "Asang bintana ang tinuod nga abli, asang numero ang gitubag, unsa ang ilang gipadala nga dad-on. Walay dokumento nga nagrekord niana, ug kasagaran kana ang labing gikinahanglan sa residente."
     },
