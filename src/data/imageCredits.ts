@@ -78,6 +78,36 @@ export const IMAGE_CREDITS: Record<string, ImageCredit> = {
     source:
       'https://commons.wikimedia.org/wiki/File:National_Museum_of_Fine_Arts_façade_golden_hour_(Manila,_2024).jpg',
   },
+
+  // Home page hero panel.
+  '/images/hero/city-centre.webp': {
+    author: 'Vyacheslav Argenberg',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    source:
+      'https://commons.wikimedia.org/wiki/File:Manila,_Centre,_Philippines.jpg',
+  },
+  '/images/hero/bay-sunset.webp': {
+    author: 'Vyacheslav Argenberg',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    source:
+      'https://commons.wikimedia.org/wiki/File:Manila_Bay,_Sunset,_Philippines.jpg',
+  },
+  '/images/hero/pasig-river.webp': {
+    author: 'Vyacheslav Argenberg',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    source:
+      'https://commons.wikimedia.org/wiki/File:Manila,_Pasig_River,_Philippines.jpg',
+  },
+  '/images/hero/manila-cathedral.webp': {
+    author: 'Vyacheslav Argenberg',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    source:
+      'https://commons.wikimedia.org/wiki/File:Manila,_Manila_Cathedral,_Philippines.jpg',
+  },
 };
 
 /**
@@ -98,4 +128,8 @@ export const IMAGE_DIMENSIONS: Record<
     width: 1600,
     height: 1061,
   },
+  '/images/hero/city-centre.webp': { width: 1200, height: 800 },
+  '/images/hero/bay-sunset.webp': { width: 1200, height: 800 },
+  '/images/hero/pasig-river.webp': { width: 1200, height: 800 },
+  '/images/hero/manila-cathedral.webp': { width: 1200, height: 800 },
 };

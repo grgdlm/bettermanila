@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import { Heading } from '../ui/Heading';
 import { QUICK_LINKS } from '../../data/quickLinks';
+import HeroImages from './HeroImages';
 
 /**
  * Home page hero.
@@ -60,84 +61,99 @@ export default function Hero() {
       </div>
 
       <div className="relative container mx-auto px-4 py-12 md:py-16">
-        <p
-          className={`animate-fade-in ${FILL} text-xs font-semibold tracking-[0.2em] text-primary-700 uppercase`}
-        >
-          {t('common.eyebrowIndependent')}
-        </p>
-
-        <Heading
-          level={1}
-          className={`animate-slide-in ${FILL} mt-3 mb-0 max-w-3xl text-3xl leading-[1.1] font-extrabold tracking-tight text-balance text-primary-800 sm:text-4xl md:text-5xl`}
-        >
-          <Trans
-            i18nKey="hero.title"
-            components={{
-              city: (
-                <span className="bg-linear-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent" />
-              ),
-            }}
-          />
-        </Heading>
-
-        <p
-          className={`animate-slide-in ${FILL} mt-4 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg`}
-          style={{ animationDelay: '100ms' }}
-        >
-          {t('hero.subtitle')}
-        </p>
-
-        <form
-          onSubmit={onSubmit}
-          role="search"
-          className={`animate-slide-in ${FILL} mt-7 max-w-2xl`}
-          style={{ animationDelay: '160ms' }}
-        >
-          <label htmlFor="hero-search" className="sr-only">
-            {t('common.searchLabel')}
-          </label>
-          <div className="flex gap-2">
-            <div className="relative flex-1">
-              <Search
-                aria-hidden="true"
-                className="pointer-events-none absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-gray-400"
-              />
-              <input
-                id="hero-search"
-                type="search"
-                value={query}
-                onChange={e => setQuery(e.target.value)}
-                placeholder={t('common.searchPlaceholder')}
-                className="w-full rounded-xl border border-gray-300 bg-white py-3.5 pr-4 pl-12 text-base text-gray-900 shadow-sm transition-colors placeholder:text-gray-600 focus-visible:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="shrink-0 rounded-xl bg-primary-600 px-6 py-3.5 font-semibold text-white shadow-sm transition-colors hover:bg-primary-500 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none"
+        {/* Two columns from lg up: the copy and the search box keep the left,
+            the photo panel fills what used to be empty gutter. Below lg the
+            panel is not rendered at all, so a phone downloads none of it and
+            the layout stays exactly as it was. */}
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:items-center lg:gap-14">
+          <div>
+            <p
+              className={`animate-fade-in ${FILL} text-xs font-semibold tracking-[0.2em] text-primary-700 uppercase`}
             >
-              {t('hero.searchButton')}
-            </button>
-          </div>
-        </form>
+              {t('common.eyebrowIndependent')}
+            </p>
 
-        <p
-          className={`animate-fade-in ${FILL} mt-4 max-w-2xl text-sm text-gray-700`}
-          style={{ animationDelay: '220ms' }}
-        >
-          <Trans
-            i18nKey="hero.disclaimer"
-            components={{
-              link: (
-                <a
-                  href="https://manila.gov.ph"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
-                />
-              ),
-            }}
-          />
-        </p>
+            <Heading
+              level={1}
+              className={`animate-slide-in ${FILL} mt-3 mb-0 max-w-3xl text-3xl leading-[1.1] font-extrabold tracking-tight text-balance text-primary-800 sm:text-4xl md:text-5xl`}
+            >
+              <Trans
+                i18nKey="hero.title"
+                components={{
+                  city: (
+                    <span className="bg-linear-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent" />
+                  ),
+                }}
+              />
+            </Heading>
+
+            <p
+              className={`animate-slide-in ${FILL} mt-4 max-w-2xl text-base leading-relaxed text-gray-700 md:text-lg`}
+              style={{ animationDelay: '100ms' }}
+            >
+              {t('hero.subtitle')}
+            </p>
+
+            <form
+              onSubmit={onSubmit}
+              role="search"
+              className={`animate-slide-in ${FILL} mt-7 max-w-2xl`}
+              style={{ animationDelay: '160ms' }}
+            >
+              <label htmlFor="hero-search" className="sr-only">
+                {t('common.searchLabel')}
+              </label>
+              <div className="flex gap-2">
+                <div className="relative flex-1">
+                  <Search
+                    aria-hidden="true"
+                    className="pointer-events-none absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-gray-400"
+                  />
+                  <input
+                    id="hero-search"
+                    type="search"
+                    value={query}
+                    onChange={e => setQuery(e.target.value)}
+                    placeholder={t('common.searchPlaceholder')}
+                    className="w-full rounded-xl border border-gray-300 bg-white py-3.5 pr-4 pl-12 text-base text-gray-900 shadow-sm transition-colors placeholder:text-gray-600 focus-visible:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="shrink-0 rounded-xl bg-primary-600 px-6 py-3.5 font-semibold text-white shadow-sm transition-colors hover:bg-primary-500 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:outline-none"
+                >
+                  {t('hero.searchButton')}
+                </button>
+              </div>
+            </form>
+
+            <p
+              className={`animate-fade-in ${FILL} mt-4 max-w-2xl text-sm text-gray-700`}
+              style={{ animationDelay: '220ms' }}
+            >
+              <Trans
+                i18nKey="hero.disclaimer"
+                components={{
+                  link: (
+                    <a
+                      href="https://manila.gov.ph"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded font-medium text-primary-700 underline decoration-primary-300 underline-offset-4 transition-colors hover:text-primary-600 hover:decoration-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
+                    />
+                  ),
+                }}
+              />
+            </p>
+          </div>
+
+          <div
+            className={`animate-fade-in ${FILL} mt-10 hidden lg:mt-0 lg:block`}
+            style={{ animationDelay: '200ms' }}
+          >
+            <HeroImages />
+          </div>
+        </div>
 
         {/* The things people actually come here for */}
         <div className="mt-10 border-t border-gray-200 pt-8">
