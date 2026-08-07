@@ -23,6 +23,7 @@ import { TableWithToggle, type HastLike } from './TableWithToggle';
 import { VerifyNotice } from '../components/ui/VerifyNotice';
 import { linkifyTelChildren } from './telLinks';
 import { Figure } from '../components/ui/Figure';
+import { JeepneyRide } from '../components/ui/JeepneyRide';
 
 const TODO_PREFIX = /^\s*TODO:\s*/;
 
@@ -38,6 +39,20 @@ function isLoneImage(node?: HastLike): boolean {
     child => !(child.type === 'text' && !String(child.value ?? '').trim())
   );
   return children.length === 1 && children[0]?.tagName === 'img';
+}
+
+/**
+ * Fenced languages that render an illustration rather than code, and so must
+ * escape the <pre> wrapper markdown puts around every fence.
+ */
+const ILLUSTRATION_FENCES = ['language-jeepney'];
+
+function isIllustrationFence(node?: HastLike): boolean {
+  const code = (node?.children ?? []).find(child => child.tagName === 'code');
+  const classes =
+    (code as { properties?: { className?: string[] } } | undefined)?.properties
+      ?.className ?? [];
+  return classes.some(name => ILLUSTRATION_FENCES.includes(name));
 }
 
 /**
@@ -306,6 +321,10 @@ export function createMarkdownComponents(theme: TypographyTheme) {
       className,
       ...props
     }: { className?: string } & MdProps<HTMLElement>) => {
+      // An empty ```jeepney fence is an illustration, not code. See the
+      // `pre` renderer below, which unwraps it.
+      if (className?.includes('language-jeepney')) return <JeepneyRide />;
+
       // Check if it's inline code or code block
       const isInline = !className?.includes('language-');
       return isInline ? (
@@ -318,11 +337,23 @@ export function createMarkdownComponents(theme: TypographyTheme) {
         </code>
       );
     },
-    pre: ({ children, ...props }: MdProps<HTMLPreElement>) => (
-      <pre className={theme.components.pre} {...domProps(props)}>
-        {children}
-      </pre>
-    ),
+    pre: ({
+      node,
+      children,
+      ...props
+    }: { node?: HastLike } & MdProps<HTMLPreElement>) => {
+      // A ```jeepney fence renders an illustration, which must not be
+      // wrapped in a <pre> — it would inherit the code block's monospace
+      // frame and scrollbar. Same unwrapping the paragraph renderer does
+      // for a lone image.
+      if (isIllustrationFence(node)) return <>{children}</>;
+
+      return (
+        <pre className={theme.components.pre} {...domProps(props)}>
+          {children}
+        </pre>
+      );
+    },
     a: ({
       children,
       href,

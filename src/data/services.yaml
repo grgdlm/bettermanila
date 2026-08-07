@@ -69,3 +69,9 @@ categories:
     slug: 'tourism'
     description: 'Plan a day in the capital: Intramuros, Rizal Park and the national museums, with hours and fees from official sources.'
     icon: 'Landmark'
+
+  # Getting Around
+  - category: 'Getting Around'
+    slug: 'getting-around'
+    description: 'How to move around the city on public transport: what a jeepney ride costs, who gets a discount, and how to read a route sign.'
+    icon: 'Bus'

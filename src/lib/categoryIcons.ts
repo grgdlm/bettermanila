@@ -11,6 +11,7 @@
 import {
   Book,
   Building2,
+  Bus,
   ChartBar,
   FileText,
   GraduationCap,
@@ -33,6 +34,7 @@ export type IconComponent = React.ComponentType<{ className?: string }>;
 export const CATEGORY_ICONS: Record<string, IconComponent> = {
   Book,
   Building2,
+  Bus,
   ChartBar,
   FileText,
   GraduationCap,

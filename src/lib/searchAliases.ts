@@ -85,6 +85,15 @@ const SYNONYM_GROUPS: string[][] = [
   ['hours', 'oras'],
   ['certificate', 'sertipiko', 'katibayan'],
 
+  // Transport
+  ['jeepney', 'jeepneys', 'jeep', 'dyip'],
+  ['fare', 'fares', 'pamasahe'],
+  ['route', 'routes', 'ruta'],
+  ['discount', 'discounts', 'diskwento'],
+  ['passenger', 'passengers', 'pasahero'],
+  ['driver', 'drivers', 'drayber', 'tsuper'],
+  ['vehicle', 'vehicles', 'sasakyan'],
+
   // Infrastructure, housing, environment, agriculture
   ['water', 'tubig'],
   ['road', 'roads', 'kalsada', 'kalye', 'daan'],
@@ -144,6 +153,8 @@ const DIRECTED_ALIASES: Record<string, string[]> = {
   requirements: ['requirement', 'documents'],
   kailangan: ['requirement', 'requirements'],
   magkano: ['cost', 'fee', 'price'],
+  sakay: ['ride', 'jeepney'],
+  byahe: ['ride', 'route'],
   // Question words are deliberately absent. "saan" and "paano" expand to
   // "where" and "how", which appear on nearly every page, so they add noise
   // and no signal.

@@ -1,0 +1,8 @@
+# Getting Around
+# Public transport as a rider experiences it: what it costs, who gets a
+# discount, and how to work out which vehicle goes where.
+
+pages:
+  - name: 'Ride a jeepney in Manila'
+    slug: 'ride-a-jeepney'
+    description: 'What a jeepney ride costs under the current LTFRB fare, the 20% discount students, seniors and PWDs are entitled to by law, and how to read a route sign.'

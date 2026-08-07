@@ -107,6 +107,32 @@
       opacity: 1;
     }
   }
+
+  /* The jeepney on the "Ride a jeepney" page. Decorative only; both
+     animations are disabled under prefers-reduced-motion at the call site. */
+  --animate-jeepney-drive: jeepneyDrive 9s linear infinite;
+  --animate-jeepney-wheel: jeepneyWheel 0.7s linear infinite;
+
+  /* Travel is measured in container width, not viewport width: the reading
+     column is far narrower than the screen, and a 100vw sweep would park the
+     jeepney out of sight for most of every cycle. */
+  @keyframes jeepneyDrive {
+    0% {
+      transform: translateX(-140px);
+    }
+    100% {
+      transform: translateX(calc(100cqw + 140px));
+    }
+  }
+
+  @keyframes jeepneyWheel {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 @theme inline {
