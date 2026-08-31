@@ -85,9 +85,14 @@ const Navbar: React.FC = () => {
               <label htmlFor="lang-desktop" className="sr-only">
                 Language
               </label>
+              {/*
+                Bind to resolvedLanguage, never i18n.language: a first-time
+                visitor's detected locale is region-tagged ("en-US", "fil-PH"),
+                which matches no <option value> and leaves the select blank.
+              */}
               <select
                 id="lang-desktop"
-                value={i18n.language}
+                value={i18n.resolvedLanguage ?? 'en'}
                 onChange={e => changeLanguage(e.target.value as LanguageType)}
                 className="rounded border border-white/25 bg-transparent px-2 py-0.5 text-xs text-white transition-colors hover:border-white/60 focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:outline-none"
               >
@@ -308,7 +313,7 @@ const Navbar: React.FC = () => {
               </label>
               <select
                 id="lang-mobile"
-                value={i18n.language}
+                value={i18n.resolvedLanguage ?? 'en'}
                 onChange={e => changeLanguage(e.target.value as LanguageType)}
                 className="rounded-lg border border-gray-300 bg-white px-2 py-1.5 text-sm text-gray-700 transition-colors hover:border-primary-600 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:outline-none"
               >
