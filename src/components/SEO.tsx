@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 interface SEOProps {
   title?: string;
@@ -24,6 +25,7 @@ export default function SEO({
   noindex = false,
 }: SEOProps) {
   const { i18n } = useTranslation();
+  const { pathname } = useLocation();
   // og:locale has to name the language actually rendered. It was pinned to
   // en_PH, which mislabelled every page once the site started shipping
   // Filipino.
@@ -47,7 +49,11 @@ export default function SEO({
   const siteUrl = (
     import.meta.env.VITE_WEBSITE_URL || 'https://bettermanila.org'
   ).replace(/\/+$/, '');
-  const fullUrl = url || siteUrl;
+  // No page passes `url`, so defaulting to the bare domain told crawlers that
+  // every service guide and department page was a duplicate of the home page.
+  // The current path is the honest canonical for a client-routed SPA.
+  const fullUrl =
+    url || `${siteUrl}${pathname === '/' ? '' : pathname.replace(/\/+$/, '')}`;
   const ogImage = image || import.meta.env.VITE_OG_IMAGE_URL || '/og-image.jpg';
   // Scrapers (Facebook included) require an absolute og:image URL.
   const fullImage = /^https?:\/\//.test(ogImage)
