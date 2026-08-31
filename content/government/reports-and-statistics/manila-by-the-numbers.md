@@ -24,11 +24,11 @@ Very. The PSA puts the city's land area at 24.98 square kilometers, and at the 2
 
 ---
 
-## 897 barangays in 14 districts
+## 897 barangays in 16 districts
 
 Manila has **897 barangays** — more than half of the 1,715 barangays in the entire National Capital Region, spread across its 16 cities and lone municipality. Manila's are known by number rather than by name: the PSA's geographic masterlist reads Barangay 287, Barangay 288, and so on.
 
-The barangays group into the 14 districts Manileños actually navigate by:
+The city is commonly described as having **16 districts**. The PSA's geographic masterlist groups Manila's barangays into 14 units, and those are the ones with published population and barangay counts:
 
 | District    | Residents (2024) | Barangays |
 | ----------- | ---------------- | --------- |
@@ -47,7 +47,9 @@ The barangays group into the 14 districts Manileños actually navigate by:
 | Ermita      | 22,863           | 13        |
 | Intramuros  | 7,437            | 5         |
 
-One Manileño in three lives in Tondo. Intramuros, the walled city where Manila began, is now the smallest district by population — Tondo holds eighty-five times as many people. The fourteen district counts sum exactly to the citywide 1,902,590.
+One Manileño in three lives in Tondo. Intramuros, the walled city where Manila began, is now the smallest district by population — Tondo holds eighty-five times as many people. The fourteen counts above sum exactly to the citywide 1,902,590.
+
+TODO: Reconcile the two district figures. Manila is usually described as having 16 districts, San Andres and Santa Mesa among them, but the PSA's masterlist publishes 14. Confirm how those two are treated in the masterlist, and cite the ordinances that created them, so this page can give per-district figures for all 16.
 
 For elections the city is drawn differently: **six legislative districts**, each sending one representative to Congress and each electing six of the city council's 36 district councilors. Two ex-officio members complete the 38-seat Sangguniang Panlungsod.
 

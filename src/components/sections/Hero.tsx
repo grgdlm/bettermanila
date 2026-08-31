@@ -25,9 +25,11 @@ import HeroImages from './HeroImages';
 const FILL = '[animation-fill-mode:both] motion-reduce:animate-none';
 
 /**
- * Per the PSA's PSGC entry for the City of Manila (counts as of 31 July
- * 2025) and the 2024 POPCEN: 897 barangays grouped into 14 districts, and
- * six legislative districts. Full figures with sources live on
+ * 897 barangays per the PSA's PSGC entry for the City of Manila (counts as
+ * of 31 July 2025), and six legislative districts. The 16 districts are the
+ * city's commonly used ones; the PSGC groups the barangays into 14 units
+ * instead, which manila-by-the-numbers explains and flags for sourcing.
+ * Full figures with sources live on
  * /government/reports-and-statistics/manila-by-the-numbers.
  *
  * The figures are language-independent; only the noun after each one is
@@ -35,7 +37,7 @@ const FILL = '[animation-fill-mode:both] motion-reduce:animate-none';
  */
 const CITY_FACTS = [
   { value: '897', key: 'barangays' },
-  { value: '14', key: 'districts' },
+  { value: '16', key: 'districts' },
   { value: '6', key: 'legislativeDistricts' },
 ];
 

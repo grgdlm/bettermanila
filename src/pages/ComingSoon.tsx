@@ -188,7 +188,7 @@ export default function ComingSoon() {
             className={`animate-fade-in ${FILL} mt-6 font-mono text-xs tracking-wide text-[#b3c4f8] md:text-sm`}
             style={{ animationDelay: '1000ms' }}
           >
-            14 districts, 897 barangays, one place to look things up.
+            16 districts, 897 barangays, one place to look things up.
           </p>
         </section>
 
