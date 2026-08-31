@@ -14,7 +14,9 @@ export default defineConfig({
         // caches: the app chunk changes weekly, react and the markdown
         // pipeline change only when dependencies are upgraded.
         manualChunks: {
-          react: ['react', 'react-dom', 'react-router-dom'],
+          // 'react-dom/client' is a separate entry point from 'react-dom';
+          // naming only the latter left the whole renderer in the app chunk.
+          react: ['react', 'react-dom', 'react-dom/client', 'react-router-dom'],
           markdown: ['react-markdown', 'remark-gfm'],
           icons: ['lucide-react'],
         },
