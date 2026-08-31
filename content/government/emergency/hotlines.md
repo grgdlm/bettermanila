@@ -193,7 +193,7 @@ Call **911** first if someone is in immediate danger. Manila Police District sta
 
 ## Numbers we could not confirm
 
-**TODO: Manila Disaster Risk Reduction and Management Office, landline.** The city publishes two different landline numbers for the same office. Its emergency hotlines poster shows 8568-6909 and its evacuation centers poster shows 8526-6909. Both are printed clearly, so this is not a reading error, and we will not guess which one is live. Use 0932-662-2322, 0950-700-3710 or 911 until the office confirms it.
+TODO: **Manila Disaster Risk Reduction and Management Office, landline.** The city publishes two different landline numbers for the same office. Its emergency hotlines poster shows 8568-6909 and its evacuation centers poster shows 8526-6909. Both are printed clearly, so this is not a reading error, and we will not guess which one is live. Use 0932-662-2322, 0950-700-3710 or 911 until the office confirms it.
 
 Every other number on this page was read twice from two separate high magnification captures of the city's posters and matched both times.
 
