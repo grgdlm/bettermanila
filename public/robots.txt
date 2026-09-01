@@ -1,0 +1,12 @@
+# BetterManila — an independent guide to the City of Manila.
+# Not an official site of the City Government of Manila.
+
+User-agent: *
+Allow: /
+
+# /search is a search box, not a page. Its results are the same URLs listed
+# in the sitemap, seen through a query string, and the SPA rewrite answers
+# every path with 200, so crawling them invents pages that do not exist.
+Disallow: /search
+
+Sitemap: https://bettermanila.org/sitemap.xml
