@@ -1,0 +1,50 @@
+name: Something on the site is wrong
+description: A number, fee, address, schedule or name that does not match reality.
+title: 'Wrong: '
+labels: ['wrong fact']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you — this is the most useful thing anyone can do here. A wrong
+        hotline number on a government-information site does real harm.
+
+        You do not need a source. If you rang a number and it did not
+        connect, or an office has moved, that is worth reporting on its own
+        and someone will look it up.
+
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      description: The link, or just the title of the page.
+      placeholder: bettermanila.org/government/emergency/hotlines
+    validations:
+      required: true
+
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What does it say now?
+      description: Copy the part that is wrong, if you can.
+    validations:
+      required: true
+
+  - type: textarea
+    id: right
+    attributes:
+      label: What should it say?
+      description: Leave this blank if you only know that it is wrong.
+    validations:
+      required: false
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Where do you know it from?
+      description: >
+        A page on manila.gov.ph, a poster at the office, a notice you were
+        handed, or "I called the number and it was disconnected". Anything at
+        all helps, and so does nothing.
+    validations:
+      required: false
