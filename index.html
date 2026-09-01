@@ -12,6 +12,59 @@
       name="description"
       content="BetterManila is an independent, open-source portal that makes City of Manila public information easy to find: services, departments, budgets and ordinances, in plain language."
     />
+    <!--
+      Social preview tags, deliberately duplicated here in static HTML.
+
+      SEO.tsx sets these per page through Helmet, but Helmet writes them
+      after React mounts and no link scraper runs JavaScript. Facebook,
+      Messenger, Viber and Twitter were therefore fetching this file, finding
+      no og: tags at all, and rendering every shared link — every hotline
+      page, every permit guide — as a blank card.
+
+      These are the site-wide defaults, so a shared link previews as
+      something whatever page it points at. They are not per-page: that needs
+      prerendering, which this build does not do.
+
+      In a browser these end up duplicated — Helmet appends its own copies on
+      mount rather than replacing these, and marking them data-rh does not
+      help, because react-helmet-async only reclaims existing tags when
+      hydrating a server render. The duplication is harmless: nothing in the
+      page reads og: tags, and the scrapers these exist for never run the
+      JavaScript that creates the second copy.
+
+      og:url is intentionally absent. Pinning it to the home page would make
+      every shared deep link resolve to the home page in the scraper's index;
+      leaving it out lets the scraper keep the URL it actually fetched.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BetterManila" />
+    <meta
+      property="og:title"
+      content="BetterManila — an independent guide to the City of Manila"
+    />
+    <meta
+      property="og:description"
+      content="Emergency numbers, permits, health services and what the city spends, in plain language. An independent, open-source project — not an official site of the City Government of Manila."
+    />
+    <meta property="og:image" content="https://bettermanila.org/og-image.jpg" />
+    <meta
+      property="og:image:alt"
+      content="BetterManila — an independent guide to the City of Manila"
+    />
+    <meta property="og:locale" content="en_PH" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="BetterManila — an independent guide to the City of Manila"
+    />
+    <meta
+      name="twitter:description"
+      content="Emergency numbers, permits, health services and what the city spends, in plain language. An independent, open-source project — not an official site of the City Government of Manila."
+    />
+    <meta
+      name="twitter:image"
+      content="https://bettermanila.org/og-image.jpg"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
