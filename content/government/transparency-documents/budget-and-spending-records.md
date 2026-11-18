@@ -39,6 +39,22 @@ Several of these government sites block automated access and only respond to a r
 
 ---
 
+## National government money spent in Manila
+
+Everything above is the city's own money. National agencies also build in Manila, mostly through the Department of Public Works and Highways (DPWH), and that money sits in the national budget rather than the city's. None of the four places above shows it. The BetterManila budget portal does:
+
+- <https://budget.bettermanila.org/>
+
+It lists the FY 2027 projects it attributes to Manila, both as proposed in the National Expenditure Program and as amended in the House budget bill (House Bill 10858), and links every figure to the page of the budget document it came from. A second view shows the enacted national budgets for 2020 to 2026 for the same area. You can search the list, filter it by program, status and DPWH office, and download it as a spreadsheet.
+
+The figures come from the [BetterGov.ph Budget API](https://budget.bettergov.ph/). The portal is maintained by Mark Lapada ([@aeschyllus](https://github.com/aeschyllus)), and its code is open at <https://github.com/aeschyllus/transparency-portal-manila>.
+
+**What counts as Manila there.** The portal takes everything the budget lists under DPWH's North Manila and South Manila District Engineering Offices, then adds lines from four national programs (DPWH, farm-to-market roads, health facilities and irrigation) whose listing names "Manila". That second step also picks up some Metro Manila-wide programs and facilities in other NCR cities, so the portal's totals may include some projects outside Manila city proper. Check where a project is before quoting it.
+
+These are national appropriations, not city spending, so do not add them to the city's figures below.
+
+---
+
 ## The headline figures
 
 Two of the four systems above already carry Manila's numbers. They count on different bases — BLGF's statement is a cash tally and the COA figures are audited accrual accounts — so the two tables sit side by side rather than adding up to each other.
@@ -83,4 +99,4 @@ The full report is on the COA page linked above: choose **2024 → National Capi
 
 ---
 
-> Sourced from the City of Manila's official site on 29 July 2026. Financial figures retrieved 4 August 2026 from the BLGF Statement of Receipts and Expenditures and Annual Regular Income files for FY 2025 (preliminary, blgf.gov.ph) and from the COA _Annual Audit Report on the City of Manila, CY 2024_ Executive Summary (coa.gov.ph, posted 9 December 2025). This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila.
+> Sourced from the City of Manila's official site on 29 July 2026. Financial figures retrieved 4 August 2026 from the BLGF Statement of Receipts and Expenditures and Annual Regular Income files for FY 2025 (preliminary, blgf.gov.ph) and from the COA _Annual Audit Report on the City of Manila, CY 2024_ Executive Summary (coa.gov.ph, posted 9 December 2025). The budget portal's scope and data source were checked on 18 November 2026 against its repository and the BetterGov.ph Budget API. This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila.
