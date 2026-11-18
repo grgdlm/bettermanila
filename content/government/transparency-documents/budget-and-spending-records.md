@@ -53,6 +53,43 @@ The figures come from the [BetterGov.ph Budget API](https://budget.bettergov.ph/
 
 These are national appropriations, not city spending, so do not add them to the city's figures below.
 
+### What DPWH's two Manila offices are budgeted
+
+DPWH builds in Manila through two district engineering offices. Each one serves several legislative districts, and South Manila also serves Pasay, so these are whole-office figures. They cannot be split by district.
+
+| Office                                       | Districts it serves   | FY 2026, enacted     | FY 2027, NEP         | FY 2027, House bill    |
+| -------------------------------------------- | --------------------- | -------------------- | -------------------- | ---------------------- |
+| [North Manila DEO]({NORTH_DEO_PROJECTS_URL}) | {NORTH_DEO_DISTRICTS} | {NORTH_DEO_GAA_2026} | {NORTH_DEO_NEP_2027} | {NORTH_DEO_HOUSE_2027} |
+| [South Manila DEO]({SOUTH_DEO_PROJECTS_URL}) | {SOUTH_DEO_DISTRICTS} | {SOUTH_DEO_GAA_2026} | {SOUTH_DEO_NEP_2027} | {SOUTH_DEO_HOUSE_2027} |
+
+The enacted and NEP figures cover the whole office. The House bill figure counts only the projects the bill names, so it is not a like-for-like total. The NEP and the House bill are two versions of one budget: compare them, never add them. All three are amounts the government is allowed to spend, not what was actually spent.
+
+> {BUDGET_API_NOTICE}
+
+### Find your district
+
+Every Manila district has a page on BetterGov.ph showing which DPWH office builds there and that office's budget history. The same site will draft a letter to your representative about the 2027 House bill, with your district's figures filled in.
+
+| District     | District page                                                        |
+| ------------ | -------------------------------------------------------------------- |
+| 1st District | <https://budget.bettergov.ph/hgab/2027/districts/leg%3Amanila%3A1st> |
+| 2nd District | <https://budget.bettergov.ph/hgab/2027/districts/leg%3Amanila%3A2nd> |
+| 3rd District | <https://budget.bettergov.ph/hgab/2027/districts/leg%3Amanila%3A3rd> |
+| 4th District | <https://budget.bettergov.ph/hgab/2027/districts/leg%3Amanila%3A4th> |
+| 5th District | <https://budget.bettergov.ph/hgab/2027/districts/leg%3Amanila%3A5th> |
+| 6th District | <https://budget.bettergov.ph/hgab/2027/districts/leg%3Amanila%3A6th> |
+
+Write to your representative: <https://budget.bettergov.ph/hgab/2027/letter>
+
+### More from BetterGov.ph
+
+| What you want                                                  | Where it is                                           |
+| -------------------------------------------------------------- | ----------------------------------------------------- |
+| **What was said about a project in the House budget hearings** | <https://budget.bettergov.ph/hearings>                |
+| **Every enacted national budget, FY 2000 to 2026**             | <https://budget.bettergov.ph/gaa>                     |
+| **Multi-purpose buildings, by place, FY 2015 to 2027**         | <https://budget.bettergov.ph/hgab/2027/multi-purpose> |
+| **A budget term you do not recognise**                         | <https://budget.bettergov.ph/glossary>                |
+
 ---
 
 ## The headline figures
@@ -99,4 +136,4 @@ The full report is on the COA page linked above: choose **2024 → National Capi
 
 ---
 
-> Sourced from the City of Manila's official site on 29 July 2026. Financial figures retrieved 4 August 2026 from the BLGF Statement of Receipts and Expenditures and Annual Regular Income files for FY 2025 (preliminary, blgf.gov.ph) and from the COA _Annual Audit Report on the City of Manila, CY 2024_ Executive Summary (coa.gov.ph, posted 9 December 2025). The budget portal's scope and data source were checked on 18 November 2026 against its repository and the BetterGov.ph Budget API. This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila.
+> Sourced from the City of Manila's official site on 29 July 2026. Financial figures retrieved 4 August 2026 from the BLGF Statement of Receipts and Expenditures and Annual Regular Income files for FY 2025 (preliminary, blgf.gov.ph) and from the COA _Annual Audit Report on the City of Manila, CY 2024_ Executive Summary (coa.gov.ph, posted 9 December 2025). The budget portal's scope and data source were checked on 18 November 2026 against its repository and the BetterGov.ph Budget API. DPWH office figures retrieved {BUDGET_RETRIEVED} from the BetterGov.ph Budget API (<https://budget.bettergov.ph/docs>, data built {BUDGET_API_SNAPSHOT}), which reads them from the published General Appropriations Acts, the National Expenditure Program and House Bill 10858. This is an independent volunteer project and is not affiliated with, or endorsed by, the City Government of Manila.

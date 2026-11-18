@@ -1,0 +1,15 @@
+{
+  "NORTH_DEO_DISTRICTS": "Manila 1st, 2nd, 3rd, 4th and 6th",
+  "NORTH_DEO_GAA_2026": "₱750.7 million",
+  "NORTH_DEO_NEP_2027": "₱1.03 billion",
+  "NORTH_DEO_HOUSE_2027": "₱1.37 billion",
+  "NORTH_DEO_PROJECTS_URL": "https://budget.bettergov.ph/hgab/2027/dpwh?view=projects&deo=North%20Manila%20District%20Engineering%20Office",
+  "SOUTH_DEO_DISTRICTS": "Manila 5th and 6th, and Pasay City",
+  "SOUTH_DEO_GAA_2026": "₱785.9 million",
+  "SOUTH_DEO_NEP_2027": "₱648.6 million",
+  "SOUTH_DEO_HOUSE_2027": "₱752.2 million",
+  "SOUTH_DEO_PROJECTS_URL": "https://budget.bettergov.ph/hgab/2027/dpwh?view=projects&deo=South%20Manila%20District%20Engineering%20Office",
+  "BUDGET_API_NOTICE": "Independent and unofficial. This comparison is our own reading of the published documents, not an official record of the budget department, the agencies or the House. Figures are the amounts published in the documents, not spending. No allegations. An insertion, deletion, or amount-change candidate describes a provisional comparison between identified sources. That classification alone does not establish irregularity or wrongdoing by any office or official and should not be represented as such. Absence from an API snapshot likewise does not establish absence from the published NEP or concealment. Read the full notice: https://budget.bettergov.ph/hgab/2027/methodology#disclaimer.",
+  "BUDGET_API_SNAPSHOT": "26 October 2026",
+  "BUDGET_RETRIEVED": "18 November 2026"
+}
