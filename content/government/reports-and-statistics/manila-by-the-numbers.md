@@ -90,6 +90,8 @@ On the spending side, social services took the biggest share at ₱7.48 billion 
 
 The audited picture for 2024: income of ₱21.84 billion against expenses of ₱16.62 billion, and city assets of ₱87.52 billion. The auditor signed off with a qualified opinion — what that means, and what the audit found, is on [Budget and spending records](/government/transparency-documents/budget-and-spending-records). The audited 2024 and preliminary 2025 figures are kept on different accounting bases, so they are close neighbors, not the same measure.
 
+All of this is the city's own money. National government projects built in Manila, mostly by the Department of Public Works and Highways, are budgeted in the national budget instead, and are not in these figures. Where to look them up is on the same [Budget and spending records](/government/transparency-documents/budget-and-spending-records) page.
+
 Running all this took **21,074 people** on the city payroll at the end of 2024: 8,214 permanent employees, 9,599 job-order workers, 2,701 contractuals, 500 co-terminus staff, 40 elected officials and 20 consultants.
 
 ---

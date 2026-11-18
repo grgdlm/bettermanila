@@ -28,6 +28,12 @@ PhilGEPS is generally the better source if you want to compare Manila against ot
 
 ---
 
+## National projects built in Manila
+
+Roads, drainage, pumping stations and other works paid for by the national budget are procured by the agency that builds them, mostly the Department of Public Works and Highways, not by the city. They will not appear among the city's bid documents. To see what national money is budgeted for projects in Manila, start at [Where the city publishes its budget and spending](/government/transparency-documents/budget-and-spending-records), which links the BetterManila budget portal and DPWH's figures for its two Manila offices. The contracts themselves are on PhilGEPS, under the DPWH office that awarded them.
+
+---
+
 ## Why the Notice of Award is the one to read
 
 An invitation to bid tells you what was wanted. A notice of award tells you **who got the money**. If you are checking whether a project was awarded fairly, that is the document to start from, then work backwards to the bid terms.
