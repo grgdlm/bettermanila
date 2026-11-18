@@ -147,6 +147,13 @@ export const footerNavigation: {
       titleKey: 'footer.sections.national',
       links: [
         {
+          // National appropriations for projects in Manila (DPWH and three
+          // other programs), maintained as a BetterManila subdomain.
+          label: 'National budget projects in Manila',
+          href: 'https://budget.bettermanila.org',
+          external: true,
+        },
+        {
           label: 'Official Gazette',
           href: 'https://www.officialgazette.gov.ph',
           external: true,
