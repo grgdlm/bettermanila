@@ -63,10 +63,11 @@ export const mainNavigation: NavigationItem[] = [
  *
  * There is no social row. The starter kit aimed all four icons at the
  * national accounts (facebook.com/govph and friends), which do not belong to
- * this project. Better Manila does have a Facebook page, but its address has
- * not been confirmed, and a guessed link in the footer of a civic site is
- * worse than no link at all. Add it below once someone verifies it.
+ * this project. BetterManila's own Facebook page is listed in the Site column
+ * instead, as a plain link. Its address was confirmed by the maintainer in
+ * November 2026; add other accounts the same way, and only once confirmed.
  */
+export const FACEBOOK_URL = 'https://www.facebook.com/BetterManilaOrg';
 
 export interface FooterLink {
   /**
@@ -138,6 +139,8 @@ export const footerNavigation: {
         { labelKey: 'footer.links.home', href: '/' },
         { labelKey: 'footer.links.about', href: '/about' },
         { labelKey: 'footer.links.search', href: '/search' },
+        // A brand name, so a literal label rather than a translation key.
+        { label: 'Facebook', href: FACEBOOK_URL, external: true },
       ],
     },
     {
